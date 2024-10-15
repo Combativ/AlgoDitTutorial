@@ -11,5 +11,11 @@ config_version=5
 [application]
 
 config/name="AlgoDitTutorial"
+run/main_scene="res://Assets/Tests/snapping_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Snapper="Object that can snap to a SnapTarget"
+SnapTarget="Object that Snappers can snap to."

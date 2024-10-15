@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvc8rgpppkr2a"]
+
+[ext_resource type="Texture2D" uid="uid://dux77h7ihgxnc" path="res://icon.svg" id="1_w1721"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo3vi"]
+size = Vector2(46, 47)
+
+[node name="RoomSnapTarget" type="Area2D" groups=["SnapTarget"]]
+modulate = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vo3vi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("1_w1721")

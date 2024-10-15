@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhindg3qte46a"]
+
+[ext_resource type="PackedScene" uid="uid://bvc8rgpppkr2a" path="res://snap_target.tscn" id="1_ag7tk"]
+[ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://Assets/Tests/snapper.tscn" id="2_4n8nh"]
+
+[node name="SnappingTest" type="Node2D"]
+
+[node name="SnapTarget" parent="." instance=ExtResource("1_ag7tk")]
+position = Vector2(560, 80)
+
+[node name="Snapper" parent="." instance=ExtResource("2_4n8nh")]
+position = Vector2(532, 602)
+
+[node name="SnapTarget2" parent="." instance=ExtResource("1_ag7tk")]
+position = Vector2(320, 400)
+
+[node name="SnapTarget3" parent="." instance=ExtResource("1_ag7tk")]
+position = Vector2(400, 240)
+
+[node name="SnapTarget4" parent="." instance=ExtResource("1_ag7tk")]
+position = Vector2(720, 240)
+
+[node name="SnapTarget5" parent="." instance=ExtResource("1_ag7tk")]
+position = Vector2(480, 400)
+
+[node name="SnapTarget6" parent="." instance=ExtResource("1_ag7tk")]
+position = Vector2(640, 400)
+
+[node name="SnapTarget7" parent="." instance=ExtResource("1_ag7tk")]
+position = Vector2(800, 400)
