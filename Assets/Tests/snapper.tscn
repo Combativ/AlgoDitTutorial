@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhrv6jgwyaplb"]
 
-[ext_resource type="Script" path="res://Assets/Tests/draggable.gd" id="1_63bsi"]
+[ext_resource type="Script" path="res://Assets/Tests/drag_and_snap.gd" id="1_63bsi"]
 [ext_resource type="Texture2D" uid="uid://dux77h7ihgxnc" path="res://icon.svg" id="2_7pvhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeaq3"]
 size = Vector2(128, 128)
 
-[node name="Room" type="Area2D" groups=["Snapper"]]
+[node name="Snapper" type="Area2D"]
 z_index = 1
+script = ExtResource("1_63bsi")
 metadata/_edit_group_ = true
 
-[node name="DragAndSnap" type="Button" parent="."]
+[node name="DragMask" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
-script = ExtResource("1_63bsi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yeaq3")
@@ -24,5 +24,5 @@ shape = SubResource("RectangleShape2D_yeaq3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_7pvhh")
 
-[connection signal="button_down" from="DragAndSnap" to="DragAndSnap" method="_on_button_down"]
-[connection signal="button_up" from="DragAndSnap" to="DragAndSnap" method="_on_button_up"]
+[connection signal="button_down" from="DragMask" to="." method="_on_button_down"]
+[connection signal="button_up" from="DragMask" to="." method="_on_button_up"]

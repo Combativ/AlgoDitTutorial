@@ -15,7 +15,6 @@ run/main_scene="res://Assets/Tests/snapping_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[global_group]
+[autoload]
 
-Snapper="Object that can snap to a SnapTarget"
-SnapTarget="Object that Snappers can snap to."
+SignalBus="*res://Assets/Tests/signal_bus.gd"
