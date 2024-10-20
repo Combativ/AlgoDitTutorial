@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://eu8sigjhnj2"]
+
+[ext_resource type="Script" path="res://Assets/Tests/snap_target.gd" id="1_ibjt0"]
+[ext_resource type="Script" path="res://Assets/Tests/tree_node.gd" id="1_ucuf1"]
+[ext_resource type="Texture2D" uid="uid://bn4nr4230q1he" path="res://Assets/Tests/Banane.png" id="2_3tyjc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8jsw"]
+size = Vector2(46, 46)
+
+[node name="TreeSnapTarget" type="Area2D"]
+script = ExtResource("1_ucuf1")
+metadata/_edit_group_ = true
+
+[node name="SnapTargetScript" type="Node" parent="."]
+script = ExtResource("1_ibjt0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t8jsw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("2_3tyjc")
+
+[connection signal="occupied_false" from="SnapTargetScript" to="." method="_on_snap_target_script_occupied_false"]
+[connection signal="occupied_true" from="SnapTargetScript" to="." method="_on_snap_target_script_occupied_true"]
