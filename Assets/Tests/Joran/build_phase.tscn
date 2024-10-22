@@ -24,7 +24,7 @@ position = Vector2(320, 480)
 [node name="Tree" type="Node2D" parent="."]
 
 [node name="root" parent="Tree" instance=ExtResource("2_qwjv3")]
-position = Vector2(600, 80)
+position = Vector2(602, 73)
 
 [node name="lChild" parent="Tree/root" instance=ExtResource("2_qwjv3")]
 position = Vector2(-160, 80)
@@ -33,13 +33,19 @@ position = Vector2(-160, 80)
 position = Vector2(-80, 120)
 
 [node name="lChild" parent="Tree/root/lChild/lChild" instance=ExtResource("2_qwjv3")]
-position = Vector2(-40, 80)
+position = Vector2(-50, 55)
 
 [node name="rChild" parent="Tree/root/lChild/lChild" instance=ExtResource("2_qwjv3")]
-position = Vector2(40, 80)
+position = Vector2(40, 55)
 
 [node name="rChild" parent="Tree/root/lChild" instance=ExtResource("2_qwjv3")]
 position = Vector2(80, 120)
+
+[node name="lChild" parent="Tree/root/lChild/rChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(-50, 55)
+
+[node name="rChild" parent="Tree/root/lChild/rChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(40, 55)
 
 [node name="rChild" parent="Tree/root" instance=ExtResource("2_qwjv3")]
 position = Vector2(160, 80)
@@ -47,8 +53,20 @@ position = Vector2(160, 80)
 [node name="lChild" parent="Tree/root/rChild" instance=ExtResource("2_qwjv3")]
 position = Vector2(-80, 120)
 
+[node name="lChild" parent="Tree/root/rChild/lChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(-46, 58)
+
+[node name="rChild" parent="Tree/root/rChild/lChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(46, 58)
+
 [node name="rChild" parent="Tree/root/rChild" instance=ExtResource("2_qwjv3")]
 position = Vector2(80, 120)
+
+[node name="lChild" parent="Tree/root/rChild/rChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(-35, 58)
+
+[node name="rChild" parent="Tree/root/rChild/rChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(39, 58)
 
 [node name="Inventory" type="Node2D" parent="."]
 script = ExtResource("3_fkn2a")
