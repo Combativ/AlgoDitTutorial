@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://caglc8uk2g50v"]
+
+[ext_resource type="PackedScene" uid="uid://c03bn4ttox6bm" path="res://Assets/Tests/Joran/build_phase.tscn" id="1_tfl5d"]
+[ext_resource type="PackedScene" uid="uid://wwsm0nlicxut" path="res://Assets/Tests/Johanna/search_phase.tscn" id="2_b2xy3"]
+
+[node name="main" type="Node2D"]
+
+[node name="build_phase" parent="." instance=ExtResource("1_tfl5d")]
+
+[node name="search_phase" parent="." instance=ExtResource("2_b2xy3")]

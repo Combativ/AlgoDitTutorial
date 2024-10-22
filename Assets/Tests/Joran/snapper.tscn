@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhrv6jgwyaplb"]
+[gd_scene load_steps=4 format=3 uid="uid://dhrv6jgwyaplb"]
 
-[ext_resource type="Script" path="res://Assets/Tests/drag_and_snap.gd" id="1_63bsi"]
-[ext_resource type="Script" path="res://Assets/Tests/snapper.gd" id="1_kjycp"]
+[ext_resource type="Script" path="res://Assets/Tests/Joran/drag_and_snap.gd" id="1_63bsi"]
 [ext_resource type="Texture2D" uid="uid://dux77h7ihgxnc" path="res://icon.svg" id="2_7pvhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeaq3"]
@@ -9,7 +8,6 @@ size = Vector2(64, 64)
 
 [node name="Snapper" type="Area2D"]
 z_index = 1
-script = ExtResource("1_kjycp")
 metadata/_edit_group_ = true
 
 [node name="drag_and_snap_script" type="Node" parent="."]

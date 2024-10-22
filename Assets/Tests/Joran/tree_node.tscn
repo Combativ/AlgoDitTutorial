@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://eu8sigjhnj2"]
 
-[ext_resource type="Script" path="res://Assets/Tests/snap_target.gd" id="1_ibjt0"]
-[ext_resource type="Script" path="res://Assets/Tests/tree_node.gd" id="1_ucuf1"]
-[ext_resource type="Texture2D" uid="uid://bn4nr4230q1he" path="res://Assets/Tests/Banane.png" id="2_3tyjc"]
+[ext_resource type="Script" path="res://Assets/Tests/Joran/snap_target.gd" id="1_ibjt0"]
+[ext_resource type="Script" path="res://Assets/Tests/Joran/tree_node.gd" id="1_ucuf1"]
+[ext_resource type="Texture2D" uid="uid://bn4nr4230q1he" path="res://Assets/Tests/Joran/Banane.png" id="2_3tyjc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8jsw"]
 size = Vector2(46, 46)

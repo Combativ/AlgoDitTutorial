@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="AlgoDitTutorial"
-run/main_scene="res://Assets/Tests/tree_test.tscn"
+run/main_scene="res://Assets/Tests/Joran/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SignalBus="*res://Assets/Tests/signal_bus.gd"
-Helper="*res://Assets/Tests/helper.gd"
+SignalBus="*res://Assets/Tests/Joran/signal_bus.gd"
+Helper="*res://Assets/Tests/Joran/helper.gd"
 
 [display]
 

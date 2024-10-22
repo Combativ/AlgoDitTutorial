@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://c03bn4ttox6bm"]
+
+[ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://Assets/Tests/Joran/snapper.tscn" id="1_c5y05"]
+[ext_resource type="PackedScene" uid="uid://eu8sigjhnj2" path="res://Assets/Tests/Joran/tree_node.tscn" id="2_qwjv3"]
+[ext_resource type="Script" path="res://Assets/Tests/Joran/inventory.gd" id="3_fkn2a"]
+[ext_resource type="PackedScene" uid="uid://bvc8rgpppkr2a" path="res://Assets/Tests/Joran/snap_target.tscn" id="4_nu10e"]
+
+[node name="build_phase" type="Node2D"]
+
+[node name="SnapperContainer" type="Node2D" parent="."]
+
+[node name="Snapper1" parent="SnapperContainer" instance=ExtResource("1_c5y05")]
+position = Vector2(80, 480)
+
+[node name="Snapper2" parent="SnapperContainer" instance=ExtResource("1_c5y05")]
+position = Vector2(160, 480)
+
+[node name="Snapper3" parent="SnapperContainer" instance=ExtResource("1_c5y05")]
+position = Vector2(240, 480)
+
+[node name="Snapper4" parent="SnapperContainer" instance=ExtResource("1_c5y05")]
+position = Vector2(320, 480)
+
+[node name="Tree" type="Node2D" parent="."]
+
+[node name="root" parent="Tree" instance=ExtResource("2_qwjv3")]
+position = Vector2(600, 80)
+
+[node name="lChild" parent="Tree/root" instance=ExtResource("2_qwjv3")]
+position = Vector2(-160, 80)
+
+[node name="lChild" parent="Tree/root/lChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(-80, 120)
+
+[node name="lChild" parent="Tree/root/lChild/lChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(-40, 80)
+
+[node name="rChild" parent="Tree/root/lChild/lChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(40, 80)
+
+[node name="rChild" parent="Tree/root/lChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(80, 120)
+
+[node name="rChild" parent="Tree/root" instance=ExtResource("2_qwjv3")]
+position = Vector2(160, 80)
+
+[node name="lChild" parent="Tree/root/rChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(-80, 120)
+
+[node name="rChild" parent="Tree/root/rChild" instance=ExtResource("2_qwjv3")]
+position = Vector2(80, 120)
+
+[node name="Inventory" type="Node2D" parent="."]
+script = ExtResource("3_fkn2a")
+
+[node name="SnapTargetContainer" type="Node2D" parent="Inventory"]
+
+[node name="Slot1" parent="Inventory/SnapTargetContainer" instance=ExtResource("4_nu10e")]
+position = Vector2(80, 560)
+
+[node name="Slot2" parent="Inventory/SnapTargetContainer" instance=ExtResource("4_nu10e")]
+position = Vector2(200, 560)
+
+[node name="Slot3" parent="Inventory/SnapTargetContainer" instance=ExtResource("4_nu10e")]
+position = Vector2(320, 560)
+
+[node name="Slot4" parent="Inventory/SnapTargetContainer" instance=ExtResource("4_nu10e")]
+position = Vector2(440, 560)

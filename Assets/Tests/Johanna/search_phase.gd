@@ -1,15 +1,11 @@
-extends Area2D
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print(get_parent().find_child("build_phase"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_kicked_snapper() -> void:
-	print("lol")

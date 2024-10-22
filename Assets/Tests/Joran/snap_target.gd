@@ -10,7 +10,7 @@ extends Node
 signal occupied_true
 signal occupied_false
 
-var master
+var master # root node (parent)
 var occupied: bool = false
 var snapperObject = null
 

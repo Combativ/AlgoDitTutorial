@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhindg3qte46a"]
 
-[ext_resource type="PackedScene" uid="uid://bvc8rgpppkr2a" path="res://Assets/Tests/snap_target.tscn" id="1_ag7tk"]
-[ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://Assets/Tests/snapper.tscn" id="2_4n8nh"]
+[ext_resource type="PackedScene" uid="uid://bvc8rgpppkr2a" path="res://Assets/Tests/Joran/snap_target.tscn" id="1_ag7tk"]
+[ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://Assets/Tests/Joran/snapper.tscn" id="2_4n8nh"]
 
 [node name="SnappingTest" type="Node2D"]
 
