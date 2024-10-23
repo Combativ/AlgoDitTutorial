@@ -8,3 +8,4 @@
 [node name="build_phase" parent="." instance=ExtResource("1_tfl5d")]
 
 [node name="search_phase" parent="." instance=ExtResource("2_b2xy3")]
+visible = false
