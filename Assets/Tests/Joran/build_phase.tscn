@@ -23,6 +23,9 @@ position = Vector2(240, 480)
 [node name="Snapper4" parent="SnapperContainer" instance=ExtResource("1_c5y05")]
 position = Vector2(320, 480)
 
+[node name="Snapper5" parent="SnapperContainer" instance=ExtResource("1_c5y05")]
+position = Vector2(400, 480)
+
 [node name="Tree" type="Node2D" parent="."]
 
 [node name="root" parent="Tree" instance=ExtResource("2_qwjv3")]
@@ -87,19 +90,21 @@ position = Vector2(320, 560)
 [node name="Slot4" parent="Inventory/SnapTargetContainer" instance=ExtResource("4_nu10e")]
 position = Vector2(440, 560)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="UICanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 992.0
-offset_top = 552.0
-offset_right = 1120.0
-offset_bottom = 619.0
+[node name="Button" type="Button" parent="UICanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -88.0
+offset_right = -24.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Search Phase
 "
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UICanvasLayer/Button" to="." method="_on_button_pressed"]

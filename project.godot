@@ -22,4 +22,5 @@ Helper="*res://Assets/Tests/Joran/helper.gd"
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
