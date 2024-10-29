@@ -1,61 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://wwsm0nlicxut"]
+[gd_scene load_steps=3 format=3 uid="uid://wwsm0nlicxut"]
 
 [ext_resource type="Script" path="res://Assets/Tests/Johanna/search_phase.gd" id="1_oio5x"]
-[ext_resource type="Texture2D" uid="uid://cb8q3y5sqnt0u" path="res://Assets/Tests/Johanna/Algodat skizze.png" id="2_suck6"]
+[ext_resource type="PackedScene" uid="uid://cfl8svrwpuvlw" path="res://Assets/Tests/Johanna/room.tscn" id="2_ov0qu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rd0u"]
-size = Vector2(162, 258)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_spbog"]
-size = Vector2(121.313, 89)
-
-[node name="search_phase" type="Node2D"]
+[node name="SearchPhase" type="Node2D"]
 script = ExtResource("1_oio5x")
 
-[node name="AlgodatSkizze" type="Sprite2D" parent="."]
-position = Vector2(546, 340)
-scale = Vector2(0.475404, 0.475404)
-texture = ExtResource("2_suck6")
-
-[node name="Tür links" type="Area2D" parent="."]
-
-[node name="Button" type="Button" parent="Tür links"]
-offset_left = 246.0
-offset_top = 219.0
-offset_right = 400.0
-offset_bottom = 475.0
-flat = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tür links"]
-position = Vector2(322, 347.25)
-shape = SubResource("RectangleShape2D_1rd0u")
-one_way_collision_margin = 0.0
-
-[node name="Tür rechts" type="Area2D" parent="."]
-
-[node name="Button2" type="Button" parent="Tür rechts"]
-offset_left = 695.0
-offset_top = 219.0
-offset_right = 852.0
-offset_bottom = 471.0
-flat = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tür rechts"]
-position = Vector2(776, 346)
-shape = SubResource("RectangleShape2D_1rd0u")
-one_way_collision_margin = 0.0
-
-[node name="Bild" type="Area2D" parent="."]
-
-[node name="Button Bild" type="Button" parent="Bild"]
-offset_left = 491.0
-offset_top = 232.0
-offset_right = 611.0
-offset_bottom = 324.0
-flat = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bild"]
-position = Vector2(553.656, 277)
-shape = SubResource("RectangleShape2D_spbog")
-
-[connection signal="pressed" from="Bild/Button Bild" to="." method="_on_button_bild_pressed"]
+[node name="Room" parent="." instance=ExtResource("2_ov0qu")]
