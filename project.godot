@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://Assets/Tests/Joran/signal_bus.gd"
 Helper="*res://Assets/Tests/Joran/helper.gd"
+Global="*res://Assets/Game/Misc/global.gd"
 
 [display]
 

@@ -13,6 +13,8 @@ func _ready() -> void:
 	for child in get_children():
 		if child.is_in_group("SnapTarget"):
 			Helper.disable_and_hide_node(child)
+	
+	
 
 
 
@@ -30,3 +32,14 @@ func _on_snap_target_script_occupied_false() -> void:
 			
 			SignalBus.snapTarget_kick_snapper.emit(snapTarget)
 			Helper.disable_and_hide_node(snapTarget)
+
+
+
+func getLeftChildNumber() -> int:
+	return get_child(0).find_child("SnapTargetScript").snapperObject.find_child("drag_and_snap_script").number
+
+func getRightChildNumber() -> int:
+	return get_child(1).find_child("SnapTargetScript").snapperObject.find_child("drag_and_snap_script").number
+
+func getSelfNumber() -> int:
+	return find_child("SnapTargetScript").snapperObject.find_child("drag_and_snap_script").number
