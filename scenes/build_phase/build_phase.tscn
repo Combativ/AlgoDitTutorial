@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c03bn4ttox6bm"]
+
+[ext_resource type="Script" path="res://scenes/build_phase/scripts/build_phase.gd" id="1_u1egv"]
+[ext_resource type="PackedScene" uid="uid://c57guka732x6i" path="res://scenes/build_phase/level_1.tscn" id="2_lpoja"]
+
+[node name="BuildPhase" type="Node2D"]
+script = ExtResource("1_u1egv")
+
+[node name="UICanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DoneButton" type="Button" parent="UICanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -88.0
+offset_right = -24.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Search Phase
+"
+
+[node name="Level1" parent="." instance=ExtResource("2_lpoja")]
+
+[connection signal="pressed" from="UICanvasLayer/DoneButton" to="." method="_on_done_button_pressed"]

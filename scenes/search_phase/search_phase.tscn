@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wwsm0nlicxut"]
+
+[ext_resource type="PackedScene" uid="uid://cfl8svrwpuvlw" path="res://scenes/search_phase/room.tscn" id="2_ov0qu"]
+
+[node name="SearchPhase" type="Node2D"]
+
+[node name="Room" parent="." instance=ExtResource("2_ov0qu")]

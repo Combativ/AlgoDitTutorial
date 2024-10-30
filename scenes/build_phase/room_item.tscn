@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://nvjsceiv6lbb"]
+
+[ext_resource type="Texture2D" uid="uid://cw3710glxvp2k" path="res://icon_small.svg" id="1_mjpli"]
+[ext_resource type="Script" path="res://scenes/build_phase/scripts/room_item.gd" id="1_nyvok"]
+
+[node name="RoomItem" type="PanelContainer"]
+script = ExtResource("1_nyvok")
+
+[node name="RoomItemTexture" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_mjpli")
+
+[node name="RoomNumberLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+text = "123"
+horizontal_alignment = 1
+
+[node name="MouseTrigger" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[connection signal="button_down" from="MouseTrigger" to="." method="_on_mouse_trigger_button_down"]

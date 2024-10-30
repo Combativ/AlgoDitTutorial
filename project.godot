@@ -11,17 +11,22 @@ config_version=5
 [application]
 
 config/name="AlgoDitTutorial"
-run/main_scene="res://Assets/Tests/Joran/main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SignalBus="*res://Assets/Tests/Joran/signal_bus.gd"
-Helper="*res://Assets/Tests/Joran/helper.gd"
-Global="*res://Assets/Game/Misc/global.gd"
+SignalBus="*res://globals/signal_bus.gd"
+Helper="*res://globals/helper.gd"
+Global="*res://globals/global.gd"
 
 [display]
 
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom="res://themes/default_theme/custom_theme.tres"

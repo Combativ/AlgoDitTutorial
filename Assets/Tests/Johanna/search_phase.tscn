@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://wwsm0nlicxut"]
-
-[ext_resource type="Script" path="res://Assets/Tests/Johanna/search_phase.gd" id="1_oio5x"]
-[ext_resource type="PackedScene" uid="uid://cfl8svrwpuvlw" path="res://Assets/Tests/Johanna/room.tscn" id="2_ov0qu"]
-
-[node name="SearchPhase" type="Node2D"]
-script = ExtResource("1_oio5x")
-
-[node name="Room" parent="." instance=ExtResource("2_ov0qu")]
