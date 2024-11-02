@@ -6,8 +6,6 @@ extends Node2D
 class_name SnapTargetNode
 
 
-enum side {LEFT = 0, RIGHT = 1}
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	add_to_group("SnapTargetNode", true)
@@ -47,9 +45,15 @@ func release_room_miniature():
 
 
 # methods to navigate the tree
-func get_child_node(s: side):
-	if (get_child(s).find_child("SnapTarget").snapperObject != null):
-		return get_child(s) # returns reference to left or right SnapTargetNode
+func get_left_child_node():
+	if (find_child("lChild").find_child("SnapTarget").snapperObject != null):
+		return find_child("lChild") # returns reference to left or right SnapTargetNode
+	else:
+		return null
+
+func get_right_child_node():
+	if (find_child("rChild").find_child("SnapTarget").snapperObject != null):
+		return find_child("rChild") # returns reference to left or right SnapTargetNode
 	else:
 		return null
 
