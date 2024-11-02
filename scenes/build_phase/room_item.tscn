@@ -14,7 +14,7 @@ texture = ExtResource("1_mjpli")
 [node name="RoomNumberLabel" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 1
-text = "123"
+text = "number"
 horizontal_alignment = 1
 
 [node name="MouseTrigger" type="Button" parent="."]

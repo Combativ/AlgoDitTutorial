@@ -10,7 +10,7 @@ extends Control
 const ROOM_ITEM = preload("res://scenes/build_phase/room_item.tscn")
 
 # This variable controls how many RoomMiniatures the level will have
-@export var inventory_size = 10
+@export var inventory_size = 20
 
 # This HBoxContainer is the one storing all RoomItems
 @onready var itemContainer: HBoxContainer = $MarginContainer/ScrollContainer/RoomItemContainer
