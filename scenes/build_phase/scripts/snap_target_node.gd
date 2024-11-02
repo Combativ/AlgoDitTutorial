@@ -33,7 +33,7 @@ func _on_snap_target_occupied_false() -> void:
 	# release their RoomMiniatures
 	for child in get_children():
 		if (child is SnapTargetNode):
-			if (child.find_child("SnapTarget").occupied == true):
+			if (child.get_node("SnapTarget").occupied == true):
 				child.release_room_miniature()
 			Helper.disable_and_hide_node(child)
 
@@ -46,14 +46,14 @@ func release_room_miniature():
 
 # methods to navigate the tree
 func get_left_child_node():
-	if (find_child("lChild").find_child("SnapTarget").snapperObject != null):
-		return find_child("lChild") # returns reference to left or right SnapTargetNode
+	if (get_node("lChild").get_node("SnapTarget").snapperObject != null):
+		return get_node("lChild") # returns reference to left or right SnapTargetNode
 	else:
 		return null
 
 func get_right_child_node():
-	if (find_child("rChild").find_child("SnapTarget").snapperObject != null):
-		return find_child("rChild") # returns reference to left or right SnapTargetNode
+	if (get_node("rChild").get_node("SnapTarget").snapperObject != null):
+		return get_node("rChild") # returns reference to left or right SnapTargetNode
 	else:
 		return null
 
@@ -64,7 +64,7 @@ func get_parent_node():
 		return null
 
 func get_number() -> int:
-	if (find_child("SnapTarget").snapperObject != null):
-		return find_child("SnapTarget").snapperObject.number
+	if (get_node("SnapTarget").snapperObject != null):
+		return get_node("SnapTarget").snapperObject.number
 	else:
 		return -1

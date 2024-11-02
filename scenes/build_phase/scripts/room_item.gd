@@ -22,7 +22,9 @@ func _on_mouse_trigger_button_down() -> void:
 	
 	# add RoomMiniature to the scene
 	get_tree().current_scene.add_child(room_miniature)
-	room_miniature.initiate_drag()
 	
-	# delete self from the inventory
+	# trigger a drag action on this RoomMiniature
+	Helper.emulate_left_mouse_button_down(room_miniature.get_node("DragMask").position)
+	
+	# delete self (the item) from the inventory
 	queue_free()

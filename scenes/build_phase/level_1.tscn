@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c57guka732x6i"]
+[gd_scene load_steps=4 format=3 uid="uid://c57guka732x6i"]
 
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/level.gd" id="1_6uj8a"]
 [ext_resource type="PackedScene" uid="uid://eu8sigjhnj2" path="res://scenes/build_phase/snap_target_node.tscn" id="1_lr2ig"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/inventory.gd" id="2_g7442"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnhlm"]
-size = Vector2(1000, 120)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_6uj8a")
@@ -69,12 +66,6 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 script = ExtResource("2_g7442")
-
-[node name="InventoryArea" type="Area2D" parent="CanvasLayer/Inventory"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Inventory/InventoryArea"]
-position = Vector2(480, 40)
-shape = SubResource("RectangleShape2D_pnhlm")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Inventory"]
 layout_mode = 2

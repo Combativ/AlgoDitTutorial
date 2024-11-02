@@ -22,3 +22,13 @@ func get_all_children(node, arr:=[], depth:=0):
 	for child in node.get_children():
 		arr = get_all_children(child, arr, depth+1)
 	return arr
+
+
+# This is mainly used as a workaround in the 'room_item' script to virtually
+# press a button, but may be used anywhere where useful
+func emulate_left_mouse_button_down(pos):
+	var press = InputEventMouseButton.new()
+	press.set_button_index(MOUSE_BUTTON_LEFT)
+	press.set_position(pos)
+	press.set_pressed(true)
+	Input.parse_input_event(press)
