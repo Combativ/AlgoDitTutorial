@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfl8svrwpuvlw"]
+
+[ext_resource type="Script" path="res://scenes/search_phase/scripts/test_room.gd" id="1_71vnw"]
+[ext_resource type="Texture2D" uid="uid://cb8q3y5sqnt0u" path="res://scenes/search_phase/art/Algodat skizze.png" id="2_pvjxm"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_71vnw")
+
+[node name="AlgodatSkizze" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(546, 340)
+scale = Vector2(0.475404, 0.475404)
+texture = ExtResource("2_pvjxm")
+
+[node name="DoorLeft" type="Node2D" parent="."]
+visible = false
+
+[node name="ButtonDoorLeft" type="Button" parent="DoorLeft"]
+visible = false
+offset_left = 246.0
+offset_top = 219.0
+offset_right = 400.0
+offset_bottom = 475.0
+flat = true
+
+[node name="DoorNumber" type="Label" parent="DoorLeft"]
+visible = false
+offset_left = 307.0
+offset_top = 166.0
+offset_right = 347.0
+offset_bottom = 189.0
+text = "123"
+
+[node name="DoorRight" type="Node2D" parent="."]
+visible = false
+
+[node name="ButtonDoorRight" type="Button" parent="DoorRight"]
+visible = false
+offset_left = 695.0
+offset_top = 219.0
+offset_right = 852.0
+offset_bottom = 471.0
+flat = true
+
+[node name="DoorNumber" type="Label" parent="DoorRight"]
+visible = false
+offset_left = 756.0
+offset_top = 165.0
+offset_right = 796.0
+offset_bottom = 188.0
+text = "128"
+
+[node name="Picture" type="Node2D" parent="."]
+visible = false
+
+[node name="ButtonPicture" type="Button" parent="Picture"]
+visible = false
+offset_left = 491.0
+offset_top = 232.0
+offset_right = 611.0
+offset_bottom = 324.0
+flat = true
+
+[node name="PicNumber" type="Label" parent="Picture"]
+visible = false
+offset_left = 534.0
+offset_top = 196.0
+offset_right = 574.0
+offset_bottom = 219.0
+text = "110"
+
+[connection signal="pressed" from="DoorLeft/ButtonDoorLeft" to="." method="_on_button_door_left_pressed"]
+[connection signal="pressed" from="DoorRight/ButtonDoorRight" to="." method="_on_button_door_right_pressed"]
+[connection signal="pressed" from="Picture/ButtonPicture" to="." method="_on_button_picture_pressed"]

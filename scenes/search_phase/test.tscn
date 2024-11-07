@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0y7vbfet4poj"]
+
+[ext_resource type="Texture2D" uid="uid://dux77h7ihgxnc" path="res://icon.svg" id="1_hwl1y"]
+[ext_resource type="Script" path="res://scenes/search_phase/scripts/test_door.gd" id="1_v0dxb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Door" type="Node2D" parent="." node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_v0dxb")
+hitbox = NodePath("TextureButton")
+pos_x = 100
+pos_y = 100
+door_number = 5
+
+[node name="TextureButton" type="TextureButton" parent="Door"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_hwl1y")
