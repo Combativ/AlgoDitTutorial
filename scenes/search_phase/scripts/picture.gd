@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @onready var label: Label = $PictureNumber
 @onready var hitbox: TextureButton = $"Hitbox & Image"
 @onready var number_background: ColorRect = $ColorRect
