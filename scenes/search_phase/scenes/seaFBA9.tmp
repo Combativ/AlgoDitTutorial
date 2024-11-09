@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv23w1bipx018"]
+
+[ext_resource type="Script" path="res://scenes/search_phase/scripts/searchphase.gd" id="1_8hc0f"]
+[ext_resource type="PackedScene" uid="uid://dqlk1wfmnu28x" path="res://scenes/search_phase/scenes/room.tscn" id="1_gbsri"]
+[ext_resource type="Script" path="res://scenes/search_phase/scripts/CONTROLLER_SEARCHPHASE.gd" id="1_mf2pv"]
+[ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="2_2aq4u"]
+
+[node name="Searchphase" type="Node2D"]
+script = ExtResource("1_8hc0f")
+
+[node name="Controller" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mf2pv")
+DOOR_IMG_DOORPLATE = ExtResource("2_2aq4u")
+
+[node name="Room" parent="." instance=ExtResource("1_gbsri")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Switch Phase" type="Button" parent="CanvasLayer"]
+offset_left = 829.0
+offset_top = 408.0
+offset_right = 917.0
+offset_bottom = 468.0
+text = "Buildphase"
+
+[connection signal="pressed" from="CanvasLayer/Switch Phase" to="." method="_on_switch_phase_button_pressed"]

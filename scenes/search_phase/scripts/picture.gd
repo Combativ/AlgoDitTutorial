@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Picture
 
 @onready var label: Label = $PictureNumber
 @onready var hitbox: TextureButton = $"Hitbox & Image"
@@ -18,11 +18,14 @@ func _process(delta: float) -> void:
 #Getters & Setters
 ####################################################################################################
 
+##sets this picture´s number to the new one
 func set_number(number: int):
 	label.set_text(str(number))
 
+##returns this picture´s number (text) as a String or 
+##the String "null", if the number is not set
 func get_number() -> String:
-	var text = label.get_text()
+	var text: String = label.get_text()
 	if(text == null):
-		return "number is null"
+		return "null"
 	return 	text

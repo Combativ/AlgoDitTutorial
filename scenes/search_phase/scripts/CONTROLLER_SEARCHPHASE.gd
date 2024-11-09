@@ -1,6 +1,15 @@
 extends Node
 class_name Controller
 
+##This Controller is used to Control the images of the Objects
+
+#Room
+@export var ROOM_IMG: Texture2D = preload("res://scenes/search_phase/art/Algodat skizze.png"):
+	set(img):
+		ROOM_IMG = img
+	get():
+		return ROOM_IMG
+
 #Picture
 @export var PICTURE_IMG: Texture2D = preload("res://scenes/search_phase/art/Picture_v01.png"):
 	set(img):
