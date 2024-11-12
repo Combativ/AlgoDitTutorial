@@ -21,7 +21,7 @@ func _on_mouse_trigger_button_down() -> void:
 	room_miniature.number = room_number
 	
 	# add RoomMiniature to the scene
-	get_tree().current_scene.add_child(room_miniature)
+	get_tree().current_scene.get_node("build_phase").get_node("RoomMiniatureContainer").add_child(room_miniature)
 	
 	# trigger a drag action on this RoomMiniature
 	Helper.emulate_left_mouse_button_down(room_miniature.get_node("DragMask").position)

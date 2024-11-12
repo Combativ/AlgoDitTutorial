@@ -8,13 +8,13 @@ class_name Room
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$RoomIMG.set_texture($"../Controller".ROOM_IMG)
 	_initialize()
 	
 	pass # Replace with function body.
 
 ##initializes the first room with Global.tree_root as room_node (first node to enter)
 func _initialize() -> void:
-	$RoomIMG.set_texture($"../Controller".ROOM_IMG)
 	move_to_room(Global.tree_root)
 	
 

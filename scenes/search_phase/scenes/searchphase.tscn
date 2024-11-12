@@ -18,13 +18,11 @@ DOOR_IMG_DOORPLATE = ExtResource("2_2aq4u")
 
 [node name="Room" parent="." instance=ExtResource("1_gbsri")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Switch Phase" type="Button" parent="CanvasLayer"]
+[node name="SwitchPhase" type="Button" parent="."]
 offset_left = 829.0
 offset_top = 408.0
-offset_right = 917.0
+offset_right = 924.0
 offset_bottom = 468.0
 text = "Buildphase"
 
-[connection signal="pressed" from="CanvasLayer/Switch Phase" to="." method="_on_switch_phase_button_pressed"]
+[connection signal="pressed" from="SwitchPhase" to="." method="_on_switch_phase_button_pressed"]

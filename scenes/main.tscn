@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://caglc8uk2g50v"]
+[gd_scene load_steps=5 format=3 uid="uid://caglc8uk2g50v"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_twobj"]
 [ext_resource type="PackedScene" uid="uid://c03bn4ttox6bm" path="res://scenes/build_phase/build_phase.tscn" id="1_v80fr"]
 [ext_resource type="PackedScene" uid="uid://cv23w1bipx018" path="res://scenes/search_phase/scenes/searchphase.tscn" id="2_fxd7f"]
 [ext_resource type="PackedScene" uid="uid://b4tvajj0c08u7" path="res://menus/title/title.tscn" id="3_lrpwh"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_twobj")
 
 [node name="build_phase" parent="." instance=ExtResource("1_v80fr")]
+visible = true
 
 [node name="search_phase" parent="." instance=ExtResource("2_fxd7f")]
 visible = false

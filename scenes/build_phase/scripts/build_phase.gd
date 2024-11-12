@@ -1,5 +1,7 @@
 extends Node2D
 
 
+@onready var main = $".."
+
 func _on_done_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/search_phase/scenes/searchphase.tscn")
+	main.switch_to_search_phase()
