@@ -28,4 +28,8 @@ class_name Controller
 		DOOR_IMG_HOVER = img
 	get():
 		return DOOR_IMG_HOVER
-@export var DOOR_IMG_DOORPLATE: Texture2D = PICTURE_IMG
+@export var DOOR_IMG_DOORPLATE: Texture2D = PICTURE_IMG:
+	set(img):
+		DOOR_IMG_DOORPLATE = img
+	get():
+		return DOOR_IMG_DOORPLATE

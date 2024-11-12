@@ -8,6 +8,8 @@ class_name Door
 ##stores a reference to the TextureButton used for the door´s hitbox and texture
 @onready var door_hitbox: TextureButton = $"Hitbox & Image"
 
+
+
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,8 +64,12 @@ func get_door_node() -> SnapTargetNode:
 #TODO something wents wrong (get_number() does not exist? but it actually does)
 ##updates the door´s number to the number of the room, this door references to
 func update() -> void:
-	set_number(self.door_node.get_number())
+	if self.door_node != null:
+		set_number(self.door_node.get_number())
+	else:
+		print("door_node is null")
 	
 ##uses the method "move_to_room" from the Room class and hands over it´s own door_node
 func move_trough_door() -> void:
 	$"../".move_to_room(self.door_node)
+	$"../../".move_counter_increment()
