@@ -4,25 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://c57guka732x6i" path="res://scenes/build_phase/level_1.tscn" id="2_lpoja"]
 
 [node name="BuildPhase" type="Node2D"]
+visible = false
 script = ExtResource("1_u1egv")
 
-[node name="UICanvasLayer" type="CanvasLayer" parent="."]
+[node name="Level1" parent="." instance=ExtResource("2_lpoja")]
 
-[node name="DoneButton" type="Button" parent="UICanvasLayer"]
+[node name="RoomMiniatureContainer" type="Node2D" parent="."]
+
+[node name="DoneButton" type="Button" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -180.0
-offset_right = -32.0
-offset_bottom = -113.0
+offset_left = 800.0
+offset_top = 360.0
+offset_right = 928.0
+offset_bottom = 427.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Search Phase
 "
 
-[node name="Level1" parent="." instance=ExtResource("2_lpoja")]
-
-[connection signal="pressed" from="UICanvasLayer/DoneButton" to="." method="_on_done_button_pressed"]
+[connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]

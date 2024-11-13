@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxk0vcdmjjrxc"]
+
+[ext_resource type="Script" path="res://scenes/search_phase/scripts/picture.gd" id="1_mdc0d"]
+[ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="2_856cl"]
+
+[node name="Picture" type="Node2D"]
+script = ExtResource("1_mdc0d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 55.0
+offset_top = 54.0
+offset_right = 516.0
+offset_bottom = 370.0
+color = Color(0, 0, 0, 1)
+
+[node name="Hitbox & Image" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_856cl")
+
+[node name="PictureNumber" type="Label" parent="."]
+offset_left = 213.0
+offset_top = 109.0
+offset_right = 314.0
+offset_bottom = 253.0
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 100
+text = "-1
+"
+horizontal_alignment = 1
