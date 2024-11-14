@@ -45,21 +45,18 @@ func initiate_drag():
 # End of a Drag and Drop action
 func end_drag():
 	
-	# if RoomMiniature is released on a SnapTarget, then snap
 	var overlapping_areas = get_overlapping_areas()
-	if (!overlapping_areas.is_empty()):
-		for area2d in overlapping_areas:
-			
-			# snap to SnapTarget
-			if (area2d is SnapTarget):
-				SignalBus.room_miniature_released_on_snap_target.emit(self, area2d)
-				# counterpart to z_index = zindex + 1 on initiate_drag()
-				z_index = zindex
-				break
-			
-		is_being_dragged = false
-	else: # else move it back to inventory
-		SignalBus.room_miniature_freed.emit(self)
+	
+	# if RoomMiniature is released on a SnapTarget, then snap
+	for area2d in overlapping_areas:
+		if (area2d is SnapTarget && area2d.occupied == false):
+			SignalBus.room_miniature_released_on_snap_target.emit(self, area2d)
+			z_index = zindex # counterpart to z_index = zindex + 1 on initiate_drag()
+			is_being_dragged = false
+			return # end function call
+		
+	# if no SnapTargets, then move it back to inventory
+	SignalBus.room_miniature_freed.emit(self)
 	
 
 func update_number():

@@ -26,7 +26,7 @@ func get_all_children(node, arr:=[], depth:=0):
 
 # This is mainly used as a workaround in the 'room_item' script to virtually
 # press a button, but may be used anywhere where useful
-func emulate_left_mouse_button_down(pos):
+func emulate_left_mouse_button_down(pos: Vector2 = get_viewport().get_mouse_position()):
 	var press = InputEventMouseButton.new()
 	press.set_button_index(MOUSE_BUTTON_LEFT)
 	press.set_position(pos)
