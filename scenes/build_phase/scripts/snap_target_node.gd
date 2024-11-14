@@ -1,4 +1,4 @@
-# This script handles the hiding and showing of the TreeNode children as well as
+# This script handles the hiding and showing of the SnapTargetNode children as well as
 # coordinating RoomMiniatures
 
 extends Node2D
@@ -8,14 +8,13 @@ class_name SnapTargetNode
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_to_group("SnapTargetNode", true)
-	
+
 	$SnapTarget.occupied_true.connect(_on_snap_target_occupied_true)
 	$SnapTarget.occupied_false.connect(_on_snap_target_occupied_false)
 	
 	# hide SnapTargetNode children on start
 	for child in get_children():
-		if child.is_in_group("SnapTargetNode"):
+		if child is SnapTargetNode:
 			Helper.disable_and_hide_node(child)
 	
 

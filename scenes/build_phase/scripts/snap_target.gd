@@ -2,6 +2,8 @@
 
 extends Area2D
 
+class_name SnapTarget
+
 
 signal occupied_true
 signal occupied_false
@@ -12,7 +14,6 @@ var snapperObject = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	add_to_group("SnapTarget")
 	SignalBus.room_miniature_released_on_snap_target.connect(_on_room_miniature_released_on_snap_target)
 	SignalBus.room_miniature_dragged.connect(_on_room_miniature_dragged)
 	
