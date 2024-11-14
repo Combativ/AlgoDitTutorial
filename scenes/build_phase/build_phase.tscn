@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c03bn4ttox6bm"]
 
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/build_phase.gd" id="1_u1egv"]
-[ext_resource type="PackedScene" uid="uid://c57guka732x6i" path="res://scenes/build_phase/level_1.tscn" id="2_lpoja"]
+[ext_resource type="PackedScene" uid="uid://c57guka732x6i" path="res://scenes/build_phase/scenes/level_1.tscn" id="2_lpoja"]
 
 [node name="BuildPhase" type="Node2D"]
 visible = false

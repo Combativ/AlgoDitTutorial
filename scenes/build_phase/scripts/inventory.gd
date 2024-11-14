@@ -7,7 +7,7 @@ extends Control
 
 
 # Creating a reference to the "RoomItem" Scene for later use
-const ROOM_ITEM = preload("res://scenes/build_phase/room_item.tscn")
+const ROOM_ITEM = preload("res://scenes/build_phase/scenes/room_item.tscn")
 
 # This variable controls how many RoomMiniatures the level will have
 @export var inventory_size = 20

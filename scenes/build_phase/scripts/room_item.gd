@@ -9,7 +9,7 @@ extends PanelContainer
 var room_number = -1
 
 # preload the RoomMiniature Scene to instantiate it later
-const ROOM_MINIATURE = preload("res://scenes/build_phase/room_miniature.tscn")
+const ROOM_MINIATURE = preload("res://scenes/build_phase/scenes/room_miniature.tscn")
 
 
 func _ready() -> void:
