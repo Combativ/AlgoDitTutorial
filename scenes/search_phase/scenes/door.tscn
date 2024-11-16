@@ -11,9 +11,9 @@ script = ExtResource("1_33kvn")
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("2_a3lmd")
-texture_hover = ExtResource("2_a3lmd")
 
 [node name="DoorNumber" parent="." instance=ExtResource("3_lt8sn")]
+visible = false
 position = Vector2(58, -231)
 scale = Vector2(0.5, 0.5)
 

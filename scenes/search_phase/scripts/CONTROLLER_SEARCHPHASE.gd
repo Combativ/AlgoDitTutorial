@@ -33,7 +33,3 @@ class_name Controller
 		DOOR_IMG_DOORPLATE = img
 	get():
 		return DOOR_IMG_DOORPLATE
-
-#TODO creating null door && references if Room is leaf
-#func get_null_door():
-	#Door door = Door.new()

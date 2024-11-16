@@ -9,3 +9,5 @@ var tree_root: SnapTargetNode = null:
 		tree_root = node
 	get():
 		return tree_root
+
+var path_tracker: Array = []

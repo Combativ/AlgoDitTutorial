@@ -65,15 +65,24 @@ func set_door_node(node: SnapTargetNode) -> void:
 
 ##returns the reference to the room behind this door
 func get_door_node() -> SnapTargetNode:
-	return door_node
+	return self.door_node
+
+##returns the entire label of the door to give access to more detailed instructions for the door´s number field
+func get_door_label() -> Label:
+	return self.door_number
+
+func get_door_hitbox() -> TextureButton:
+	return self.door_hitbox
 	
 #TODO something wents wrong (get_number() does not exist? but it actually does)
 ##updates the door´s number to the number of the room, this door references to
 func update() -> void:
 	if self.door_node != null:
 		set_number(self.door_node.get_number())
+		door_hitbox.set_disabled(false)
 	else:
-		print("door_node is null")
+		door_number.text = ""
+		door_hitbox.set_disabled(true)
 	
 ##uses the method "move_to_room" from the Room class and hands over it´s own door_node
 func move_trough_door() -> void:
