@@ -24,6 +24,7 @@ func _ready() -> void:
 	# assign snapper object to SnapTarget if desired
 	if (snapTarget_snapperObject != null):
 		$SnapTarget.accept_snapper(snapTarget_snapperObject)
+		
 	
 
 
@@ -53,13 +54,13 @@ func release_room_miniature():
 
 # methods to navigate the tree
 func get_left_child_node() -> SnapTargetNode:
-	if (get_node("lChild") != null && get_node("lChild").get_node("SnapTarget").snapperObject != null):
+	if (get_node_or_null("lChild") != null && get_node("lChild").get_node("SnapTarget").snapperObject != null):
 		return get_node("lChild") # returns reference to left or right SnapTargetNode
 	else:
 		return null
 
 func get_right_child_node() -> SnapTargetNode:
-	if (get_node("rChild") != null && get_node("rChild").get_node("SnapTarget").snapperObject != null):
+	if (get_node_or_null("rChild") != null && get_node("rChild").get_node("SnapTarget").snapperObject != null):
 		return get_node("rChild") # returns reference to left or right SnapTargetNode
 	else:
 		return null
@@ -70,8 +71,38 @@ func get_parent_node() -> SnapTargetNode:
 	else:
 		return null
 
+# methods to access properties of the tree
 func get_number() -> int:
 	if (get_node("SnapTarget").snapperObject != null):
 		return get_node("SnapTarget").snapperObject.number
 	else:
 		return -1
+
+
+# I didn't write this method myself. I copied it from this website:
+# https://favtutor.com/blogs/binary-tree-height
+# I am not responsible for any errors
+func get_height(node: SnapTargetNode = self) -> int:
+	var result: int = -1
+	
+	var queue: Array[SnapTargetNode]
+	
+	if node == null:
+		return result
+	
+	queue.append(node)
+	
+	while(!queue.is_empty()):
+		var current_size: int = queue.size()
+		
+		while current_size > 0:
+			var current_node: SnapTargetNode = queue.pop_front()
+			current_size -= 1
+			
+			if (current_node.get_left_child_node() != null):
+				queue.append(current_node.get_left_child_node())
+			if (current_node.get_right_child_node() != null):
+				queue.append(current_node.get_right_child_node())
+		
+		result += 1
+	return result

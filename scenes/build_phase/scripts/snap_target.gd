@@ -27,13 +27,13 @@ func _on_room_miniature_released_on_snap_target(room_miniature, snapTarget) -> v
 		accept_snapper(room_miniature)
 
 
-func _on_room_miniature_dragged(room_miniature: Variant) -> void:
+func _on_room_miniature_dragged(room_miniature: RoomMiniature) -> void:
 	if (room_miniature == snapperObject):
 		release_snapper()
 
 
 # This function snaps a Snapper to this SnapTarget and does the paperwork
-func accept_snapper(snapper) -> void:
+func accept_snapper(snapper: RoomMiniature) -> void:
 	snapper.position = global_position
 	snapperObject = snapper
 	occupied = true
