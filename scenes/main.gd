@@ -6,7 +6,9 @@ extends Node2D
 func switch_to_search_phase():
 	Helper.disable_and_hide_node(build_phase)
 	Helper.enable_and_show_node(search_phase)
+	Global.path_tracker.clear()
 	search_phase.get_node("Room")._initialize()
+	
 
 func switch_to_build_phase():
 	Helper.disable_and_hide_node(search_phase)

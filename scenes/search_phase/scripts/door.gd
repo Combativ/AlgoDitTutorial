@@ -2,7 +2,7 @@ extends Node2D
 class_name Door
 
 ##represents the room behind this door
-@onready var door_node: SnapTargetNode = Global.tree_root
+@onready var door_node: SnapTargetNode 
 ##a label with the door´s number
 @onready var door_number: Label = $"DoorNumber/PictureNumber"
 ##stores a reference to the TextureButton used for the door´s hitbox and texture
@@ -87,4 +87,4 @@ func update() -> void:
 ##uses the method "move_to_room" from the Room class and hands over it´s own door_node
 func move_trough_door() -> void:
 	$"../".move_to_room(self.door_node)
-	$"../../".move_counter_increment()
+	
