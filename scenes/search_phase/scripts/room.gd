@@ -36,6 +36,10 @@ func update() -> void:
 	if doorLeft != null:
 		doorLeft.set_door_node(self.room_node.get_left_child_node())
 		doorLeft.update()
+	#TODO implement Null Door
+	#else:
+		#doorLeft.set_number(-1)
+		#doorLeft.
 	if doorRight != null:
 		doorRight.set_door_node(self.room_node.get_right_child_node())
 		doorRight.update()

@@ -22,6 +22,12 @@ func _initialize() -> void:
 	set_img_hover($"../../Controller".DOOR_IMG_HOVER)
 	set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
 
+#TODO creating Null Door 
+#func _init() -> void:
+	#door_node = null
+	#door_number.text = ""
+	#door_hitbox.pressed.disconnect(door_hitbox.get_connections()[0])
+	#return Door.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

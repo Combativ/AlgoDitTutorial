@@ -2,25 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://di3vmniplspd7" path="res://scenes/search_phase/scenes/door.tscn" id="1_7lnf2"]
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/room.gd" id="1_71vnw"]
-[ext_resource type="Texture2D" uid="uid://cb8q3y5sqnt0u" path="res://scenes/search_phase/art/Algodat skizze.png" id="2_pvjxm"]
+[ext_resource type="Texture2D" uid="uid://c5vgmosuagjes" path="res://scenes/search_phase/art/Room_v001.png" id="2_07f0h"]
 [ext_resource type="PackedScene" uid="uid://bxk0vcdmjjrxc" path="res://scenes/search_phase/scenes/picture.tscn" id="4_b34m5"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_71vnw")
 
 [node name="RoomIMG" type="Sprite2D" parent="."]
-position = Vector2(484.875, 274.25)
-scale = Vector2(0.498857, 0.406388)
-texture = ExtResource("2_pvjxm")
+position = Vector2(480, 269.775)
+scale = Vector2(0.498857, 0.500416)
+texture = ExtResource("2_07f0h")
 
 [node name="DoorRight" parent="." instance=ExtResource("1_7lnf2")]
-position = Vector2(694, 164)
-scale = Vector2(0.25, 0.25)
+position = Vector2(604, 210)
+scale = Vector2(0.3, 0.3)
 
 [node name="DoorLeft" parent="." instance=ExtResource("1_7lnf2")]
-position = Vector2(231, 165)
-scale = Vector2(0.25, 0.25)
+position = Vector2(234, 208)
+scale = Vector2(0.3, 0.3)
 
 [node name="Picture" parent="." instance=ExtResource("4_b34m5")]
-position = Vector2(416, 172)
+position = Vector2(390, 217)
 scale = Vector2(0.3, 0.3)
