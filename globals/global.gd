@@ -9,3 +9,7 @@ var tree_root: SnapTargetNode = null:
 		tree_root = node
 	get():
 		return tree_root
+
+##stores the References of the SnapTargetNodes of the rooms the Player through in the search phase
+##resets every time the search phase is entered 
+var path_tracker: Array[SnapTargetNode] = []

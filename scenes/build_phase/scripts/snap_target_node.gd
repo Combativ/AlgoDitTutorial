@@ -53,13 +53,13 @@ func release_room_miniature():
 
 # methods to navigate the tree
 func get_left_child_node() -> SnapTargetNode:
-	if (get_node("lChild").get_node("SnapTarget").snapperObject != null):
+	if (get_node("lChild") != null && get_node("lChild").get_node("SnapTarget").snapperObject != null):
 		return get_node("lChild") # returns reference to left or right SnapTargetNode
 	else:
 		return null
 
 func get_right_child_node() -> SnapTargetNode:
-	if (get_node("rChild").get_node("SnapTarget").snapperObject != null):
+	if (get_node("rChild") != null && get_node("rChild").get_node("SnapTarget").snapperObject != null):
 		return get_node("rChild") # returns reference to left or right SnapTargetNode
 	else:
 		return null

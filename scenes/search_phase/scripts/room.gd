@@ -27,8 +27,11 @@ func _process(delta: float) -> void:
 
 ##sets the door´s node to the new one and
 ##updates the room´s links and numbers to the new ones
+##adds the room, to move in, to Global.path_tracker
 func move_to_room(node: SnapTargetNode) -> void:
 	self.room_node = node
+	Global.path_tracker.append(self.room_node)
+	#print(Global.path_tracker)
 	update()
 
 ##updates the room´s links and numbers to the ones of the room_node´s
