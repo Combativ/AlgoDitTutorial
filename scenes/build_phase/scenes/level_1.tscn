@@ -1,58 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://c57guka732x6i"]
+[gd_scene load_steps=5 format=3 uid="uid://c57guka732x6i"]
 
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/level.gd" id="1_6uj8a"]
 [ext_resource type="PackedScene" uid="uid://eu8sigjhnj2" path="res://scenes/build_phase/scenes/snap_target_node.tscn" id="1_lr2ig"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/inventory.gd" id="2_g7442"]
+[ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://scenes/build_phase/scenes/room_miniature.tscn" id="4_bvggk"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_6uj8a")
 
 [node name="Tree" type="Node2D" parent="."]
 
-[node name="root" parent="Tree" instance=ExtResource("1_lr2ig")]
+[node name="root" parent="Tree" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
 position = Vector2(480, 40)
+snapTarget_snapperObject = NodePath("../../RoomMiniatureContainer/RoomMiniature50")
 
-[node name="lChild" parent="Tree/root" instance=ExtResource("1_lr2ig")]
-position = Vector2(-160, 80)
+[node name="lChild" parent="Tree/root" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-200, 80)
+snapTarget_snapperObject = NodePath("../../../RoomMiniatureContainer/RoomMiniature25")
 
-[node name="lChild" parent="Tree/root/lChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(-80, 120)
+[node name="lChild" parent="Tree/root/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-100, 120)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/RoomMiniature15")
 
-[node name="lChild" parent="Tree/root/lChild/lChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(-50, 55)
+[node name="lChild" parent="Tree/root/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature10")
 
-[node name="rChild" parent="Tree/root/lChild/lChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(40, 55)
+[node name="lChild" parent="Tree/root/lChild/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-40, 80)
+snapTarget_snapperObject = NodePath("../../../../../../RoomMiniatureContainer/RoomMiniature5")
 
-[node name="rChild" parent="Tree/root/lChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(80, 120)
+[node name="rChild" parent="Tree/root/lChild/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(40, 80)
+snapTarget_snapperObject = NodePath("../../../../../../RoomMiniatureContainer/RoomMiniature12")
 
-[node name="lChild" parent="Tree/root/lChild/rChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(-50, 55)
+[node name="rChild" parent="Tree/root/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature20")
 
-[node name="rChild" parent="Tree/root/lChild/rChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(40, 55)
+[node name="rChild" parent="Tree/root/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(100, 120)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/RoomMiniature35")
 
-[node name="rChild" parent="Tree/root" instance=ExtResource("1_lr2ig")]
-position = Vector2(160, 80)
+[node name="lChild" parent="Tree/root/lChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature30")
 
-[node name="lChild" parent="Tree/root/rChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(-80, 120)
+[node name="rChild" parent="Tree/root/lChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature40")
 
-[node name="lChild" parent="Tree/root/rChild/lChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(-46, 58)
+[node name="rChild" parent="Tree/root" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(200, 80)
+snapTarget_snapperObject = NodePath("../../../RoomMiniatureContainer/RoomMiniature75")
 
-[node name="rChild" parent="Tree/root/rChild/lChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(46, 58)
+[node name="lChild" parent="Tree/root/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-100, 120)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/RoomMiniature65")
 
-[node name="rChild" parent="Tree/root/rChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(80, 120)
+[node name="lChild" parent="Tree/root/rChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature60")
 
-[node name="lChild" parent="Tree/root/rChild/rChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(-35, 58)
+[node name="rChild" parent="Tree/root/rChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature70")
 
-[node name="rChild" parent="Tree/root/rChild/rChild" instance=ExtResource("1_lr2ig")]
-position = Vector2(39, 58)
+[node name="rChild" parent="Tree/root/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(100, 120)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/RoomMiniature85")
+
+[node name="lChild" parent="Tree/root/rChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(-60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature80")
+
+[node name="rChild" parent="Tree/root/rChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+position = Vector2(60, 80)
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature90")
 
 [node name="Inventory" type="Panel" parent="."]
 anchors_preset = 12
@@ -79,3 +103,56 @@ layout_mode = 2
 
 [node name="RoomItemContainer" type="HBoxContainer" parent="Inventory/MarginContainer/ScrollContainer"]
 layout_mode = 2
+
+[node name="RoomMiniatureContainer" type="Node2D" parent="."]
+
+[node name="RoomMiniature5" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 5
+
+[node name="RoomMiniature10" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 10
+
+[node name="RoomMiniature12" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 12
+
+[node name="RoomMiniature15" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 15
+
+[node name="RoomMiniature20" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 20
+
+[node name="RoomMiniature25" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 25
+
+[node name="RoomMiniature30" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 30
+
+[node name="RoomMiniature35" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 35
+
+[node name="RoomMiniature40" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 40
+
+[node name="RoomMiniature50" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 50
+
+[node name="RoomMiniature60" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 60
+
+[node name="RoomMiniature65" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 65
+
+[node name="RoomMiniature70" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 70
+
+[node name="RoomMiniature75" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 75
+
+[node name="RoomMiniature80" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 80
+
+[node name="RoomMiniature85" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 85
+
+[node name="RoomMiniature90" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+number = 90

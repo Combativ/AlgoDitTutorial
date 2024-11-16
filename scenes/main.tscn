@@ -9,7 +9,6 @@
 script = ExtResource("1_twobj")
 
 [node name="build_phase" parent="." instance=ExtResource("1_v80fr")]
-visible = true
 
 [node name="search_phase" parent="." instance=ExtResource("2_fxd7f")]
 visible = false

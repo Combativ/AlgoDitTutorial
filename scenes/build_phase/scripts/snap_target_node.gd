@@ -1,9 +1,13 @@
-# This script handles the hiding and showing of the SnapTargetNode children as well as
-# coordinating RoomMiniatures
+# This script handles the hiding and showing of the SnapTargetNode children
+# as well as coordinating RoomMiniatures
 
 extends Node2D
 
 class_name SnapTargetNode
+
+# This variable is used to manually assign a snapper object to the SnapTarget node
+# in the editor. The variable is used in the _ready() function.
+@export var snapTarget_snapperObject: RoomMiniature
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +20,10 @@ func _ready() -> void:
 	for child in get_children():
 		if child is SnapTargetNode:
 			Helper.disable_and_hide_node(child)
+	
+	# assign snapper object to SnapTarget if desired
+	if (snapTarget_snapperObject != null):
+		$SnapTarget.accept_snapper(snapTarget_snapperObject)
 	
 
 

@@ -9,7 +9,7 @@ signal occupied_true
 signal occupied_false
 
 var occupied: bool = false
-var snapperObject = null
+var snapperObject: RoomMiniature = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

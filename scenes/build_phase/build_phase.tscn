@@ -8,7 +8,8 @@ script = ExtResource("1_u1egv")
 
 [node name="Level1" parent="." instance=ExtResource("2_lpoja")]
 
-[node name="RoomMiniatureContainer" type="Node2D" parent="."]
+[node name="Inventory" parent="Level1" index="1" node_paths=PackedStringArray("inventory")]
+inventory = [null, null]
 
 [node name="DoneButton" type="Button" parent="."]
 anchors_preset = 3
@@ -26,3 +27,5 @@ text = "Search Phase
 "
 
 [connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]
+
+[editable path="Level1"]
