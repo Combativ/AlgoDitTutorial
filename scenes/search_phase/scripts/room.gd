@@ -34,7 +34,10 @@ func move_to_room(node: SnapTargetNode) -> void:
 	#print(Global.path_tracker)
 	update()
 
+
 ##updates the room´s links and numbers to the ones of the room_node´s
+##enables button of the piture if in the destination_room
+##TODO !! button is not disabled anymore and not gets rested
 func update() -> void:
 	if doorLeft != null:
 		doorLeft.set_door_node(self.room_node.get_left_child_node())
@@ -43,4 +46,7 @@ func update() -> void:
 		doorRight.set_door_node(self.room_node.get_right_child_node())
 		doorRight.update()
 	picture.set_number(self.room_node.get_number())
+	if(room_node == Global.destination_room):
+		var button: TextureButton = self.picture.get_hitbox()
+		button.disabled = false
 	pass

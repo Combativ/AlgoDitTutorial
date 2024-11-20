@@ -106,3 +106,23 @@ func get_height(node: SnapTargetNode = self) -> int:
 		
 		result += 1
 	return result
+
+##returns true if this (sub-) tree is balanced, false otherwise
+func is_balanced() -> bool:
+	var right: bool
+	var left: bool 
+	
+	if(self.get_right_child_node() != null):
+		right = self.get_right_child_node().is_balanced()
+	else:
+		right = true
+	
+	if(self.get_left_child_node() != null):
+		left = self.get_left_child_node().is_balanced()
+	else:
+		left = true
+	
+	var hight_left: int = self.get_height(self.get_left_child_node())
+	var hight_right: int = self.get_height(self.get_right_child_node())
+	
+	return right && left && (abs(hight_left - hight_right) < 2)

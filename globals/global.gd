@@ -13,3 +13,6 @@ var tree_root: SnapTargetNode = null:
 ##stores the References of the SnapTargetNodes of the rooms the Player through in the search phase
 ##resets every time the search phase is entered 
 var path_tracker: Array[SnapTargetNode] = []
+
+##stores the Reference of the room that is the destination in the search phase
+var destination_room: SnapTargetNode = null
