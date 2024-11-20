@@ -23,7 +23,7 @@ static func get_move_counter() -> int:
 	
 ##sets the variable destination_room to one of the rooms with the highest depth in the tree 
 ##or null if the tree is empty 
-func create_destination_room() -> void:
+static func create_destination_room() -> void:
 	var room: SnapTargetNode = Global.tree_root
 	if(room != null):
 		var running: bool = true
@@ -40,5 +40,5 @@ func create_destination_room() -> void:
 		Global.destination_room = null
 	
 ##returns true if the tree is balanced, false otherwise
-func tree_is_balanced(tree_root: SnapTargetNode) -> bool:
+static func tree_is_balanced(tree_root: SnapTargetNode) -> bool:
 	return tree_root.is_balanced()

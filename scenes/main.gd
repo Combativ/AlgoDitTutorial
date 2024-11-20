@@ -10,11 +10,11 @@ func switch_to_search_phase():
 	search_phase.get_node("Room")._initialize()
 	
 	if(Global.destination_room == null):
-		$"search_phase".create_destination_room()
+		SearchPhase.create_destination_room()
 	print("destination_room: ", Global.destination_room.get_number())
 	
-	var balanced: bool = $"search_phase".tree_is_balanced(Global.tree_root)
-	print(balanced)
+	var balanced: bool = SearchPhase.tree_is_balanced(Global.tree_root)
+	print("is balanced: ",balanced)
 
 func switch_to_build_phase():
 	Helper.disable_and_hide_node(search_phase)

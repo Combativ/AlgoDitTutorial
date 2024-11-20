@@ -15,4 +15,5 @@ var tree_root: SnapTargetNode = null:
 var path_tracker: Array[SnapTargetNode] = []
 
 ##stores the Reference of the room that is the destination in the search phase
+## !! needs a reset (set to null) whenever the level changes to asure working
 var destination_room: SnapTargetNode = null
