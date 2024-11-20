@@ -1,8 +1,6 @@
 extends Node2D
 class_name SearchPhase
 
-
-
 @onready var main = $".."
 
 # Called when the node enters the scene tree for the first time.
