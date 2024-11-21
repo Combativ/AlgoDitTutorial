@@ -47,13 +47,25 @@ func end_drag():
 	
 	var overlapping_areas = get_overlapping_areas()
 	
-	# if RoomMiniature is released on a SnapTarget, then snap
-	for area2d in overlapping_areas:
-		if (area2d is SnapTarget && area2d.occupied == false):
-			SignalBus.room_miniature_released_on_snap_target.emit(self, area2d)
-			z_index = zindex # counterpart to z_index = zindex + 1 on initiate_drag()
-			is_being_dragged = false
-			return # end function call
+	# for handling custom level functions (see "level.gd")
+	# if sorted_insertion is enabled
+	var level_node: Level = Global.tree_root.get_parent().get_parent()
+	if (level_node.sorted_insertion == true):
+		
+		# if the insertion failed, send a signal
+		var success:bool = Global.tree_root.insert_sorted(self)
+		if (not success):
+			pass
+		return
+		
+	else:
+		# if RoomMiniature is released on a SnapTarget, then snap
+		for area2d in overlapping_areas:
+			if (area2d is SnapTarget && area2d.occupied == false):
+				SignalBus.room_miniature_released_on_snap_target.emit(self, area2d)
+				z_index = zindex # counterpart to z_index = zindex + 1 on initiate_drag()
+				is_being_dragged = false
+				return # end function call
 		
 	# if no SnapTargets, then move it back to inventory
 	SignalBus.room_miniature_freed.emit(self)

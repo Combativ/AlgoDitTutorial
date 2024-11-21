@@ -1,6 +1,8 @@
 # This script is attached to the root node of every level
 extends Node2D
 
+class_name Level
+
 # reference to the tree root of the level
 @onready var tree_root_node = find_child("root")
 @onready var main = get_tree().get_root().get_node("Main")
@@ -24,7 +26,7 @@ extends Node2D
   # independent of where the player put it. If the sorted position can't be
   # reached (the maximum depth of the tree is reached), the Node will go back
   # to the inventory and send a signal
-#@export var sorted_insertion: bool = false
+@export var sorted_insertion: bool = false
 
   # enables the left and right rotation operations
 #@export var enable_rotation_operations: bool = false

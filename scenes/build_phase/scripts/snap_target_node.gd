@@ -126,3 +126,26 @@ func is_balanced() -> bool:
 	var hight_right: int = self.get_height(self.get_right_child_node())
 	
 	return right && left && (abs(hight_left - hight_right) < 2)
+
+
+# insert a RoomMiniature into the tree at its sorted position
+func insert_sorted(room: RoomMiniature) -> bool:
+	var insertion_success: bool = true
+	
+	var right_subtree: SnapTargetNode = get_node_or_null("rChild")
+	var left_subtree: SnapTargetNode = get_node_or_null("lChild")
+	
+	if ($SnapTarget.occupied == false):
+		$SnapTarget.accept_snapper(room)
+		room.z_index = room.zindex # counterpart to z_index = zindex + 1 on initiate_drag()
+		room.is_being_dragged = false
+	elif (room.number < get_number() && left_subtree != null):
+		left_subtree.insert_sorted(room)
+	elif (room.number > get_number() && right_subtree != null):
+		right_subtree.insert_sorted(room)
+	else:
+		SignalBus.room_miniature_freed.emit(room)
+		insertion_success = false
+	
+	return insertion_success
+	

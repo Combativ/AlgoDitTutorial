@@ -33,6 +33,16 @@ func emulate_left_mouse_button_down(pos: Vector2 = get_viewport().get_mouse_posi
 	press.set_position(pos)
 	press.set_pressed(true)
 	Input.parse_input_event(press)
+# Addition for a full mouse click (press and release)
+func emulate_left_mouse_button_click(pos: Vector2 = get_viewport().get_mouse_position()):
+	var press = InputEventMouseButton.new()
+	press.set_button_index(MOUSE_BUTTON_LEFT)
+	press.set_position(pos)
+	press.set_pressed(true)
+	Input.parse_input_event(press)
+	press.set_pressed(false)
+	Input.parse_input_event(press)
+
 
 ##returns true if the tree is balanced, 
 ##false otherwise
