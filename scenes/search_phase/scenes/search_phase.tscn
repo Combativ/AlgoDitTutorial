@@ -17,12 +17,13 @@ script = ExtResource("1_mf2pv")
 DOOR_IMG_DOORPLATE = ExtResource("2_2aq4u")
 
 [node name="Room" parent="." instance=ExtResource("1_gbsri")]
+scale = Vector2(1.335, 1.335)
 
 [node name="SwitchPhase" type="Button" parent="."]
-offset_left = 829.0
-offset_top = 408.0
-offset_right = 924.0
-offset_bottom = 468.0
+offset_left = 1120.0
+offset_top = 520.0
+offset_right = 1248.0
+offset_bottom = 587.0
 text = "Buildphase"
 
 [connection signal="pressed" from="SwitchPhase" to="." method="_on_switch_phase_button_pressed"]
