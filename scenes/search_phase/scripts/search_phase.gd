@@ -5,6 +5,7 @@ class_name SearchPhase
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	pass # Replace with function body.
 
 
@@ -38,7 +39,3 @@ static func create_destination_room() -> void:
 		Global.destination_room = room
 	else:
 		Global.destination_room = null
-	
-##returns true if the tree is balanced, false otherwise
-static func tree_is_balanced(tree_root: SnapTargetNode) -> bool:
-	return tree_root.is_balanced()

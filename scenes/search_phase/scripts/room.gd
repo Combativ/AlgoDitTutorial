@@ -46,7 +46,5 @@ func update() -> void:
 		doorRight.set_door_node(self.room_node.get_right_child_node())
 		doorRight.update()
 	picture.set_number(self.room_node.get_number())
-	if(room_node == Global.destination_room):
-		var button: TextureButton = self.picture.get_hitbox()
-		button.disabled = false
+	
 	pass

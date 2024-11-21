@@ -21,13 +21,8 @@ func _initialize() -> void:
 	set_img($"../../Controller".DOOR_IMG_NORMAL)
 	set_img_hover($"../../Controller".DOOR_IMG_HOVER)
 	set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
-
-#TODO creating Null Door 
-#func _init() -> void:
-	#door_node = null
-	#door_number.text = ""
-	#door_hitbox.pressed.disconnect(door_hitbox.get_connections()[0])
-	#return Door.new()
+	$"DoorNumber/Hitbox & Image".disabled = true
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -74,7 +69,7 @@ func get_door_label() -> Label:
 func get_door_hitbox() -> TextureButton:
 	return self.door_hitbox
 	
-#TODO something wents wrong (get_number() does not exist? but it actually does)
+
 ##updates the door´s number to the number of the room, this door references to
 func update() -> void:
 	if self.door_node != null:

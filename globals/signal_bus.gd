@@ -16,3 +16,9 @@ signal snapTarget_kick_snapper(snapTarget)
 # (i.e. when dragging a RoomMiniature that has more RoomMiniature below it)
 # This is in the inventory script to collect freed RoomMiniatures
 signal room_miniature_freed(room_miniature)
+
+##This signal is emitted when clicked on the picture of Global.destination_room (in search phase)
+signal picture_right_room()
+
+##This signal is emitted when clicked on a picture in another room than Global.destination_room (in search phase)
+signal picture_wrong_room()

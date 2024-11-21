@@ -3,6 +3,7 @@
 extends Node
 
 
+
 # disable and enable a node. Makes it invisible and deactivates all of it's functionalities
 func disable_and_hide_node(node:Node) -> void:
 	node.set_process_mode(Node.PROCESS_MODE_DISABLED)
@@ -32,3 +33,8 @@ func emulate_left_mouse_button_down(pos: Vector2 = get_viewport().get_mouse_posi
 	press.set_position(pos)
 	press.set_pressed(true)
 	Input.parse_input_event(press)
+
+##returns true if the tree is balanced, 
+##false otherwise
+static func tree_is_balanced(tree_root: SnapTargetNode) -> bool:
+	return tree_root.is_balanced()

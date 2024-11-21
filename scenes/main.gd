@@ -13,7 +13,7 @@ func switch_to_search_phase():
 		SearchPhase.create_destination_room()
 	print("destination_room: ", Global.destination_room.get_number())
 	
-	var balanced: bool = SearchPhase.tree_is_balanced(Global.tree_root)
+	var balanced: bool = Helper.tree_is_balanced(Global.tree_root)
 	print("is balanced: ",balanced)
 
 func switch_to_build_phase():
