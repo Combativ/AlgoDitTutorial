@@ -7,36 +7,32 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_6uj8a")
+lock_predefined_nodes_in_tree = true
 
 [node name="Tree" type="Node2D" parent="."]
 
 [node name="root" parent="Tree" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
-position = Vector2(480, 40)
+position = Vector2(640, 80)
 snapTarget_snapperObject = NodePath("../../RoomMiniatureContainer/RoomMiniature50")
 
 [node name="lChild" parent="Tree/root" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
 position = Vector2(-200, 80)
 snapTarget_snapperObject = NodePath("../../../RoomMiniatureContainer/RoomMiniature25")
 
-[node name="lChild" parent="Tree/root/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+[node name="lChild" parent="Tree/root/lChild" instance=ExtResource("1_lr2ig")]
 position = Vector2(-100, 120)
-snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/RoomMiniature15")
 
-[node name="lChild" parent="Tree/root/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+[node name="lChild" parent="Tree/root/lChild/lChild" instance=ExtResource("1_lr2ig")]
 position = Vector2(-60, 80)
-snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature10")
 
-[node name="lChild" parent="Tree/root/lChild/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+[node name="lChild" parent="Tree/root/lChild/lChild/lChild" instance=ExtResource("1_lr2ig")]
 position = Vector2(-40, 80)
-snapTarget_snapperObject = NodePath("../../../../../../RoomMiniatureContainer/RoomMiniature5")
 
-[node name="rChild" parent="Tree/root/lChild/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+[node name="rChild" parent="Tree/root/lChild/lChild/lChild" instance=ExtResource("1_lr2ig")]
 position = Vector2(40, 80)
-snapTarget_snapperObject = NodePath("../../../../../../RoomMiniatureContainer/RoomMiniature12")
 
-[node name="rChild" parent="Tree/root/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
+[node name="rChild" parent="Tree/root/lChild/lChild" instance=ExtResource("1_lr2ig")]
 position = Vector2(60, 80)
-snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/RoomMiniature20")
 
 [node name="rChild" parent="Tree/root/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("1_lr2ig")]
 position = Vector2(100, 120)
@@ -83,9 +79,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 460.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_top = 640.0
+offset_right = 1280.0
+offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("2_g7442")
@@ -104,22 +100,27 @@ layout_mode = 2
 [node name="RoomItemContainer" type="HBoxContainer" parent="Inventory/MarginContainer/ScrollContainer"]
 layout_mode = 2
 
-[node name="RoomMiniatureContainer" type="Node2D" parent="."]
-
-[node name="RoomMiniature5" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+[node name="RoomMiniature5" parent="Inventory" instance=ExtResource("4_bvggk")]
+position = Vector2(0, -640)
 number = 5
 
-[node name="RoomMiniature10" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+[node name="RoomMiniature10" parent="Inventory" instance=ExtResource("4_bvggk")]
+position = Vector2(0, -640)
 number = 10
 
-[node name="RoomMiniature12" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+[node name="RoomMiniature12" parent="Inventory" instance=ExtResource("4_bvggk")]
+position = Vector2(0, -640)
 number = 12
 
-[node name="RoomMiniature15" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+[node name="RoomMiniature15" parent="Inventory" instance=ExtResource("4_bvggk")]
+position = Vector2(0, -640)
 number = 15
 
-[node name="RoomMiniature20" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
+[node name="RoomMiniature20" parent="Inventory" instance=ExtResource("4_bvggk")]
+position = Vector2(0, -640)
 number = 20
+
+[node name="RoomMiniatureContainer" type="Node2D" parent="."]
 
 [node name="RoomMiniature25" parent="RoomMiniatureContainer" instance=ExtResource("4_bvggk")]
 number = 25

@@ -8,10 +8,6 @@ extends Control
 # Creating a reference to the "RoomItem" Scene for later use
 const ROOM_ITEM = preload("res://scenes/build_phase/scenes/room_item.tscn")
 
-# This variable controls the RoomMiniatures the player has in his inventory in
-# this level. It is only used for manual manipulation in the inspector.
-@export var inventory: Array[RoomMiniature] = []
-
 # This HBoxContainer is the one storing all RoomItems
 @onready var itemContainer: HBoxContainer = $MarginContainer/ScrollContainer/RoomItemContainer
 
@@ -19,11 +15,12 @@ const ROOM_ITEM = preload("res://scenes/build_phase/scenes/room_item.tscn")
 func _ready() -> void:
 	SignalBus.room_miniature_freed.connect(_on_room_miniature_freed)
 
-	# fill the inventory with RoomItems at the start
-	for room_miniature in inventory:
-		if room_miniature != null:
-			add_room_item(room_miniature.number)
-			room_miniature.queue_free()
+	# If there are RoomMiniatures assigned for the inventory (as children
+	# of this Node), then create these as RoomItems in the inventory
+	for child in get_children():
+		if child is RoomMiniature:
+			add_room_item(child.number)
+			child.queue_free()
 
 
 
