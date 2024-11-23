@@ -16,6 +16,7 @@ func switch_to_search_phase():
 	
 	var balanced: bool = Helper.tree_is_balanced(Global.tree_root)
 	print("is balanced: ",balanced)
+	print("is sorted: ", Helper.tree_is_sorted(Global.tree_root))
 
 func switch_to_build_phase():
 	Helper.disable_and_hide_node(search_phase)

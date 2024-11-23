@@ -76,6 +76,7 @@ func get_speed() -> int:
 	return self.speed
 
 ##sets the speed to the transferred value
+##(px per operation)
 func set_speed(px: int) -> void:
 	self.speed = px
 
@@ -84,5 +85,6 @@ func get_counter_size() -> int:
 	return self.counter_size
 	
 ##sets the counter size to the transferred value 
+##amount of operations should execute
 func set_counter_size(size: int) -> void:
 	self.counter_size = size

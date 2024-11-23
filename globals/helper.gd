@@ -48,3 +48,30 @@ func emulate_left_mouse_button_click(pos: Vector2 = get_viewport().get_mouse_pos
 ##false otherwise
 static func tree_is_balanced(tree_root: SnapTargetNode) -> bool:
 	return tree_root.is_balanced()
+	
+##returns true if the tree is sorted,
+##false otherwise 
+static func tree_is_sorted(tree_root: SnapTargetNode) -> bool:
+	var array: Array[int] = []
+	_apply(tree_root, array)
+	
+	if array.size() <= 1:
+		return true
+	elif array[0] < array[1]:
+		for i in range(array.size()-2):
+			if array[i] > array[i+1]:
+				return false
+	else:
+		for i in range(array.size()-2):
+			if array[i] < array[i+1]:
+				return false
+	return true
+
+##recursive function to append nodes of the tree in in-order to the array
+static func _apply(tree_root: SnapTargetNode, array: Array[int]) -> void:
+	if tree_root.get_left_child_node() != null:
+		_apply(tree_root.get_left_child_node(), array)
+	array.append(tree_root.get_number())
+	if tree_root.get_right_child_node() != null:
+		_apply(tree_root.get_right_child_node(), array)
+	pass
