@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsehu8h5432ef"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/scripts/database.gd" id="1_23t7t"]
+[ext_resource type="Script" path="res://scenes/dialog_system/scripts/dialog_system.gd" id="1_wxxts"]
+[ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="3_fe838"]
+[ext_resource type="Script" path="res://scenes/dialog_system/scripts/text_box.gd" id="3_qjwsw"]
+
+[node name="dialog_system" type="Node2D"]
+script = ExtResource("1_wxxts")
+
+[node name="Database" type="Node" parent="."]
+script = ExtResource("1_23t7t")
+
+[node name="Text_box" type="CharacterBody2D" parent="."]
+script = ExtResource("3_qjwsw")
+
+[node name="Text_box_img" type="Sprite2D" parent="Text_box"]
+texture = ExtResource("3_fe838")
+offset = Vector2(288, 217)
+
+[node name="MarginContainer" type="MarginContainer" parent="Text_box/Text_box_img"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Text_box_text" type="Label" parent="Text_box/Text_box_img/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
+text = "lkjö kjölkj ölkj ljöj öoijöl kjölkj ökj öllk ölkj lkjöl kjölk jökj ölkjö lkjölk jökj ölkj
+pohpokj k ökjö kj ökkkj ökjölklllllllllllllllllllllllllllllllllll"
+text_overrun_behavior = 2
