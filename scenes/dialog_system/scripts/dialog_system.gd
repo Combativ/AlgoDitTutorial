@@ -10,6 +10,8 @@ var speed: int 			= 1
 var location: Mode 		= Mode.NEUTRAL
 var working: bool 		= false
 
+var text: String		= ""
+var index: int			= 0
 
 enum Mode {DOWN, NEUTRAL, UP}
 
@@ -44,6 +46,12 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	SignalBus.picture_right_room.connect(slide_down)
 	SignalBus.picture_wrong_room.connect(slide_up)
+	
+	SignalBus.picture_right_room.connect(test)
+	
+func _process(delta: float) -> void:
+	if self.index <= self.text.length()-1:
+		write_next()
 
 ####################################################################################################
 
@@ -53,7 +61,7 @@ func get_database() -> Node:
 
 ##returns the dialog system´s text box
 func get_text_box() -> Node2D:
-	return $Text_boxw
+	return $Text_box
 
 ##sets the text of it´s text box to the transferred text
 func set_text(text: String) -> void:
@@ -88,3 +96,25 @@ func get_counter_size() -> int:
 ##amount of operations should execute
 func set_counter_size(size: int) -> void:
 	self.counter_size = size
+	
+##sets the text to none 
+func clear() -> void:
+	set_text("")
+
+##writes text in text_box with writing animation
+func write(text: String) -> void:
+	clear()
+	self.text = text
+	self.index = 0
+
+##writes next character of self.text in text_box
+func write_next() -> void:
+	if(self.text != null && self.index <= self.text.length()-1):
+		self.set_text(self.get_text_box().get_text() + self.text[self.index])
+		print(self.get_text_box().get_text() + self.text[self.index])
+		index += 1
+
+func test() -> void:
+	print("test linked")
+	var s: String = "hallo, das ist ein Test, wie lange das Schreiben dauert."
+	write(s)
