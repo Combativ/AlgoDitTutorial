@@ -111,9 +111,9 @@ func write(text: String) -> void:
 func write_next() -> void:
 	if(self.text != null && self.index <= self.text.length()-1):
 		self.set_text(self.get_text_box().get_text() + self.text[self.index])
-		print(self.get_text_box().get_text() + self.text[self.index])
 		index += 1
 
+##just a test-text
 func test() -> void:
 	print("test linked")
 	var s: String = "hallo, das ist ein Test, wie lange das Schreiben dauert."

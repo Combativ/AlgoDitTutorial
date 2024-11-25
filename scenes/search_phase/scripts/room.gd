@@ -37,7 +37,6 @@ func move_to_room(node: SnapTargetNode) -> void:
 
 ##updates the room´s links and numbers to the ones of the room_node´s
 ##enables button of the piture if in the destination_room
-##TODO !! button is not disabled anymore and not gets rested
 func update() -> void:
 	if doorLeft != null:
 		doorLeft.set_door_node(self.room_node.get_left_child_node())
@@ -48,3 +47,17 @@ func update() -> void:
 	picture.set_number(self.room_node.get_number())
 	
 	pass
+
+##blocks every button of this object
+## disabled = true
+func block() -> void:
+	$DoorLeft.block()
+	$DoorRight.block()
+	$Picture.block()
+	
+##releases the buttons (buttons can be used again)
+## disabled = false
+func release() -> void:
+	$DoorLeft.release()
+	$DoorRight.release()
+	$Picture.release()

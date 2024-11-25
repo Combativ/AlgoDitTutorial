@@ -39,3 +39,13 @@ static func create_destination_room() -> void:
 		Global.destination_room = room
 	else:
 		Global.destination_room = null
+
+##blocks every single button of this phase (incl. switch_phase button)
+func block() -> void:
+	$Room.block()
+	$SwitchPhase.disabled = true
+	
+##releases the buttons of this phase
+func release() -> void: 
+	$Room.release()
+	$SwitchPhase.disabled = false

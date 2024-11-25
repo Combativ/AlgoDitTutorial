@@ -83,3 +83,12 @@ func update() -> void:
 func move_trough_door() -> void:
 	$"../".move_to_room(self.door_node)
 	
+##blocks every button of this object
+## disabled = true
+func block() -> void:
+	$"Hitbox & Image".disabled = true
+
+##releases the buttons (buttons can be used again)
+## disabled = false
+func release() -> void:
+	$"Hitbox & Image".disabled = false

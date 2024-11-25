@@ -45,3 +45,13 @@ func _on_hitbox_pressed():
 		SignalBus.picture_wrong_room.emit()
 		print("destiniation not reached yet")
 		
+
+##blocks every button of this object
+## disabled = true
+func block() -> void:
+	$"Hitbox & Image".disabled = true
+	
+##releases the buttons (buttons can be used again)
+## disabled = false
+func release() -> void:
+	$"Hitbox & Image".disabled = false

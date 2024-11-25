@@ -33,15 +33,6 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="Text_box_text" type="Label" parent="Text_box/Text_box_img/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 20
-text = "lkjö kjölkj ölkj ljöj öoijöl kjölkj ökj öllk ölkj lkjöl kjölk jökj ölkjö lkjölk jökj ölkj
-pohpokj k ökjö kj ökkkj ökjölklllllllllllllllllllllllllllllllllll"
-text_overrun_behavior = 2
-
 [node name="RichTextLabel" type="RichTextLabel" parent="Text_box/Text_box_img/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 20
