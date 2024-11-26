@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://n2liaj1xpsip"]
+
+[ext_resource type="Script" path="res://scenes/build_phase/scripts/inventory.gd" id="1_n0d71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvl4"]
+size = Vector2(1320, 120)
+
+[node name="Inventory" type="Panel"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_n0d71")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RoomItemContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(640, 40)
+shape = SubResource("RectangleShape2D_ddvl4")

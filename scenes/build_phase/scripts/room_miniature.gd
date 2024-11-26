@@ -52,6 +52,13 @@ func end_drag():
 	var level_node: Level = Global.tree_root.get_parent().get_parent()
 	if (level_node.sorted_insertion == true):
 		
+		# If released over inventory, go back into inventory
+		for area2d in overlapping_areas:
+			if (area2d.get_parent()) is Inventory:
+				SignalBus.room_miniature_freed.emit(self)
+				return
+		
+		# else, sort into the tree
 		# if the insertion failed, send a signal
 		var success:bool = Global.tree_root.insert_sorted(self)
 		if (not success):

@@ -4,6 +4,8 @@
 
 extends Control
 
+class_name Inventory
+
 
 # Creating a reference to the "RoomItem" Scene for later use
 const ROOM_ITEM = preload("res://scenes/build_phase/scenes/room_item.tscn")
