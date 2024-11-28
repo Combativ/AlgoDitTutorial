@@ -3,10 +3,12 @@ class_name Dialogsystem
 
 var up: bool 			= false
 var down: bool		 	= false
-var distance: int 	= 255
+##distacne the text_box will travel using slide methods
+@export var distance: int 	= 255
 var counter_up: int 	= self.distance
 var counter_down: int 	= self.distance
-var speed: int 			= 4
+##number of pixels traveled every operation
+@export var speed: int 			= 4
 var location: Mode 		= Mode.NEUTRAL
 
 ##logical switches for animation control
