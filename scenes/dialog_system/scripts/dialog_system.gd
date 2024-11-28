@@ -3,16 +3,21 @@ class_name Dialogsystem
 
 var up: bool 			= false
 var down: bool		 	= false
-var counter_size: int 	= 255
-var counter_up: int 	= self.counter_size
-var counter_down: int 	= self.counter_size
-var speed: int 			= 1
+var distance: int 	= 255
+var counter_up: int 	= self.distance
+var counter_down: int 	= self.distance
+var speed: int 			= 4
 var location: Mode 		= Mode.NEUTRAL
-var working: bool 		= false
 
+##logical switches for animation control
+var working: bool 		= false
+var writing: bool		= false
+
+##data for logic of the text_box 
 var text: String		= ""
 var index: int			= 0
 
+##status of the position of the text_box
 enum Mode {DOWN, NEUTRAL, UP}
 
 ####################################################################################################
@@ -20,25 +25,25 @@ enum Mode {DOWN, NEUTRAL, UP}
 func _physics_process(delta: float) -> void:
 	if up && location != Mode.UP:
 		position.y += speed
-		counter_up -= 1
+		counter_up -= speed
 		
 	elif up:
 		up = false
 		
 	if counter_up <= 0:
-		counter_up = counter_size
+		counter_up = distance
 		up = !up
 		location += 1
 		working = false
 		
 	if down && location != Mode.DOWN:
 		position.y -= speed
-		counter_down -= 1
+		counter_down -= speed
 	elif down:
 		down = false
 		
 	if counter_down <= 0:
-		counter_down = counter_size
+		counter_down = distance
 		down = !down
 		location -= 1
 		working = false
@@ -50,8 +55,11 @@ func _ready() -> void:
 	SignalBus.picture_right_room.connect(test)
 	
 func _process(delta: float) -> void:
-	if self.index <= self.text.length()-1:
+	if writing:
 		write_next()
+		if self.index == self.text.length()-1:
+			working = false
+			writing = false
 
 ####################################################################################################
 
@@ -59,11 +67,11 @@ func _process(delta: float) -> void:
 func get_database() -> Node:
 	return $Database
 
-##returns the dialog system´s text box
+##returns the dialog system´s text_box
 func get_text_box() -> Node2D:
 	return $Text_box
 
-##sets the text of it´s text box to the transferred text
+##sets the text of it´s text_box to the transferred text
 func set_text(text: String) -> void:
 	$Text_box.set_text(text)
 
@@ -88,14 +96,14 @@ func get_speed() -> int:
 func set_speed(px: int) -> void:
 	self.speed = px
 
-##returns the counter size
-func get_counter_size() -> int:
-	return self.counter_size
+##returns the distance the text_box is sliding
+func get_distance() -> int:
+	return self.distance
 	
-##sets the counter size to the transferred value 
-##amount of operations should execute
-func set_counter_size(size: int) -> void:
-	self.counter_size = size
+##sets the distance to the transferred value 
+##distance the text_box travels when slide_up() of slide_down() is called
+func set_distance(size: int) -> void:
+	self.distance = size
 	
 ##sets the text to none 
 func clear() -> void:
@@ -103,6 +111,9 @@ func clear() -> void:
 
 ##writes text in text_box with writing animation
 func write(text: String) -> void:
+	await  !working
+	working = true
+	writing = true
 	clear()
 	self.text = text
 	self.index = 0
