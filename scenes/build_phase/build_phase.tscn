@@ -8,6 +8,14 @@ script = ExtResource("1_u1egv")
 
 [node name="Level1" parent="." instance=ExtResource("2_lpoja")]
 
+[node name="InputLock" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 1320.0
+offset_bottom = 760.0
+
 [node name="DoneButton" type="Button" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
