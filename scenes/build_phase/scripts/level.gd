@@ -18,6 +18,7 @@ class_name Level
 
   # lock all tree nodes that have been set in the editor, during design-time
   # The player can only move tree nodes he has placed himself
+  # (Does not lock rotations, if rotations are enabled!)
 @export var lock_predefined_nodes_in_tree: bool = false
 
   # if sorted_insertion is true, nodes will always insert in their sorted position,

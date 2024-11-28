@@ -9,12 +9,14 @@ class_name SnapTargetNode
 # in the editor. The variable is used in the _ready() function.
 @export var snapTarget_snapperObject: RoomMiniature
 
+@onready var snapTarget: SnapTarget = $SnapTarget
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
-	$SnapTarget.occupied_true.connect(_on_snap_target_occupied_true)
-	$SnapTarget.occupied_false.connect(_on_snap_target_occupied_false)
+	snapTarget.occupied_true.connect(_on_snap_target_occupied_true)
+	snapTarget.occupied_false.connect(_on_snap_target_occupied_false)
 	
 	# hide SnapTargetNode children on start
 	for child in get_children():
@@ -23,7 +25,7 @@ func _ready() -> void:
 	
 	# assign snapper object to SnapTarget if desired
 	if (snapTarget_snapperObject != null):
-		$SnapTarget.accept_snapper(snapTarget_snapperObject)
+		snapTarget.accept_snapper(snapTarget_snapperObject)
 		
 	
 
@@ -39,16 +41,16 @@ func _on_snap_target_occupied_true() -> void:
 func _on_snap_target_occupied_false() -> void:
 	# Hide all SnapTargetNode children and sub-children and
 	# release their RoomMiniatures
-	for child in get_children():
+	for child in Helper.get_all_children(self):
 		if (child is SnapTargetNode):
-			if (child.get_node("SnapTarget").occupied == true):
+			if (child.snapTarget.occupied == true):
 				child.release_room_miniature()
 			Helper.disable_and_hide_node(child)
 
 
 func release_room_miniature():
-	var temp_room_miniature = $SnapTarget.snapperObject
-	$SnapTarget.release_snapper()
+	var temp_room_miniature = snapTarget.snapperObject
+	snapTarget.release_snapper()
 	SignalBus.room_miniature_freed.emit(temp_room_miniature)
 
 
@@ -114,6 +116,15 @@ func get_height(node: SnapTargetNode = self) -> int:
 		result += 1
 	return result
 
+func get_depth(node: SnapTargetNode = self) -> int:
+	var depth: int = 0
+	var current_node: SnapTargetNode = node
+	while (current_node != Global.tree_root && current_node is SnapTargetNode):
+		depth += 1
+		current_node = current_node.get_parent()
+	
+	return depth
+
 ##returns true if this (sub-) tree is balanced, false otherwise
 func is_balanced() -> bool:
 	var right: bool
@@ -155,4 +166,71 @@ func insert_sorted(room: RoomMiniature) -> bool:
 		insertion_success = false
 	
 	return insertion_success
+
+
+
+# rotation operators
+
+func rotate_right():
+	# check if rotation is possible (abort if not enough space in tree)
+	if ((get_left_child_node() == null) || ((get_right_child_node() != null) && (get_depth() + get_right_child_node().get_height()+1 >= 4))):
+		return
 	
+	# convert to logical (sub-)tree
+	var subtree: BinaryTree = $binary_tree_script.convert_to_binary_subtree()
+	var rotated_subtree: BinaryTree = subtree.rotate_right()
+	
+	# delete actual (sub-)tree
+	for child in Helper.get_all_children(self):
+		if (child is SnapTargetNode):
+			if (child.snapTarget.snapperObject != null):
+				# remove child
+				child.snapTarget.snapperObject.get_parent().remove_child(child.snapTarget.snapperObject)
+				child.snapTarget.snapperObject = null
+				child.snapTarget.occupied = false
+	# remove own snapperObject
+	snapTarget.snapperObject.get_parent().remove_child(snapTarget.snapperObject)
+	snapTarget.snapperObject = null
+	snapTarget.occupied = false
+	_on_snap_target_occupied_false()
+	
+	# load new (sub-)tree from rotated logical (sub-)tree
+	_load_from_binary_tree(rotated_subtree)
+
+func rotate_left():
+	# check if rotation is possible (abort if not enough space in tree)
+	if ((get_right_child_node() == null) || ((get_left_child_node() != null) && (get_depth() + get_left_child_node().get_height()+1 >= 4))):
+		return
+	
+	# convert to logical (sub-)tree
+	var subtree: BinaryTree = $binary_tree_script.convert_to_binary_subtree()
+	var rotated_subtree: BinaryTree = subtree.rotate_left()
+	
+	# delete actual (sub-)tree
+	for child in Helper.get_all_children(self):
+		if (child is SnapTargetNode):
+			if (child.snapTarget.snapperObject != null):
+				# remove child
+				child.snapTarget.snapperObject.get_parent().remove_child(child.snapTarget.snapperObject)
+				child.snapTarget.snapperObject = null
+				child.snapTarget.occupied = false
+	# remove own snapperObject
+	snapTarget.snapperObject.get_parent().remove_child(snapTarget.snapperObject)
+	snapTarget.snapperObject = null
+	snapTarget.occupied = false
+	_on_snap_target_occupied_false()
+	
+	# load new (sub-)tree from rotated logical (sub-)tree
+	_load_from_binary_tree(rotated_subtree)
+
+
+func _load_from_binary_tree(tree: BinaryTree):
+	# add RoomMiniature from data
+	Global.current_level.get_node("RoomMiniatureContainer").add_child(tree.data)
+	snapTarget.accept_snapper(tree.data)
+	
+	# add left and right children
+	if (tree.left != null):
+		get_node("lChild")._load_from_binary_tree(tree.left)
+	if (tree.right != null):
+		get_node("rChild")._load_from_binary_tree(tree.right)

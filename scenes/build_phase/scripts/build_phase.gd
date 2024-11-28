@@ -12,3 +12,10 @@ func lock():
 # enable user input
 func release():
 	$InputLock.hide()
+
+# DEBUG
+func _process(delta: float) -> void:
+	if (Input.is_action_just_pressed("ui_left")):
+		Global.tree_root.rotate_left()
+	if (Input.is_action_just_pressed("ui_right")):
+		Global.tree_root.rotate_right()
