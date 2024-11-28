@@ -7,14 +7,7 @@
 script = ExtResource("1_u1egv")
 
 [node name="Level1" parent="." instance=ExtResource("2_lpoja")]
-
-[node name="InputLock" type="Button" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
-offset_left = -40.0
-offset_top = -40.0
-offset_right = 1320.0
-offset_bottom = 760.0
+lock_predefined_nodes_in_tree = false
 
 [node name="DoneButton" type="Button" parent="."]
 anchors_preset = 3
@@ -30,6 +23,14 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Search Phase
 "
+
+[node name="InputLock" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 1320.0
+offset_bottom = 760.0
 
 [connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]
 
