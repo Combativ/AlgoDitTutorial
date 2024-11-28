@@ -8,6 +8,10 @@ class_name Level
 @onready var main = get_tree().get_root().get_node("Main")
 
 
+# the room the player has to find to finish the level
+# (must be set in the inspector)
+@export var target_room: RoomMiniature = null
+
 
 # variables to enable/disable functions. These must be set
 # in the inspector, for each level
@@ -15,12 +19,6 @@ class_name Level
   # lock all tree nodes that have been set in the editor, during design-time
   # The player can only move tree nodes he has placed himself
 @export var lock_predefined_nodes_in_tree: bool = false
-
-  # usually only part of the tree is shown and when you place a room, the
-  # tree expands. With show_entire_tree all room "slots" are shown and you can
-  # place rooms anywhere. This induces a check that all rooms are connected, before
-  # moving to the search phase
-#@export var show_entire_tree: bool = false
 
   # if sorted_insertion is true, nodes will always insert in their sorted position,
   # independent of where the player put it. If the sorted position can't be
@@ -42,6 +40,8 @@ class_name Level
 func _ready() -> void:
 	# Update the tree root reference
 	Global.tree_root = tree_root_node
+	# Update the level reference
+	Global.current_level = self
 	
 	if (lock_predefined_nodes_in_tree == true):
 		await main.ready

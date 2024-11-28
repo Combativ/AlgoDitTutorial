@@ -4,11 +4,11 @@ extends Node
 
 # This variable references the root of the tree of the build phase.
 # It is updated with every new level
-var tree_root: SnapTargetNode = null:
-	set(node):
-		tree_root = node
-	get():
-		return tree_root
+var tree_root: SnapTargetNode = null
+
+# This variable references the level and is updated when a new level
+# is loaded
+var current_level: Level = null
 
 ##stores the References of the SnapTargetNodes of the rooms the Player through in the search phase
 ##resets every time the search phase is entered 
