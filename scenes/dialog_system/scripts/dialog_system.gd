@@ -18,42 +18,69 @@ var writing: bool			= false
 var text: String			= ""
 var index: int				= 0
 
+##operations the dialogsystem can execute
+enum Operation {SLIDE_UP, SLIDE_DOWN, WRITE}
+
+##queue of operations that have to be executed 
+var operations: Array[Operation] 	= []
+##queue of text that will be written by the write-operation
+var texts: Array[String] 			= []
+
 ##status of the position of the text_box
 enum Mode {DOWN, NEUTRAL, UP}
 
 ####################################################################################################
 #controls the movement of the dialog system
 func _physics_process(delta: float) -> void:
+	if !working && !operations.is_empty():
+		var op: Operation = operations.pop_front()
+		working = true
+		if op == Operation.SLIDE_UP:
+			up = true
+		elif op == Operation.SLIDE_DOWN:
+			down = true
+		elif op == Operation.WRITE:
+			writing = true
+			clear()
+			self.index = 0
+			self.text = texts.pop_front()
+			
+		else:
+			working = false
+	
 	if up && location != Mode.UP:
 		position.y += speed
 		counter -= speed
 	elif up:
 		up = false
+		working = false
 		
 	if up && counter <= 0:
 		counter = distance
 		up = false
 		location += 1
 		working = false
-		#semaphor.post()
 		
 	if down && location != Mode.DOWN:
 		position.y -= speed
 		counter -= speed
 	elif down:
 		down = false
+		working = false
 		
 	if down && counter <= 0:
 		counter = distance
 		down = false
 		location -= 1
 		working = false
-		#semaphor.post()
+	
+	if location == Mode.NEUTRAL:
+		clear()
 
 func _ready() -> void:
-	#SignalBus.picture_right_room.connect(slide_down)
-	#SignalBus.picture_wrong_room.connect(slide_up)
-	#SignalBus.picture_right_room.connect(test)
+	SignalBus.picture_right_room.connect(slide_down)
+	SignalBus.picture_wrong_room.connect(slide_up)
+	SignalBus.picture_right_room.connect(test)
 	pass
 	
 func _process(delta: float) -> void:
@@ -62,7 +89,7 @@ func _process(delta: float) -> void:
 		if self.index == self.text.length()-1:
 			working = false
 			writing = false
-			#semaphor.post()
+			
 
 ####################################################################################################
 
@@ -80,15 +107,11 @@ func set_text(text: String) -> void:
 
 ##slides up the dialog system
 func slide_up() -> void:
-	#semaphor.wait()
-	working = true
-	self.up = true
+	operations.append(Operation.SLIDE_UP)
 	
 ##slides down the dialog system
 func slide_down() -> void:
-	#semaphor.wait()
-	working = true
-	self.down = true
+	operations.append(Operation.SLIDE_DOWN)
 	
 ##returns the speed value
 func get_speed() -> int:
@@ -114,12 +137,8 @@ func clear() -> void:
 
 ##writes text in text_box with writing animation
 func write(text: String) -> void:
-	#semaphor.wait()
-	working = true
-	writing = true
-	clear()
-	self.text = text
-	self.index = 0
+	operations.append(Operation.WRITE)
+	texts.append(text)
 
 ##writes next character of self.text in text_box
 func write_next() -> void:
@@ -132,3 +151,4 @@ func test() -> void:
 	print("test linked")
 	var s: String = "hallo, das ist ein Test, wie lange das Schreiben dauert."
 	write(s)
+	write("Das ist alles so viel Spaßßßßßß")

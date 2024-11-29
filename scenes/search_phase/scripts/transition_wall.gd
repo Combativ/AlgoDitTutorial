@@ -5,6 +5,9 @@ class_name Transition
 signal transition_show_up_done
 signal transition_hide_back_done
 
+##speed, how fast the animation is (without waiting time)
+##intervall: (0,1]
+@export var darkening_speed: float
 
 var b: bool = true
 var sig: bool = false
@@ -29,7 +32,7 @@ func _process(delta: float) -> void:
 ##makes rectangle transparent
 func add_transparency():
 	if self.modulate.a > 0:
-		self.modulate.a -= 0.03
+		self.modulate.a -= darkening_speed
 		return true
 	else: 
 		self.sig = false
@@ -41,7 +44,7 @@ func add_transparency():
 ##makes rectangle visible
 func sub_transparency():
 	if self.modulate.a < 1:
-		self.modulate.a += 0.03
+		self.modulate.a += darkening_speed
 		return false
 	else: 
 		self.sig = false
