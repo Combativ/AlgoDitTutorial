@@ -28,7 +28,7 @@ class_name Level
 @export var sorted_insertion: bool = false
 
   # enables the left and right rotation operations
-#@export var enable_rotation_operations: bool = false
+@export var enable_rotation_operations: bool = false
 
   # The level starts in search phase. This only works if the level has a
   # predefined tree
@@ -44,11 +44,19 @@ func _ready() -> void:
 	# Update the level reference
 	Global.current_level = self
 	
+	# LEVEL FUNCTIONS
 	if (lock_predefined_nodes_in_tree == true):
 		await main.ready
 		for child in Helper.get_all_children(self):
 			if (child is SnapTarget && child.snapperObject != null):
 				child.snapperObject.get_node("DragMask").disabled = true
+				# set mouse to default arrow (indicates no interaction)
+				child.snapperObject.get_node("DragMask").mouse_default_cursor_shape = 0
+	
+	if (enable_rotation_operations == true):
+		for child in Helper.get_all_children($Tree):
+			if (child is RotationManager):
+				Helper.enable_and_show_node(child)
 	
 	if (start_in_search_phase == true):
 		await main.ready

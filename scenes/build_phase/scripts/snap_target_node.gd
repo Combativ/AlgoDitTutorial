@@ -54,6 +54,8 @@ func release_room_miniature():
 	SignalBus.room_miniature_freed.emit(temp_room_miniature)
 
 
+
+
 # methods to navigate the tree
 
 ##returns the left child if it exists
@@ -169,7 +171,14 @@ func insert_sorted(room: RoomMiniature) -> bool:
 
 
 
+
+
 # rotation operators
+
+func _on_rotate_left_button_pressed() -> void:
+	rotate_left()
+func _on_rotate_right_button_pressed() -> void:
+	rotate_right()
 
 func rotate_right():
 	# check if rotation is possible (abort if not enough space in tree)

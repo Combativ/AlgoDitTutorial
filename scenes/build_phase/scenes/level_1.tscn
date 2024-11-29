@@ -9,7 +9,8 @@
 [node name="Level1" type="Node2D" node_paths=PackedStringArray("target_room")]
 script = ExtResource("1_6uj8a")
 target_room = NodePath("RoomMiniatureContainer/RoomMiniature12")
-lock_predefined_nodes_in_tree = true
+sorted_insertion = true
+enable_rotation_operations = true
 
 [node name="Tree" type="Node2D" parent="."]
 
@@ -367,6 +368,10 @@ texture = ExtResource("3_bpbfc")
 offset_top = 640.0
 offset_right = 1280.0
 offset_bottom = 720.0
+
+[node name="RoomMiniature99" parent="Inventory" instance=ExtResource("4_bvggk")]
+position = Vector2(0, -1280)
+number = 99
 
 [node name="RoomMiniatureContainer" type="Node2D" parent="."]
 
