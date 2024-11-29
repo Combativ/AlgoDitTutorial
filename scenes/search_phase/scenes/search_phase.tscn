@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqbncjj6167a6"]
+[gd_scene load_steps=6 format=3 uid="uid://bqbncjj6167a6"]
 
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/search_phase.gd" id="1_8hc0f"]
 [ext_resource type="PackedScene" uid="uid://dqlk1wfmnu28x" path="res://scenes/search_phase/scenes/room.tscn" id="1_gbsri"]
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/CONTROLLER_SEARCHPHASE.gd" id="1_mf2pv"]
 [ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="2_2aq4u"]
+[ext_resource type="Script" path="res://scenes/search_phase/scripts/transition_wall.gd" id="5_5ya5i"]
 
 [node name="Searchphase" type="Node2D"]
 script = ExtResource("1_8hc0f")
+transition_time = 1.0
 
 [node name="Controller" type="Control" parent="."]
 layout_mode = 3
@@ -25,5 +27,12 @@ offset_top = 520.0
 offset_right = 1248.0
 offset_bottom = 587.0
 text = "Buildphase"
+
+[node name="TransitionWall" type="ColorRect" parent="."]
+visible = false
+offset_right = 1301.0
+offset_bottom = 737.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("5_5ya5i")
 
 [connection signal="pressed" from="SwitchPhase" to="." method="_on_switch_phase_button_pressed"]

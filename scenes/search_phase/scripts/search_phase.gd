@@ -2,6 +2,8 @@ extends Node2D
 class_name SearchPhase
 
 @onready var main = $".."
+@export var transition_time: float
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,13 +26,22 @@ static func get_move_counter() -> int:
 	
 ##sets the variable destination_room to one of the rooms with the highest depth in the tree 
 ##or null if the tree is empty 
-static func create_destination_room() -> void:
+##if random_destination_room_generating is true the chosen room is random (room belongs to 
+static func create_destination_room(random_destination_room_generating: bool) -> void:
 	var room: SnapTargetNode = Global.tree_root
 	if(room != null):
 		var running: bool = true
 		while (running):
 			if(room.get_height(room.get_left_child_node()) < room.get_height(room.get_right_child_node())):
 				room = room.get_right_child_node()
+			#chooses path random if depth equals
+			elif (random_destination_room_generating && (room.get_height(room.get_left_child_node()) == room.get_height(room.get_right_child_node()))):
+				var rnd = RandomNumberGenerator.new()
+				var switch = rnd.randi_range(0,1)
+				if switch == 0:
+					room = room.get_right_child_node()
+				else:
+					room = room.get_left_child_node()
 			else:
 				room = room.get_left_child_node()
 			#stops while-loop when the deepest room is reached
@@ -41,7 +52,7 @@ static func create_destination_room() -> void:
 		Global.destination_room = null
 
 ##blocks every single button of this phase (incl. switch_phase button)
-func block() -> void:
+func lock() -> void:
 	$Room.block()
 	$SwitchPhase.disabled = true
 	
@@ -49,3 +60,7 @@ func block() -> void:
 func release() -> void: 
 	$Room.release()
 	$SwitchPhase.disabled = false
+
+##makes the screen black for almost the time transferred 
+func transition(seconds: float) -> void:
+	$TransitionWall.transition(seconds)

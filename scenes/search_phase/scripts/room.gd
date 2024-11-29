@@ -31,7 +31,8 @@ func _process(delta: float) -> void:
 func move_to_room(node: SnapTargetNode) -> void:
 	self.room_node = node
 	Global.path_tracker.append(self.room_node)
-	#print(Global.path_tracker)
+	$"../".transition($"..".transition_time)
+	await $"../TransitionWall".transition_show_up_done
 	update()
 
 

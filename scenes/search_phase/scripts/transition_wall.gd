@@ -1,0 +1,69 @@
+extends ColorRect
+class_name Transition
+
+##emits when transition animation is done 
+signal transition_show_up_done
+signal transition_hide_back_done
+
+
+var b: bool = true
+var sig: bool = true
+
+####################################################################################################
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#modulate.a = 0
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if b && sig:
+		add_transparency()
+	elif (!b) && sig:
+		sub_transparency()
+
+####################################################################################################
+
+
+##makes rectangle transparent
+func add_transparency():
+	if self.modulate.a > 0:
+		self.modulate.a -= 0.03
+		return true
+	else: 
+		self.sig = false
+		b = !b
+		transition_hide_back_done.emit()
+
+		
+
+##makes rectangle visible
+func sub_transparency():
+	if self.modulate.a < 1:
+		self.modulate.a += 0.03
+		return false
+	else: 
+		self.sig = false
+		b = !b
+		transition_show_up_done.emit()
+		
+
+##creates a transition that lasts almost the transferred time in seconds
+func transition(seconds: float) -> void:
+	transition_show_up()
+	await transition_show_up_done
+	await get_tree().create_timer(seconds).timeout
+	transition_hide_back()
+
+
+func transition_show_up() -> void:
+	self.show()
+	b = false
+	sig = true
+
+func transition_hide_back() -> void:
+	b = true
+	sig = true
+	await transition_hide_back_done
+	self.hide()

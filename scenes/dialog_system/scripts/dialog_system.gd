@@ -1,23 +1,22 @@
 extends Node2D
 class_name Dialogsystem
 
-var up: bool 			= false
-var down: bool		 	= false
+var up: bool 				= false
+var down: bool		 		= false
 ##distacne the text_box will travel using slide methods
 @export var distance: int 	= 255
-var counter_up: int 	= self.distance
-var counter_down: int 	= self.distance
+var counter: int 		= self.distance
 ##number of pixels traveled every operation
-@export var speed: int 			= 4
-var location: Mode 		= Mode.NEUTRAL
+@export var speed: int 		= 20
+var location: Mode 			= Mode.NEUTRAL
 
 ##logical switches for animation control
-var working: bool 		= false
-var writing: bool		= false
+var working: bool 			= false
+var writing: bool			= false
 
 ##data for logic of the text_box 
-var text: String		= ""
-var index: int			= 0
+var text: String			= ""
+var index: int				= 0
 
 ##status of the position of the text_box
 enum Mode {DOWN, NEUTRAL, UP}
@@ -27,34 +26,35 @@ enum Mode {DOWN, NEUTRAL, UP}
 func _physics_process(delta: float) -> void:
 	if up && location != Mode.UP:
 		position.y += speed
-		counter_up -= speed
-		
+		counter -= speed
 	elif up:
 		up = false
 		
-	if counter_up <= 0:
-		counter_up = distance
-		up = !up
+	if up && counter <= 0:
+		counter = distance
+		up = false
 		location += 1
 		working = false
+		#semaphor.post()
 		
 	if down && location != Mode.DOWN:
 		position.y -= speed
-		counter_down -= speed
+		counter -= speed
 	elif down:
 		down = false
 		
-	if counter_down <= 0:
-		counter_down = distance
-		down = !down
+	if down && counter <= 0:
+		counter = distance
+		down = false
 		location -= 1
 		working = false
+		#semaphor.post()
 
 func _ready() -> void:
-	SignalBus.picture_right_room.connect(slide_down)
-	SignalBus.picture_wrong_room.connect(slide_up)
-	
-	SignalBus.picture_right_room.connect(test)
+	#SignalBus.picture_right_room.connect(slide_down)
+	#SignalBus.picture_wrong_room.connect(slide_up)
+	#SignalBus.picture_right_room.connect(test)
+	pass
 	
 func _process(delta: float) -> void:
 	if writing:
@@ -62,6 +62,7 @@ func _process(delta: float) -> void:
 		if self.index == self.text.length()-1:
 			working = false
 			writing = false
+			#semaphor.post()
 
 ####################################################################################################
 
@@ -79,13 +80,13 @@ func set_text(text: String) -> void:
 
 ##slides up the dialog system
 func slide_up() -> void:
-	await !working
+	#semaphor.wait()
 	working = true
 	self.up = true
 	
 ##slides down the dialog system
 func slide_down() -> void:
-	await !working
+	#semaphor.wait()
 	working = true
 	self.down = true
 	
@@ -113,7 +114,7 @@ func clear() -> void:
 
 ##writes text in text_box with writing animation
 func write(text: String) -> void:
-	await  !working
+	#semaphor.wait()
 	working = true
 	writing = true
 	clear()
