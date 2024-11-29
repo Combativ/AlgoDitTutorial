@@ -18,9 +18,9 @@ func _ready() -> void:
 
 ##sets all textures of this Object to the ones stored in the Controller-class
 func _initialize() -> void:
-	set_img($"../../Controller".DOOR_IMG_NORMAL)
-	set_img_hover($"../../Controller".DOOR_IMG_HOVER)
-	set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
+	#set_img($"../../Controller".DOOR_IMG_NORMAL)
+	#set_img_hover($"../../Controller".DOOR_IMG_HOVER)
+	#set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
 	$"DoorNumber/Hitbox & Image".disabled = true
 	
 

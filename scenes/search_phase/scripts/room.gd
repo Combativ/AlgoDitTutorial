@@ -9,7 +9,7 @@ class_name Room
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$RoomIMG.set_texture($"../Controller".ROOM_IMG)
-	_initialize()
+	#_initialize()
 	
 	pass # Replace with function body.
 
@@ -32,7 +32,7 @@ func move_to_room(node: SnapTargetNode) -> void:
 	self.room_node = node
 	Global.path_tracker.append(self.room_node)
 	$"../".transition($"..".transition_time)
-	await $"../TransitionWall".transition_show_up_done
+	await $"../../TransitionWall".transition_show_up_done
 	update()
 
 

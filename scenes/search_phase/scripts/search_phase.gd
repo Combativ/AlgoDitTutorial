@@ -24,6 +24,10 @@ func _on_switch_phase_button_pressed():
 static func get_move_counter() -> int:
 	return Global.path_tracker.size()
 	
+##returns the letter of the search phase (bottom left corner)
+func get_letter() -> Letter:
+	return $Letter
+	
 ##sets the variable destination_room to one of the rooms with the highest depth in the tree 
 ##or null if the tree is empty 
 ##if random_destination_room_generating is true the chosen room is random (room belongs to 
@@ -63,4 +67,4 @@ func release() -> void:
 
 ##makes the screen black for almost the time transferred 
 func transition(seconds: float) -> void:
-	$TransitionWall.transition(seconds)
+	$"../TransitionWall".transition(seconds)

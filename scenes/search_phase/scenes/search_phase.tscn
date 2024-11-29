@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dqlk1wfmnu28x" path="res://scenes/search_phase/scenes/room.tscn" id="1_gbsri"]
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/CONTROLLER_SEARCHPHASE.gd" id="1_mf2pv"]
 [ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="2_2aq4u"]
-[ext_resource type="Script" path="res://scenes/search_phase/scripts/transition_wall.gd" id="5_5ya5i"]
+[ext_resource type="PackedScene" uid="uid://1sslkuo4uswx" path="res://scenes/search_phase/scenes/letter.tscn" id="5_ih0yh"]
 
 [node name="Searchphase" type="Node2D"]
 script = ExtResource("1_8hc0f")
@@ -28,11 +28,8 @@ offset_right = 1248.0
 offset_bottom = 587.0
 text = "Buildphase"
 
-[node name="TransitionWall" type="ColorRect" parent="."]
-visible = false
-offset_right = 1301.0
-offset_bottom = 737.0
-color = Color(0, 0, 0, 1)
-script = ExtResource("5_5ya5i")
+[node name="Letter" parent="." instance=ExtResource("5_ih0yh")]
+position = Vector2(166, 698)
+rotation = -0.26825
 
 [connection signal="pressed" from="SwitchPhase" to="." method="_on_switch_phase_button_pressed"]

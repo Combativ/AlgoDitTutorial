@@ -7,12 +7,12 @@ signal transition_hide_back_done
 
 
 var b: bool = true
-var sig: bool = true
+var sig: bool = false
 
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#modulate.a = 0
+	modulate.a = 0
 	pass
 
 
@@ -56,12 +56,17 @@ func transition(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 	transition_hide_back()
 
-
+##runs the transition until the screen is covered in black
+##emits signal: transition_show_up_done when animation is done
+##shows by it´s own
 func transition_show_up() -> void:
 	self.show()
 	b = false
 	sig = true
 
+##runs the transition from black sreen to uncovered screen
+##emits signal: transition_hide_back_done when animation is done
+##hides by it´s own
 func transition_hide_back() -> void:
 	b = true
 	sig = true
