@@ -9,20 +9,13 @@ class_name Room
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$RoomIMG.set_texture($"../Controller".ROOM_IMG)
-	#_initialize()
-	
-	pass # Replace with function body.
+	pass 
 
 ##initializes the first room with Global.tree_root as room_node (first node to enter)
 func _initialize() -> void:
 	move_to_room(Global.tree_root)
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	
-	pass
-
+#methods
 ####################################################################################################
 
 ##sets the door´s node to the new one and
@@ -35,7 +28,6 @@ func move_to_room(node: SnapTargetNode) -> void:
 	await $"../../TransitionWall".transition_show_up_done
 	update()
 
-
 ##updates the room´s links and numbers to the ones of the room_node´s
 ##enables button of the piture if in the destination_room
 func update() -> void:
@@ -46,15 +38,14 @@ func update() -> void:
 		doorRight.set_door_node(self.room_node.get_right_child_node())
 		doorRight.update()
 	picture.set_number(self.room_node.get_number())
-	
 	pass
 
 ##blocks every button of this object
 ## disabled = true
-func block() -> void:
-	$DoorLeft.block()
-	$DoorRight.block()
-	$Picture.block()
+func lock() -> void:
+	$DoorLeft.lock()
+	$DoorRight.lock()
+	$Picture.lock()
 	
 ##releases the buttons (buttons can be used again)
 ## disabled = false

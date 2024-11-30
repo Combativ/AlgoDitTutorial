@@ -9,7 +9,6 @@ class_name Door
 @onready var door_hitbox: TextureButton = $"Hitbox & Image"
 
 
-
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,21 +21,35 @@ func _initialize() -> void:
 	set_img_hover($"../../Controller".DOOR_IMG_HOVER)
 	set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
 	$"DoorNumber/Hitbox & Image".disabled = true
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+#getter and setter
 ####################################################################################################
+
+##returns the door´s number as an integer
+func get_number() -> int:
+	return int(door_number.get_text())
+	
+##returns the reference to the room behind this door
+func get_door_node() -> SnapTargetNode:
+	return self.door_node
+	
+##returns the entire label of the door to give access to more detailed instructions for the door´s number field
+func get_door_label() -> Label:
+	return self.door_number
+
+##returns the hitbox of the door
+func get_door_hitbox() -> TextureButton:
+	return self.door_hitbox
 
 ##sets the door number to the new integer
 func set_number(number: int):
 	door_number.set_text(str(number))
 	
-##returns the door´s number as an integer
-func get_number() -> int:
-	return int(door_number.get_text())
+##sets the door´s reference to the room behind it to the new one
+##updates the door´s number
+func set_door_node(node: SnapTargetNode) -> void:
+	self.door_node = node
+	update()
 	
 ##sets the door´s texture to the new texture2D
 ##take care of the format of the new texture (1008 px)
@@ -52,23 +65,8 @@ func set_img_hover(img: Texture2D) -> void:
 func set_img_doorplate(img: Texture2D) -> void:
 	$"DoorNumber/Hitbox & Image".set_texture_normal(img)
 	
-##sets the door´s reference to the room behind it to the new one
-##updates the door´s number
-func set_door_node(node: SnapTargetNode) -> void:
-	self.door_node = node
-	update()
-
-##returns the reference to the room behind this door
-func get_door_node() -> SnapTargetNode:
-	return self.door_node
-
-##returns the entire label of the door to give access to more detailed instructions for the door´s number field
-func get_door_label() -> Label:
-	return self.door_number
-
-func get_door_hitbox() -> TextureButton:
-	return self.door_hitbox
-	
+#methods
+####################################################################################################	
 
 ##updates the door´s number to the number of the room, this door references to
 func update() -> void:
@@ -85,7 +83,7 @@ func move_trough_door() -> void:
 	
 ##blocks every button of this object
 ## disabled = true
-func block() -> void:
+func lock() -> void:
 	$"Hitbox & Image".disabled = true
 
 ##releases the buttons (buttons can be used again)

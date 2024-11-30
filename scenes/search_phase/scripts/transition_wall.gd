@@ -1,8 +1,9 @@
 extends ColorRect
 class_name Transition
 
-##emits when transition animation is done 
+##emits when transition animation is done (from transparent to black)
 signal transition_show_up_done
+##emits when transition animation is done (from black to transparent)
 signal transition_hide_back_done
 
 ##speed, how fast the animation is (without waiting time)
@@ -26,8 +27,8 @@ func _process(delta: float) -> void:
 	elif (!b) && sig:
 		sub_transparency()
 
+#methods
 ####################################################################################################
-
 
 ##makes rectangle transparent
 func add_transparency():
@@ -39,8 +40,6 @@ func add_transparency():
 		b = !b
 		transition_hide_back_done.emit()
 
-		
-
 ##makes rectangle visible
 func sub_transparency():
 	if self.modulate.a < 1:
@@ -51,7 +50,6 @@ func sub_transparency():
 		b = !b
 		transition_show_up_done.emit()
 		
-
 ##creates a transition that lasts almost the transferred time in seconds
 func transition(seconds: float) -> void:
 	transition_show_up()

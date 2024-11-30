@@ -21,6 +21,7 @@ visible = false
 [node name="dialog_system" parent="." instance=ExtResource("5_u6pyg")]
 visibility_layer = 2
 position = Vector2(281, 773)
+distance = 500
 
 [node name="TransitionWall" type="ColorRect" parent="."]
 visible = false

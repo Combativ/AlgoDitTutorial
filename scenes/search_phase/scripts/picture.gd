@@ -15,12 +15,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-#Getters & Setters
+#getters & setters
 ####################################################################################################
-
-##sets this picture´s number to the new one
-func set_number(number: int):
-	label.set_text(str(number))
 
 ##returns this picture´s number (text) as a String or 
 ##the String "null", if the number is not set
@@ -33,6 +29,13 @@ func get_number() -> String:
 ##returns the TextureButton of this picture
 func get_hitbox() -> TextureButton:
 	return hitbox
+
+##sets this picture´s number to the new one
+func set_number(number: int):
+	label.set_text(str(number))
+
+#methods
+####################################################################################################
 	
 ##when pressed the picture sends out signals:
 ##when in Global.destination_room: SignalBus.picture_right_room
@@ -45,10 +48,9 @@ func _on_hitbox_pressed():
 		SignalBus.picture_wrong_room.emit()
 		print("destiniation not reached yet")
 		
-
 ##blocks every button of this object
 ## disabled = true
-func block() -> void:
+func lock() -> void:
 	$"Hitbox & Image".disabled = true
 	
 ##releases the buttons (buttons can be used again)

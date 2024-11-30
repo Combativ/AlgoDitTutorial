@@ -4,29 +4,23 @@ class_name SearchPhase
 @onready var main = $".."
 @export var transition_time: float
 
+#getter and setter
+####################################################################################################
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-#switches to build_phase scene
-func _on_switch_phase_button_pressed():
-	main.switch_to_build_phase()
-	
+##returns the letter of the search phase (bottom left corner)
+func get_letter() -> Letter:
+	return $Letter
 
 ##returns the of room visited the last time the search phase was used (0 if the search phase wasn´t used yet)
 static func get_move_counter() -> int:
 	return Global.path_tracker.size()
-	
-##returns the letter of the search phase (bottom left corner)
-func get_letter() -> Letter:
-	return $Letter
+
+#methods
+####################################################################################################
+
+#switches to build_phase scene
+func _on_switch_phase_button_pressed():
+	main.switch_to_build_phase()
 	
 ##sets the variable destination_room to one of the rooms with the highest depth in the tree 
 ##or null if the tree is empty 
@@ -57,7 +51,7 @@ static func create_destination_room(random_destination_room_generating: bool) ->
 
 ##blocks every single button of this phase (incl. switch_phase button)
 func lock() -> void:
-	$Room.block()
+	$Room.lock()
 	$SwitchPhase.disabled = true
 	
 ##releases the buttons of this phase

@@ -1,5 +1,8 @@
 extends Node2D
 
+#getter and setter
+####################################################################################################
+
 ##returns the text of the text box
 func get_text() -> String:
 	return $Text_box_img/MarginContainer/RichTextLabel.text
