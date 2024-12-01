@@ -10,10 +10,13 @@ var tree_root: SnapTargetNode = null
 # is loaded
 var current_level: Level = null
 
-##stores the References of the SnapTargetNodes of the rooms the Player through in the search phase
+##stores the references of the SnapTargetNodes of the rooms the Player through in the search phase
 ##resets every time the search phase is entered 
 var path_tracker: Array[SnapTargetNode] = []
 
-##stores the Reference of the room that is the destination in the search phase
+##stores the reference of the room that is the destination in the search phase
 ## !! needs a reset (set to null) whenever the level changes to asure working
 var destination_room: SnapTargetNode = null
+
+##stores the reference to the in game dialog system
+var dialog_system: Dialogsystem = null

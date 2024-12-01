@@ -91,6 +91,7 @@ func _ready() -> void:
 	#SignalBus.picture_right_room.connect(slide_up)
 	#SignalBus.picture_wrong_room.connect(slide_down)
 	#SignalBus.picture_right_room.connect(test)
+	Global.dialog_system = self
 	pass
 	
 func _process(delta: float) -> void:
