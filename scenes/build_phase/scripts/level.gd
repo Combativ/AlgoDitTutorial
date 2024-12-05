@@ -44,6 +44,7 @@ func _ready() -> void:
 	# Update the level reference
 	Global.current_level = self
 	
+	
 	# LEVEL FUNCTIONS
 	if (lock_predefined_nodes_in_tree == true):
 		await main.ready
