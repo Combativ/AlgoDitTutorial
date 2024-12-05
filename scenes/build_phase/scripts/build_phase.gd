@@ -16,6 +16,4 @@ func release():
 # DEBUG
 func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("ui_left")):
-		Global.tree_root.rotate_left()
-	if (Input.is_action_just_pressed("ui_right")):
-		Global.tree_root.rotate_right()
+		print(Helper.find_SnapTargetNode_from_RoomMiniature(Global.current_level.target_room))

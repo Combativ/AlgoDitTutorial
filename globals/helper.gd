@@ -44,6 +44,16 @@ func emulate_left_mouse_button_click(pos: Vector2 = get_viewport().get_mouse_pos
 	Input.parse_input_event(press)
 
 
+# This method returns the SnapTargetNode the requested RoomMiniature sits in
+# It returns null, if the RoomMiniature is not found in the tree
+func find_SnapTargetNode_from_RoomMiniature(room: RoomMiniature) -> SnapTargetNode:
+	for child in Helper.get_all_children(Global.tree_root.get_parent()):
+		if (child is SnapTargetNode):
+			if (child.snapTarget.snapperObject == room):
+				return child
+	return null
+
+
 ##returns true if the tree is balanced, 
 ##false otherwise
 static func tree_is_balanced(tree_root: SnapTargetNode) -> bool:
