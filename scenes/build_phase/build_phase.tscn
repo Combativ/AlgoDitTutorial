@@ -1,12 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c03bn4ttox6bm"]
 
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/build_phase.gd" id="1_u1egv"]
-[ext_resource type="PackedScene" uid="uid://cr5c2pxieixoh" path="res://scenes/build_phase/levels/level_06.tscn" id="3_k0ki4"]
+[ext_resource type="PackedScene" uid="uid://daffh3mvhklra" path="res://scenes/build_phase/levels/level_03.tscn" id="2_4tiu8"]
 
 [node name="BuildPhase" type="Node2D"]
 script = ExtResource("1_u1egv")
-
-[node name="Level06" parent="." instance=ExtResource("3_k0ki4")]
 
 [node name="DoneButton" type="Button" parent="."]
 anchors_preset = 3
@@ -31,5 +29,7 @@ offset_top = -40.0
 offset_right = 1320.0
 offset_bottom = 760.0
 mouse_default_cursor_shape = 16
+
+[node name="Level03" parent="." instance=ExtResource("2_4tiu8")]
 
 [connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]
