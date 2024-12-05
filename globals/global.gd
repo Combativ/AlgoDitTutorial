@@ -16,6 +16,7 @@ var path_tracker: Array[SnapTargetNode] = []
 
 ##stores the reference of the room that is the destination in the search phase
 ## !! needs a reset (set to null) whenever the level changes to asure working
+##TODO find-Funktion in helper schreiben
 var destination_room: SnapTargetNode = null
 
 ##stores the reference to the in game dialog system

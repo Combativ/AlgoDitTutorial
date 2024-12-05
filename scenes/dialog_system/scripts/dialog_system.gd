@@ -165,6 +165,7 @@ func clear() -> void:
 	set_text("")
 
 ##writes text in text_box with writing animation
+##emits signal: writing_done when writing animation is finished
 func write(text: String) -> void:
 	operations.append(Operation.WRITE)
 	texts.append(text)
