@@ -27,7 +27,7 @@ func _on_switch_phase_button_pressed():
 ##if random_destination_room_generating is true the chosen room is random (room belongs to 
 static func create_destination_room(random_destination_room_generating: bool) -> void:
 	var room: SnapTargetNode = Global.tree_root
-	if(room != null):
+	if(room != null && room.get_height(room) > 1):
 		var running: bool = true
 		while (running):
 			if(room.get_height(room.get_left_child_node()) < room.get_height(room.get_right_child_node())):
@@ -45,6 +45,8 @@ static func create_destination_room(random_destination_room_generating: bool) ->
 			#stops while-loop when the deepest room is reached
 			if (room.get_left_child_node() == null && room.get_right_child_node() == null):
 				running = false
+		Global.destination_room = room
+	elif (room != null):
 		Global.destination_room = room
 	else:
 		Global.destination_room = null
