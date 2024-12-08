@@ -17,4 +17,7 @@ visible = false
 position = Vector2(58, -231)
 scale = Vector2(0.5, 0.5)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(191, 375)
+
 [connection signal="pressed" from="Hitbox & Image" to="." method="move_trough_door"]

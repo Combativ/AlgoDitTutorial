@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsehu8h5432ef"]
+[gd_scene load_steps=8 format=3 uid="uid://bsehu8h5432ef"]
 
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/database.gd" id="1_23t7t"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/dialog_system.gd" id="1_wxxts"]
 [ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="3_fe838"]
+[ext_resource type="Script" path="res://scenes/dialog_system/audio_player.gd" id="3_nxrd8"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/text_box.gd" id="3_qjwsw"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button.gd" id="5_840j7"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button_2.gd" id="6_qpihx"]
@@ -13,6 +14,9 @@ skip_key = 83
 
 [node name="Database" type="Node" parent="."]
 script = ExtResource("1_23t7t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_nxrd8")
 
 [node name="Text_box" type="CharacterBody2D" parent="."]
 script = ExtResource("3_qjwsw")
