@@ -8,46 +8,26 @@
 
 [node name="Level03" type="Node2D" node_paths=PackedStringArray("target_room")]
 script = ExtResource("1_1l77k")
-target_room = NodePath("RoomMiniatureContainer/10")
-sorted_insertion = true
-enable_rotation_operations = true
+target_room = NodePath("RoomMiniatureContainer/50")
+lock_predefined_nodes_in_tree = true
 
 [node name="Tree" type="Node2D" parent="."]
 
-[node name="root" parent="Tree" instance=ExtResource("2_uvomc")]
+[node name="root" parent="Tree" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(640, 80)
+snapTarget_snapperObject = NodePath("../../RoomMiniatureContainer/50")
 
-[node name="lChild" parent="Tree/root" instance=ExtResource("2_uvomc")]
+[node name="lChild" parent="Tree/root" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(-320, 100)
+snapTarget_snapperObject = NodePath("../../../RoomMiniatureContainer/30")
 
-[node name="lChild" parent="Tree/root/lChild" instance=ExtResource("2_uvomc")]
+[node name="lChild" parent="Tree/root/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(-160, 100)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/80")
 
-[node name="lChild" parent="Tree/root/lChild/lChild" instance=ExtResource("2_uvomc")]
+[node name="lChild" parent="Tree/root/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(-80, 100)
-
-[node name="lChild" parent="Tree/root/lChild/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-snapTarget_snapperObject = NodePath("../../../../../../RoomMiniatureContainer/10")
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/lChild/lChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(21, -50)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/lChild/lChild/lChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/lChild/lChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-20, -51)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/46")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/lChild/lChild/lChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -57,30 +37,9 @@ rotation = -0.900251
 scale = Vector2(2.04131, 0.119269)
 texture = ExtResource("3_60cec")
 
-[node name="rChild" parent="Tree/root/lChild/lChild" instance=ExtResource("2_uvomc")]
+[node name="rChild" parent="Tree/root/lChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(80, 100)
-
-[node name="lChild" parent="Tree/root/lChild/lChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/lChild/rChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(21, -50)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/lChild/lChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/lChild/rChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-20, -50)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/26")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/lChild/lChild/rChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -98,33 +57,13 @@ rotation = -0.566558
 scale = Vector2(3.23439, 0.119269)
 texture = ExtResource("3_60cec")
 
-[node name="rChild" parent="Tree/root/lChild" instance=ExtResource("2_uvomc")]
+[node name="rChild" parent="Tree/root/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(160, 100)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/45")
 
-[node name="lChild" parent="Tree/root/lChild/rChild" instance=ExtResource("2_uvomc")]
+[node name="lChild" parent="Tree/root/lChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(-80, 100)
-
-[node name="lChild" parent="Tree/root/lChild/rChild/lChild" instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/rChild/lChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(21, -51)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/lChild/rChild/lChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/rChild/lChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-20, -50)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/40")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/lChild/rChild/lChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -134,30 +73,9 @@ rotation = -0.900251
 scale = Vector2(2.04131, 0.119269)
 texture = ExtResource("3_60cec")
 
-[node name="rChild" parent="Tree/root/lChild/rChild" instance=ExtResource("2_uvomc")]
+[node name="rChild" parent="Tree/root/lChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(80, 100)
-
-[node name="lChild" parent="Tree/root/lChild/rChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/rChild/rChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(20, -49)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/lChild/rChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/lChild/rChild/rChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-20, -49)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/90")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/lChild/rChild/rChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -183,36 +101,17 @@ rotation = -0.293751
 scale = Vector2(5.22229, 0.119269)
 texture = ExtResource("3_60cec")
 
-[node name="rChild" parent="Tree/root" instance=ExtResource("2_uvomc")]
+[node name="rChild" parent="Tree/root" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(320, 100)
+snapTarget_snapperObject = NodePath("../../../RoomMiniatureContainer/25")
 
-[node name="lChild" parent="Tree/root/rChild" instance=ExtResource("2_uvomc")]
+[node name="lChild" parent="Tree/root/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(-160, 100)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/75")
 
-[node name="lChild" parent="Tree/root/rChild/lChild" instance=ExtResource("2_uvomc")]
+[node name="lChild" parent="Tree/root/rChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(-80, 100)
-
-[node name="lChild" parent="Tree/root/rChild/lChild/lChild" instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/lChild/lChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(21, -50)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/rChild/lChild/lChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/lChild/lChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-20, -49.9999)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/70")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/rChild/lChild/lChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -222,30 +121,9 @@ rotation = -0.900251
 scale = Vector2(2.04131, 0.119269)
 texture = ExtResource("3_60cec")
 
-[node name="rChild" parent="Tree/root/rChild/lChild" instance=ExtResource("2_uvomc")]
+[node name="rChild" parent="Tree/root/rChild/lChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(80, 100)
-
-[node name="lChild" parent="Tree/root/rChild/lChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/lChild/rChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(20.9999, -50)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/rChild/lChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/lChild/rChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-19.9999, -50)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/77")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/rChild/lChild/rChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -263,33 +141,13 @@ rotation = -0.566558
 scale = Vector2(3.23439, 0.119269)
 texture = ExtResource("3_60cec")
 
-[node name="rChild" parent="Tree/root/rChild" instance=ExtResource("2_uvomc")]
+[node name="rChild" parent="Tree/root/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(160, 100)
+snapTarget_snapperObject = NodePath("../../../../RoomMiniatureContainer/95")
 
-[node name="lChild" parent="Tree/root/rChild/rChild" instance=ExtResource("2_uvomc")]
+[node name="lChild" parent="Tree/root/rChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(-80, 100)
-
-[node name="lChild" parent="Tree/root/rChild/rChild/lChild" instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/rChild/lChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(20.0001, -50)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/rChild/rChild/lChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/rChild/lChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-20, -50)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/89")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/rChild/rChild/lChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -299,30 +157,9 @@ rotation = -0.900251
 scale = Vector2(2.04131, 0.119269)
 texture = ExtResource("3_60cec")
 
-[node name="rChild" parent="Tree/root/rChild/rChild" instance=ExtResource("2_uvomc")]
+[node name="rChild" parent="Tree/root/rChild/rChild" node_paths=PackedStringArray("snapTarget_snapperObject") instance=ExtResource("2_uvomc")]
 position = Vector2(80, 100)
-
-[node name="lChild" parent="Tree/root/rChild/rChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(-40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/rChild/rChild/lChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(19, -50)
-rotation = 1.95733
-scale = Vector2(1.67772, 0.119269)
-texture = ExtResource("3_60cec")
-
-[node name="rChild" parent="Tree/root/rChild/rChild/rChild" instance=ExtResource("2_uvomc")]
-position = Vector2(40, 100)
-
-[node name="Line" type="Sprite2D" parent="Tree/root/rChild/rChild/rChild/rChild"]
-self_modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(-19, -50)
-rotation = -1.9397
-scale = Vector2(1.67771, 0.119269)
-texture = ExtResource("3_60cec")
+snapTarget_snapperObject = NodePath("../../../../../RoomMiniatureContainer/10")
 
 [node name="Line" type="Sprite2D" parent="Tree/root/rChild/rChild/rChild"]
 self_modulate = Color(0, 0, 0, 1)
@@ -354,6 +191,48 @@ offset_right = 1280.0
 offset_bottom = 720.0
 
 [node name="RoomMiniatureContainer" type="Node2D" parent="."]
+
+[node name="80" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 80
+
+[node name="46" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 46
+
+[node name="90" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 90
+
+[node name="25" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 25
+
+[node name="95" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 95
+
+[node name="50" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 50
+
+[node name="30" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 30
+
+[node name="45" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 45
+
+[node name="75" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 75
+
+[node name="26" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 26
+
+[node name="40" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 40
+
+[node name="70" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 70
+
+[node name="77" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 77
+
+[node name="89" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
+number = 89
 
 [node name="10" parent="RoomMiniatureContainer" instance=ExtResource("5_kldoh")]
 number = 10
