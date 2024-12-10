@@ -39,6 +39,7 @@ var texts: Array[String] 			= []
 var key_pressed: bool
 @export var skip_key: Key
 
+@onready var audio_player: AudioPlayer = $AudioStreamPlayer
 ####################################################################################################
 
 #controls the movement of the dialog system
@@ -88,9 +89,6 @@ func _physics_process(delta: float) -> void:
 		clear()
 
 func _ready() -> void:
-	#SignalBus.picture_right_room.connect(slide_up)
-	#SignalBus.picture_wrong_room.connect(slide_down)
-	#SignalBus.picture_right_room.connect(test)
 	Global.dialog_system = self
 	pass
 	
@@ -103,7 +101,7 @@ func _process(delta: float) -> void:
 	
 	#writing animation
 	if writing && index !=  self.text.length()-1:
-		write_next()
+		_write_next()
 	elif writing:
 			working = false
 			writing = false
@@ -138,6 +136,10 @@ func get_distance() -> int:
 ##returns the key, that is used to skip the writing animation of the text_box
 func get_skip_key() -> Key:
 	return self.skip_key
+
+##returns this system's audio player
+func get_audio_player() -> AudioPlayer:
+	return self.audio_player
 	
 ##sets the text of it´s text_box to the transferred text
 func set_text(text: String) -> void:
@@ -171,23 +173,10 @@ func write(text: String) -> void:
 	texts.append(text)
 
 ##writes next character of self.text in text_box
-func write_next() -> void:
+func _write_next() -> void:
 	if(self.text != null && self.index <= self.text.length()-1):
 		self.set_text(self.get_text_box().get_text() + self.text[self.index])
 		index += 1
-
-##TODO delete this method
-##just a test-text
-func test() -> void:
-	print("test linked")
-	var s: String = "hallo, das ist ein Test, wie lange das Schreiben dauert."
-	write(s)
-	await writing_done
-	await skip
-	write("""Das ist alles so viel Spaßßßßßß jljö aökfjd ölkfajö
-lfkaö lkdfj öalkfj eölkafö lk fälklk jföalkdj fölkjadöflkjöal djfökajfd ökjaö dfljaölk djfölaj
-kja ödlkföalkdf ölakm eölmaö lödkaj ölkjcoi jaölk dflkamd öflmaökljü bjöalkd ölkaföl jdfölkjaödfjaekmadmf l,adkjadlkfjäalm e.,maä d mävpjaüplem äfaölm ädm fäapovüpoea äöflmaädölmfä a füpoejaäpm aäölcä völäeapofäöalmdöm väaövm äp aoejf äölamdälm äcölvm äökaäpoj fäölamsd fäö lam ädvöj oräaöle- ,my- lpcjpaojäflma döfmal,ä ölfkapito kma epoj +rapowmföla,mdflkmvpü oae äfalmf-as dväo laksm-f ,am sd-f mö oaiwejf äölmfa -dsöd fjadlf kjölkdajf lkjdfö alkjföldajfölkem- a,rm- er,marem äalkjfädjpaov j#ak fömea-r,mae-r,mäakdf jäakvjäp oaj äekfm 
-aösdlmf- alk efä dk#poakcvä ölaäölm -f eöalf""")
 
 ##skips writing animation and shows the entire text in the text_box instandly
 ##emits signal: writing_done
@@ -202,3 +191,15 @@ func slide_up() -> void:
 ##slides down the dialog system
 func slide_down() -> void:
 	operations.append(Operation.SLIDE_DOWN)
+
+##mutes the dialog system's audio
+func mute() -> void:
+	get_audio_player().mute()
+
+##unmutes the dialog system's audio
+func unmute() -> void:
+	get_audio_player().unmute()
+
+##returns true if the entire dialog system is muted, false otherwise
+func is_muted() -> bool:
+	return get_audio_player().is_muted()

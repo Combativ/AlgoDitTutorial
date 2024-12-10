@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://caglc8uk2g50v"]
+[gd_scene load_steps=8 format=3 uid="uid://caglc8uk2g50v"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_twobj"]
 [ext_resource type="PackedScene" uid="uid://c03bn4ttox6bm" path="res://scenes/build_phase/build_phase.tscn" id="1_v80fr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4tvajj0c08u7" path="res://menus/title/title.tscn" id="3_lrpwh"]
 [ext_resource type="PackedScene" uid="uid://bsehu8h5432ef" path="res://scenes/dialog_system/scenes/dialog_system.tscn" id="5_u6pyg"]
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/transition_wall.gd" id="6_g2gvs"]
+[ext_resource type="PackedScene" uid="uid://c0v46wm86qer8" path="res://scenes/global_sound_manager/scenes/global_sound_manager.tscn" id="7_k6mp8"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_twobj")
@@ -31,3 +32,5 @@ offset_bottom = 737.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("6_g2gvs")
 darkening_speed = 0.1
+
+[node name="sound_manager" parent="." instance=ExtResource("7_k6mp8")]

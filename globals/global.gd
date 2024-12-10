@@ -21,3 +21,6 @@ var destination_room: SnapTargetNode = null
 
 ##stores the reference to the in game dialog system
 var dialog_system: Dialogsystem = null
+
+##stores the reference to the global sound manager
+var global_sound_manager: SoundManager = null

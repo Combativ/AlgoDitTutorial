@@ -27,14 +27,14 @@ func _initialize() -> void:
 	set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
 	$"DoorNumber/Hitbox & Image".disabled = true
 	self.audioplayer.stream = self.sound
-	self.get_door_hitbox().pressed.connect(self.audioplayer.play)
+	#self.get_door_hitbox().pressed.connect(self.audioplayer.play)
 
 func _process(delta: float) -> void:
 	if(muted and self.get_door_hitbox().pressed.is_connected(self.audioplayer.play)):
 		self.get_door_hitbox().pressed.disconnect(self.audioplayer.play)
 	elif(!muted and !self.get_door_hitbox().pressed.is_connected(self.audioplayer.play)):
 		self.get_door_hitbox().pressed.connect(self.audioplayer.play)
-
+	
 #getter and setter
 ####################################################################################################
 
@@ -119,3 +119,7 @@ func mute() -> void:
 ##unmutes the door's sound
 func unmute() -> void:
 	self.muted = false
+
+##returns true if the audio player is muted, false otherwise
+func is_muted() -> bool:
+	return self.muted

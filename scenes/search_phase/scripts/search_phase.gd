@@ -3,17 +3,24 @@ class_name SearchPhase
 
 @onready var main = $".."
 @export var transition_time: float
+@onready var room: Room = $Room
+@onready var letter: Letter = $Letter
 
 #getter and setter
 ####################################################################################################
 
 ##returns the letter of the search phase (bottom left corner)
 func get_letter() -> Letter:
-	return $Letter
+	return self.letter
+
+##returns the room of the search phase
+func get_room() -> Room:
+	return self.room
 
 ##returns the of room visited the last time the search phase was used (0 if the search phase wasn´t used yet)
 static func get_move_counter() -> int:
 	return Global.path_tracker.size()
+
 
 #methods
 ####################################################################################################
@@ -53,14 +60,26 @@ static func create_destination_room(random_destination_room_generating: bool) ->
 
 ##blocks every single button of this phase (incl. switch_phase button)
 func lock() -> void:
-	$Room.lock()
+	room.lock()
 	$SwitchPhase.disabled = true
 	
 ##releases the buttons of this phase
 func release() -> void: 
-	$Room.release()
+	room.release()
 	$SwitchPhase.disabled = false
 
 ##makes the screen black for almost the time transferred 
 func transition(seconds: float) -> void:
 	$"../TransitionWall".transition(seconds)
+
+##mutes all sounds of the search phase
+func mute() -> void:
+	self.get_room().mute()
+
+##unmutes all sounds of the search phase
+func unmute() -> void: 
+	self.get_room().unmute()
+
+##returns true if the audio player is muted, false otherwise
+func is_muted() -> bool:
+	return room.is_muted()
