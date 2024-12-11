@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl6uc8stf5vfp"
-path="res://.godot/imported/Bilderrahmen.png-c65a3632666328bb66e992ae0c2b61cf.ctex"
+path="res://.godot/imported/Picture_v02.png-0746dc41daf0f4f70783708ed3e8f3c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art_assets/Bilderrahmen.png"
-dest_files=["res://.godot/imported/Bilderrahmen.png-c65a3632666328bb66e992ae0c2b61cf.ctex"]
+source_file="res://scenes/search_phase/art/Picture_v02.png"
+dest_files=["res://.godot/imported/Picture_v02.png-0746dc41daf0f4f70783708ed3e8f3c7.ctex"]
 
 [params]
 

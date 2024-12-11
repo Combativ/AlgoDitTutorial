@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0v46wm86qer8"]
+[gd_scene load_steps=5 format=3 uid="uid://c0v46wm86qer8"]
 
 [ext_resource type="Texture2D" uid="uid://ihuo4w4pefm2" path="res://scenes/global_sound_manager/art_assets/Lautsprecher.png" id="1_1pc6v"]
 [ext_resource type="Script" path="res://scenes/global_sound_manager/scripts/global_sound_manager.gd" id="1_pry1k"]
+[ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_o31qo"]
+[ext_resource type="AudioStream" uid="uid://dch5q2holvetv" path="res://scenes/global_sound_manager/sounds/WhiteNoise2.wav" id="3_scno4"]
 
 [node name="sound_manager" type="Control"]
 layout_mode = 3
@@ -12,10 +14,16 @@ script = ExtResource("1_pry1k")
 
 [node name="(un-)mute_button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1204.0
+offset_left = 1197.0
 offset_top = 21.0
-offset_right = 1913.0
-offset_bottom = 575.0
+offset_right = 2000.0
+offset_bottom = 674.0
 scale = Vector2(0.075, 0.075)
 keep_pressed_outside = true
 texture_normal = ExtResource("1_1pc6v")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="global_white_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_scno4")
+script = ExtResource("3_o31qo")

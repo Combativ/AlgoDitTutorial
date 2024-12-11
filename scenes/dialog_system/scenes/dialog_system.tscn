@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/database.gd" id="1_23t7t"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/dialog_system.gd" id="1_wxxts"]
-[ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="3_fe838"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_nxrd8"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/text_box.gd" id="3_qjwsw"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button.gd" id="5_840j7"]
+[ext_resource type="Texture2D" uid="uid://wreyh5unmm31" path="res://scenes/dialog_system/art/Postkarte.png" id="5_wyvk3"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button_2.gd" id="6_qpihx"]
 
 [node name="dialog_system" type="Node2D"]
@@ -22,7 +22,8 @@ script = ExtResource("3_nxrd8")
 script = ExtResource("3_qjwsw")
 
 [node name="Text_box_img" type="Sprite2D" parent="Text_box"]
-texture = ExtResource("3_fe838")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_wyvk3")
 offset = Vector2(288, 217)
 
 [node name="MarginContainer" type="MarginContainer" parent="Text_box/Text_box_img"]

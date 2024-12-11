@@ -11,10 +11,13 @@ var texture_unmuted: Texture2D = preload("res://scenes/global_sound_manager/art_
 var texture_muted: Texture2D = preload("res://scenes/global_sound_manager/art_assets/Durchgestrichener_Lautsprecher.png")
 
 @onready var mute_button: TextureButton = $"(un-)mute_button"
+@onready var global_white_noise_player: AudioPlayer = $global_white_noise
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mute_button.pressed.connect(switch_status)
+	global_white_noise_player.play()
+	global_white_noise_player.finished.connect(func(): global_white_noise_player.play(0.0))
 	pass # Replace with function body.
 
 
@@ -23,11 +26,15 @@ func _process(delta: float) -> void:
 	if(globally_muted and !is_muted()):
 		dialog_system.get_audio_player().mute()
 		search_phase.mute()
+		global_white_noise_player.mute()
+		
 		mute_button.texture_normal = texture_muted
 		mute_button.texture_hover = texture_unmuted
 	elif (!globally_muted):
 		dialog_system.get_audio_player().unmute()
 		search_phase.unmute()
+		global_white_noise_player.unmute()
+		
 		mute_button.texture_normal = texture_unmuted
 		mute_button.texture_hover = texture_muted
 	pass
