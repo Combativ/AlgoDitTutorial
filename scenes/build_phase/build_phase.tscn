@@ -22,10 +22,12 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Search Phase
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="InputLock" type="Button" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
+z_index = 999
 offset_left = -40.0
 offset_top = -40.0
 offset_right = 1320.0

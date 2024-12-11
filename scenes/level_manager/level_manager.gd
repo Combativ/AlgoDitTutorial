@@ -33,6 +33,8 @@ func _ready() -> void:
 	var level5_3: Node2D = LEVEL_05_3.instantiate()
 	
 	
+	#Global.dialog_system.play(introduction_01)
+	
 	load_level(level1)
 	await SignalBus.level_finished
 	load_level(level2)
@@ -55,9 +57,12 @@ func _ready() -> void:
 
 
 
+
+
 func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("ui_focus_next")):
 		SignalBus.level_finished.emit()
+
 
 
 func load_level(level: Node2D):
@@ -66,5 +71,6 @@ func load_level(level: Node2D):
 		if child is Level:
 			child.queue_free()
 	
+	Global.destination_room = null
 	build_phase.add_child(level)
 	build_phase.move_child(level, 0)
