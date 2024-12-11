@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ihuo4w4pefm2"
-path="res://.godot/imported/Lautsprecher.png-f1a8c7771f071b2dd5a04ef4d23187ee.ctex"
+uid="uid://w0r2dehouof3"
+path="res://.godot/imported/locked_door_accessory.png-0ecf7bbcf6c5f8248dbed3cd0050e5b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/global_sound_manager/art_assets/Lautsprecher.png"
-dest_files=["res://.godot/imported/Lautsprecher.png-f1a8c7771f071b2dd5a04ef4d23187ee.ctex"]
+source_file="res://scenes/search_phase/art/locked_door_accessory.png"
+dest_files=["res://.godot/imported/locked_door_accessory.png-0ecf7bbcf6c5f8248dbed3cd0050e5b9.ctex"]
 
 [params]
 

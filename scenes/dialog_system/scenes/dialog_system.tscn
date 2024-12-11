@@ -19,10 +19,11 @@ script = ExtResource("1_23t7t")
 script = ExtResource("3_nxrd8")
 
 [node name="Text_box" type="CharacterBody2D" parent="."]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("3_qjwsw")
 
 [node name="Text_box_img" type="Sprite2D" parent="Text_box"]
-scale = Vector2(0.5, 0.5)
+position = Vector2(130, 51)
 texture = ExtResource("5_wyvk3")
 offset = Vector2(288, 217)
 
@@ -30,23 +31,23 @@ offset = Vector2(288, 217)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 1.0
-offset_right = -1.0
-offset_bottom = 1.0
+offset_left = -212.0
+offset_top = -83.0
+offset_right = -212.0
+offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_right = 350
 theme_override_constants/margin_bottom = 50
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Text_box/Text_box_img/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
 
 [node name="Button" type="Button" parent="."]
-visible = false
 offset_left = 848.0
 offset_top = -736.0
 offset_right = 981.0
@@ -56,7 +57,6 @@ text = "Dialog up
 script = ExtResource("5_840j7")
 
 [node name="Button2" type="Button" parent="."]
-visible = false
 offset_left = 861.0
 offset_top = -612.0
 offset_right = 978.0

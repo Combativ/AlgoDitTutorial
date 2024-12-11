@@ -71,12 +71,12 @@ func set_door_node(node: SnapTargetNode) -> void:
 ##sets the door´s texture to the new texture2D
 ##take care of the format of the new texture (1008 px)
 func set_img(img: Texture2D) -> void:
-	$"Hitbox & Image".set_texture_normal(img)
+	door_hitbox.set_texture_normal(img)
 	
 ##sets the door´s texture - if the mouse hovers about the door - to the new texture2D
 ##take care, that the format is the same as for the normal texture (1008 px) 
 func set_img_hover(img: Texture2D) -> void:
-	$"Hitbox & Image".set_texture_hover(img)
+	door_hitbox.set_texture_hover(img)
 	
 ##sets the doorplate´s texture to the new texture2D
 func set_img_doorplate(img: Texture2D) -> void:
@@ -94,9 +94,11 @@ func update() -> void:
 	if self.door_node != null:
 		set_number(self.door_node.get_number())
 		door_hitbox.set_disabled(false)
+		$Planks.hide()
 	else:
 		door_number.text = ""
 		door_hitbox.set_disabled(true)
+		$Planks.show()
 	
 ##uses the method "move_to_room" from the Room class and hands over it´s own door_node
 func move_trough_door() -> void:

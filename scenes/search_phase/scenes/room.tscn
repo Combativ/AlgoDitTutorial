@@ -14,11 +14,11 @@ scale = Vector2(0.498857, 0.500416)
 texture = ExtResource("2_07f0h")
 
 [node name="DoorRight" parent="." instance=ExtResource("1_7lnf2")]
-position = Vector2(604, 210)
+position = Vector2(579, 211)
 scale = Vector2(0.3, 0.3)
 
 [node name="DoorLeft" parent="." instance=ExtResource("1_7lnf2")]
-position = Vector2(234, 208)
+position = Vector2(218, 210)
 scale = Vector2(0.3, 0.3)
 
 [node name="Picture" parent="." instance=ExtResource("4_b34m5")]

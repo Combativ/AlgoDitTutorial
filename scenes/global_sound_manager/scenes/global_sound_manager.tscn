@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0v46wm86qer8"]
 
-[ext_resource type="Texture2D" uid="uid://ihuo4w4pefm2" path="res://scenes/global_sound_manager/art_assets/Lautsprecher.png" id="1_1pc6v"]
 [ext_resource type="Script" path="res://scenes/global_sound_manager/scripts/global_sound_manager.gd" id="1_pry1k"]
+[ext_resource type="Texture2D" uid="uid://d0uhn2xtgkx1" path="res://scenes/global_sound_manager/art_assets/sound_on.png" id="2_3rvwp"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_o31qo"]
 [ext_resource type="AudioStream" uid="uid://dch5q2holvetv" path="res://scenes/global_sound_manager/sounds/WhiteNoise2.wav" id="3_scno4"]
 
@@ -21,7 +21,7 @@ offset_right = 2000.0
 offset_bottom = 674.0
 scale = Vector2(0.075, 0.075)
 keep_pressed_outside = true
-texture_normal = ExtResource("1_1pc6v")
+texture_normal = ExtResource("2_3rvwp")
 ignore_texture_size = true
 stretch_mode = 3
 

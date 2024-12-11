@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxk0vcdmjjrxc"]
 
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/picture.gd" id="1_mdc0d"]
-[ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="2_p6ww2"]
+[ext_resource type="Texture2D" uid="uid://c1llf5a13g8p5" path="res://scenes/search_phase/art/Picture_v03.png" id="2_75tmj"]
 
 [node name="Picture" type="Node2D"]
 script = ExtResource("1_mdc0d")
@@ -16,14 +16,15 @@ color = Color(0, 0, 0, 1)
 [node name="Hitbox & Image" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture_normal = ExtResource("2_p6ww2")
+texture_normal = ExtResource("2_75tmj")
 
 [node name="PictureNumber" type="Label" parent="."]
-offset_left = 206.0
-offset_top = 122.0
-offset_right = 307.0
-offset_bottom = 266.0
+offset_left = 109.0
+offset_top = 109.0
+offset_right = 346.0
+offset_bottom = 253.0
 scale = Vector2(1.5, 1.5)
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 100
 text = "-1
 "

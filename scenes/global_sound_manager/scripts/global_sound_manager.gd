@@ -7,8 +7,8 @@ class_name SoundManager
 
 @export var globally_muted: bool
 
-var texture_unmuted: Texture2D = preload("res://scenes/global_sound_manager/art_assets/Lautsprecher.png")
-var texture_muted: Texture2D = preload("res://scenes/global_sound_manager/art_assets/Durchgestrichener_Lautsprecher.png")
+var texture_unmuted: Texture2D = preload("res://scenes/global_sound_manager/art_assets/sound_on.png")
+var texture_muted: Texture2D = preload("res://scenes/global_sound_manager/art_assets/sound_off.png")
 
 @onready var mute_button: TextureButton = $"(un-)mute_button"
 @onready var global_white_noise_player: AudioPlayer = $global_white_noise
@@ -29,14 +29,12 @@ func _process(delta: float) -> void:
 		global_white_noise_player.mute()
 		
 		mute_button.texture_normal = texture_muted
-		mute_button.texture_hover = texture_unmuted
 	elif (!globally_muted):
 		dialog_system.get_audio_player().unmute()
 		search_phase.unmute()
 		global_white_noise_player.unmute()
 		
 		mute_button.texture_normal = texture_unmuted
-		mute_button.texture_hover = texture_muted
 	pass
 
 #methods
