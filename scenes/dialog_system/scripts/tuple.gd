@@ -2,13 +2,13 @@ extends Node
 class_name  Tuple
 	
 var text: String
-var sound_path: String
+var sound: AudioStream
 
 ####################################################################################################
 ##initialize tuple that stores the transferred values
-func _init(text: String, sound_path: String) -> void:
+func _init(text: String, sound: AudioStream) -> void:
 	self.text = text
-	self.sound_path = sound_path
+	self.sound = sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,9 +27,9 @@ func get_text() -> String:
 	return self.text
 
 ##returns the sound path, stored in this tuple
-func get_sound_path() -> String:
-	return self.sound_path
+func get_sound() -> AudioStream:
+	return self.sound
 	
 ##sets the stored text of this tuple to the transferred value
-func set_text(new_text: String) -> void:
-	self.text = new_text
+#func set_text(new_text: String) -> void:
+#	self.text = new_text

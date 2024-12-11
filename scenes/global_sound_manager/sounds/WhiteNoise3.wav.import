@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bge3o80hwq0v2"
-path="res://.godot/imported/WhiteNoise3.wav-5e2ea8fd607fbab7df6aed9cee6dacd3.sample"
+path="res://.godot/imported/WhiteNoise3.wav-77aeef5c1970523d7f8b3589b5dfa59c.sample"
 
 [deps]
 
-source_file="res://sounds/WhiteNoise3.wav"
-dest_files=["res://.godot/imported/WhiteNoise3.wav-5e2ea8fd607fbab7df6aed9cee6dacd3.sample"]
+source_file="res://scenes/global_sound_manager/sounds/WhiteNoise3.wav"
+dest_files=["res://.godot/imported/WhiteNoise3.wav-77aeef5c1970523d7f8b3589b5dfa59c.sample"]
 
 [params]
 

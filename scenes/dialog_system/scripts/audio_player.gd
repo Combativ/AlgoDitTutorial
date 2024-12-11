@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		self.volume_db = -80
 	elif(!muted and volume_db != volume):
 		self.volume_db = volume
+	
 	pass
 
 #methods
@@ -46,7 +47,7 @@ func continue_playing() -> void:
 	self.stream_paused = false
 	self.playing_continued.emit()
 	
-##dinishes playing
+##finishes playing
 ##emits signal: finished
 func skip():
 	self.finished.emit()
