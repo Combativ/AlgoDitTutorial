@@ -47,7 +47,6 @@ func _ready() -> void:
 	
 	# LEVEL FUNCTIONS
 	if (lock_predefined_nodes_in_tree == true):
-		await main.ready
 		for child in Helper.get_all_children(self):
 			if (child is SnapTarget && child.snapperObject != null):
 				child.snapperObject.get_node("DragMask").disabled = true
@@ -60,5 +59,4 @@ func _ready() -> void:
 				Helper.enable_and_show_node(child)
 	
 	if (start_in_search_phase == true):
-		await main.ready
 		main.switch_to_search_phase()
