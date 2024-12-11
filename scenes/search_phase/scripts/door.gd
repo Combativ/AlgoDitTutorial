@@ -7,6 +7,11 @@ class_name Door
 @onready var door_number: Label = $"DoorNumber/PictureNumber"
 ##stores a reference to the TextureButton used for the door´s hitbox and texture
 @onready var door_hitbox: TextureButton = $"Hitbox & Image"
+##stores a reference to this door's AudioStreamPlayer2D
+@onready var audioplayer: AudioStreamPlayer2D = $AudioStreamPlayer2D
+##sound that is played when moving through the door
+@export var sound: AudioStream
+@export var muted: bool
 
 
 ####################################################################################################
@@ -21,6 +26,14 @@ func _initialize() -> void:
 	set_img_hover($"../../Controller".DOOR_IMG_HOVER)
 	set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
 	$"DoorNumber/Hitbox & Image".disabled = true
+	self.audioplayer.stream = self.sound
+	self.get_door_hitbox().pressed.connect(self.audioplayer.play)
+
+func _process(delta: float) -> void:
+	if(muted and self.get_door_hitbox().pressed.is_connected(self.audioplayer.play)):
+		self.get_door_hitbox().pressed.disconnect(self.audioplayer.play)
+	elif(!muted and !self.get_door_hitbox().pressed.is_connected(self.audioplayer.play)):
+		self.get_door_hitbox().pressed.connect(self.audioplayer.play)
 
 #getter and setter
 ####################################################################################################
@@ -40,6 +53,10 @@ func get_door_label() -> Label:
 ##returns the hitbox of the door
 func get_door_hitbox() -> TextureButton:
 	return self.door_hitbox
+
+##returns this door's AudioStreamPlayer2D
+func get_audio_player() -> AudioStreamPlayer2D:
+	return self.audioplayer
 
 ##sets the door number to the new integer
 func set_number(number: int):
@@ -64,6 +81,10 @@ func set_img_hover(img: Texture2D) -> void:
 ##sets the doorplate´s texture to the new texture2D
 func set_img_doorplate(img: Texture2D) -> void:
 	$"DoorNumber/Hitbox & Image".set_texture_normal(img)
+
+##sets this door's audio player to the transferred one
+func set_audio_player(new_player: AudioStreamPlayer2D) -> void:
+	self.audioplayer = new_player
 	
 #methods
 ####################################################################################################	
@@ -84,9 +105,17 @@ func move_trough_door() -> void:
 ##blocks every button of this object
 ## disabled = true
 func lock() -> void:
-	$"Hitbox & Image".disabled = true
+	self.get_door_hitbox().disabled = true
 
 ##releases the buttons (buttons can be used again)
 ## disabled = false
 func release() -> void:
-	$"Hitbox & Image".disabled = false
+	self.get_door_hitbox().disabled = false
+
+##mutes the door's sound
+func mute() -> void:
+	self.muted = true
+
+##unmutes the door's sound
+func unmute() -> void:
+	self.muted = false

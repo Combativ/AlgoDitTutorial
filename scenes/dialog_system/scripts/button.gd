@@ -5,4 +5,9 @@ extends Button
 func _ready() -> void:
 	self.pressed.connect($"..".slide_up)
 	self.pressed.connect($"..".test)
+	self.pressed.connect(tuple)
 	pass # Replace with function body.
+
+func tuple():
+	print($"..".get_database().test_tuple.get_text())
+	print($"..".get_database().test_tuple.get_sound_path())
