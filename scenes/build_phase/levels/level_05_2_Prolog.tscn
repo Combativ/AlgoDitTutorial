@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://n2liaj1xpsip" path="res://scenes/build_phase/scenes/inventory.tscn" id="4_rf5b6"]
 [ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://scenes/build_phase/scenes/room_miniature.tscn" id="5_dvfrf"]
 
-[node name="Level05" type="Node2D"]
+[node name="Level05_2_Prolog" type="Node2D"]
 script = ExtResource("1_4aqdr")
 lock_predefined_nodes_in_tree = true
 

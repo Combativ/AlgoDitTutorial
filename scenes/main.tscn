@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://caglc8uk2g50v"]
+[gd_scene load_steps=9 format=3 uid="uid://caglc8uk2g50v"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_twobj"]
 [ext_resource type="PackedScene" uid="uid://c03bn4ttox6bm" path="res://scenes/build_phase/build_phase.tscn" id="1_v80fr"]
 [ext_resource type="PackedScene" uid="uid://bqbncjj6167a6" path="res://scenes/search_phase/scenes/search_phase.tscn" id="2_fxd7f"]
 [ext_resource type="PackedScene" uid="uid://b4tvajj0c08u7" path="res://menus/title/title.tscn" id="3_lrpwh"]
 [ext_resource type="PackedScene" uid="uid://bsehu8h5432ef" path="res://scenes/dialog_system/scenes/dialog_system.tscn" id="5_u6pyg"]
+[ext_resource type="Script" path="res://scenes/level_manager.gd" id="6_6mlcy"]
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/transition_wall.gd" id="6_g2gvs"]
 [ext_resource type="PackedScene" uid="uid://c0v46wm86qer8" path="res://scenes/global_sound_manager/scenes/global_sound_manager.tscn" id="7_k6mp8"]
 
@@ -24,6 +25,9 @@ visibility_layer = 2
 position = Vector2(281, 773)
 distance = 500
 
+[node name="LevelManager" type="Node2D" parent="."]
+script = ExtResource("6_6mlcy")
+
 [node name="TransitionWall" type="ColorRect" parent="."]
 visible = false
 visibility_layer = 24
@@ -34,3 +38,4 @@ script = ExtResource("6_g2gvs")
 darkening_speed = 0.1
 
 [node name="sound_manager" parent="." instance=ExtResource("7_k6mp8")]
+metadata/_edit_use_anchors_ = true
