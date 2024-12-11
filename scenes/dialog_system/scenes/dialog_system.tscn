@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/database.gd" id="1_23t7t"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/dialog_system.gd" id="1_wxxts"]
 [ext_resource type="Texture2D" uid="uid://dbdiswrgslihs" path="res://scenes/search_phase/art/Picture_v01.png" id="3_fe838"]
-[ext_resource type="Script" path="res://scenes/dialog_system/audio_player.gd" id="3_nxrd8"]
+[ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_nxrd8"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/text_box.gd" id="3_qjwsw"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button.gd" id="5_840j7"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button_2.gd" id="6_qpihx"]
@@ -45,6 +45,7 @@ layout_mode = 2
 theme_override_font_sizes/normal_font_size = 20
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 848.0
 offset_top = -736.0
 offset_right = 981.0
@@ -54,6 +55,7 @@ text = "Dialog up
 script = ExtResource("5_840j7")
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 offset_left = 861.0
 offset_top = -612.0
 offset_right = 978.0

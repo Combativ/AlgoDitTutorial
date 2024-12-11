@@ -18,12 +18,12 @@ class_name Controller
 		return PICTURE_IMG
 
 #Door
-@export var DOOR_IMG_NORMAL: Texture2D =  preload("res://scenes/search_phase/art/Door_v009.png"):
+@export var DOOR_IMG_NORMAL: Texture2D =  preload("res://scenes/search_phase/art/tur_zu.png"):
 	set(img):
 		DOOR_IMG_NORMAL = img
 	get():
 		return DOOR_IMG_NORMAL
-@export var DOOR_IMG_HOVER: Texture2D = preload("res://scenes/search_phase/art/Door_v009.png"):
+@export var DOOR_IMG_HOVER: Texture2D = preload("res://scenes/search_phase/art/tur_auf.png"):
 	set(img):
 		DOOR_IMG_HOVER = img
 	get():

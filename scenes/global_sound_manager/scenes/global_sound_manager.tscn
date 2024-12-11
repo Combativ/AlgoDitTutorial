@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0v46wm86qer8"]
+
+[ext_resource type="Texture2D" uid="uid://ihuo4w4pefm2" path="res://scenes/global_sound_manager/art_assets/Lautsprecher.png" id="1_1pc6v"]
+[ext_resource type="Script" path="res://scenes/global_sound_manager/scripts/global_sound_manager.gd" id="1_pry1k"]
+
+[node name="sound_manager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pry1k")
+
+[node name="(un-)mute_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1204.0
+offset_top = 21.0
+offset_right = 1913.0
+offset_bottom = 575.0
+scale = Vector2(0.075, 0.075)
+keep_pressed_outside = true
+texture_normal = ExtResource("1_1pc6v")
