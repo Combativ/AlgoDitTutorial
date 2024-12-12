@@ -21,7 +21,9 @@ func get_room() -> Room:
 static func get_move_counter() -> int:
 	return Global.path_tracker.size()
 
-
+##returns the time the transition stays in pure black screen
+func get_transition_time() -> float:
+	return self.transition_time
 #methods
 ####################################################################################################
 

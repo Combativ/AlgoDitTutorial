@@ -2,7 +2,7 @@ extends Node2D
 class_name Dialogsystem
 
 ##emits, when skip_key is pressed (once per press)
-signal skip
+signal skipped
 ##emits, when the writing animation has finished or got skipped
 signal writing_done
 
@@ -94,10 +94,10 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	#connecting and disconnecting skip operation
-	if writing && !skip.is_connected(skip_text):
-		skip.connect(skip_text)
-	elif !writing && skip.is_connected(skip_text):
-		skip.disconnect(skip_text)
+	if writing && !skipped.is_connected(skip_text):
+		skipped.connect(skip_text)
+	elif !writing && skipped.is_connected(skip_text):
+		skipped.disconnect(skip_text)
 	
 	#writing animation
 	if writing && index !=  self.text.length()-1:
@@ -110,7 +110,7 @@ func _process(delta: float) -> void:
 	#skip input logic
 	if Input.is_key_pressed(self.skip_key) && !key_pressed:
 		key_pressed = true
-		skip.emit()
+		skipped.emit()
 	elif !Input.is_key_pressed(self.skip_key) && key_pressed:
 		key_pressed = false
 		
@@ -183,6 +183,49 @@ func _write_next() -> void:
 func skip_text() -> void:
 	set_text(self.text)
 	self.index = self.text.length()-1
+
+##skips the writing animation and the voice track
+##emits signal: self.skipped
+##emits signal: self.get_audio_player().finished
+func skip() -> void:
+	self.skip_text()
+	self.get_audio_player().skip()
+
+##locks the scenes and slides up the text_box
+##plays a single couple of text and speech
+##emits signal: self.writing_done when the wrtie animation finishes
+##emits signal: self.get_audio_player().finished when the voice track finishes or is skipped
+##slides down the text_box and releases the scenes
+func play(couple: Tuple) -> void:
+	var array: Array[Tuple] = [couple]
+	self.play_sequence(array)
+	pass
+
+##locks the scenes and slides up the text_box
+##plays all couples of text and speech of the array in order, waits for skip-key-input after every couple
+##emits signal: self.writing_done whenever the wrtie animation finishes
+##emits signal: self.get_audio_player().finished whenever the voice track finishes or is skipped
+##slides down the text_box and releases the scenes
+func play_sequence(couple_array: Array[Tuple]) -> void:
+	$"..".build_phase.lock()
+	$"..".search_phase.lock()
+	
+	self.slide_up()
+	
+	for i in range(len(couple_array)):
+		self.write(couple_array[i].get_text())
+		self.audio_player.stream = couple_array[i].get_sound()
+		self.audio_player.play()
+		
+		await self.writing_done
+		await self.get_audio_player().finished
+		await self.skip
+	
+	self.slide_down()
+	
+	$"..".build_phase.release()
+	$"..".search_phase.release()
+	pass
 
 ##slides up the dialog system
 func slide_up() -> void:

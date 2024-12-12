@@ -2,6 +2,12 @@ extends Node
 
 var text_test: String = "Test for Database"
 
+var test_array: Array[Tuple] = [self.introduction_01, 
+								self.introduction_02, 
+								self.introduction_03,
+								self.introduction_04]
+
+
 var introduction_01: Tuple = Tuple.new("Hallöchen und Herzlich Willkommen in meinem kleinen Tutorial zu AVL-Bäumen.", null)
 var introduction_02: Tuple = Tuple.new("Ich erkläre dir heute alles, was du zu diesen wundersamen Bäumen wissen musst.", null)
 var introduction_03: Tuple = Tuple.new("Um das Tutorial zu starten, so klicke bitte einmal auf die LINKE TÜR.", null)
