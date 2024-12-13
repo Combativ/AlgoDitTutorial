@@ -129,5 +129,59 @@ var level_03_2_07: Tuple = Tuple.new("Alles an seinem Platz – ein wahres Kunst
 var level_03_2_08: Tuple = Tuple.new("Ach warte… ich hab gerade gemerkt, dass wir einen letzten Test machen müssen, um sicherzugehen, dass alles wirklich korrekt ist.", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice53_00007649.wav"))
 
 var level_03_2_09: Tuple = Tuple.new("Deine letzte Aufgabe für dieses Level: Finde die 95!", preload("res://scenes/dialog_system/voicelines/level3_2/search/AlgoditVoice54_00007876.wav"))
-var level_03_2_10: Tuple = Tuple.new("", null)
-var level_03_2_11: Tuple = Tuple.new("", null)
+
+var A_level_04_1_01: Array[Tuple] = [self.level_04_1_01,
+									self.level_04_1_02,
+									self.level_04_1_03,
+									self.level_04_1_04,
+									self.level_04_1_05,
+									self.level_04_1_06,
+									self.level_04_1_07,
+									self.level_04_1_08]
+var A_level_04_1_02: Array[Tuple] = [self.level_04_1_09,
+									self.level_04_1_10,
+									self.level_04_1_11]
+
+
+var level_04_1_01: Tuple = Tuple.new("Sieh dir die 60 an.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice55_00008161.wav"))
+var level_04_1_02: Tuple = Tuple.new("Die ist der Übeltäter hier!", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice56_00008223.wav"))
+var level_04_1_03: Tuple = Tuple.new("Sie sorgt dafür, dass ihr rechter Teilbaum viel tiefer ist als ihr linker.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice57_00008288.wav"))
+var level_04_1_04: Tuple = Tuple.new("Was wir hier brauchen, ist eine sogenannte LINKS-ROTATION.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice58_00008389.wav"))
+var level_04_1_05: Tuple = Tuple.new("Eine Links-Rotation führst du aus, indem du:", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice59_00008495.wav"))
+var level_04_1_06: Tuple = Tuple.new("- mit deiner Maus über die 60 hoverst und auf den linken Pfeil klickst, welcher erscheint", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice60_00008580.wav"))
+var level_04_1_07: Tuple = Tuple.new("Eine linke Rotation bedeutet, dass die 80 die neue Wurzel wird, die 60 ihr linkes Kind, und die 70 bleibt einfach an ihrem Platz.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice61_00008857.wav"))
+var level_04_1_08: Tuple = Tuple.new("Dadurch gelangt unser Baum ins Gleichgewicht.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice62_00009135.wav"))
+
+var level_04_1_09: Tuple = Tuple.new("So – Unser Baum ist jetzt balanciert.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice63_00009254.wav"))
+var level_04_1_10: Tuple = Tuple.new("Zum Abschluss will ich sicherstellen, dass du die 60 findest.", preload("res://scenes/dialog_system/voicelines/level4/search/AlgoditVoice64_00009413.wav"))
+
+var A_level_04_2_01: Array[Tuple] = [self.level_04_2_01,
+									self.level_04_2_02,
+									self.level_04_2_03,
+									self.level_04_2_04]
+var A_level_04_2_02: Array[Tuple] = [self.level_04_2_05,
+									self.level_04_2_06,
+									self.level_04_2_07]
+var A_level_04_2_03: Array[Tuple] = [self.level_04_2_08,
+									self.level_04_2_09,
+									self.level_04_2_10]
+var A_level_04_2_04: Array[Tuple] = [self.level_04_2_11]
+
+var level_04_2_01: Tuple = Tuple.new("Ahhh ein Wundervoller Baum.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice65_00009728.wav"))
+var level_04_2_02: Tuple = Tuple.new("Ach, nein warte, warum ist die 1 denn da unten?", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice66_00009803.wav"))
+var level_04_2_03: Tuple = Tuple.new("Zieh sie mal in den Baum,", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice67_00009906.wav"))
+var level_04_2_04: Tuple = Tuple.new("... wir müssen ihn dann zwar balancieren, aber wir als Team kriegen das hin!", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice68_00009961.wav"))
+
+var level_04_2_05: Tuple = Tuple.new("Wir müssen hier nun eine Rechts-Rotation der 30 durchführen, da ihr linkes Kind 2 Ebenen tiefer reicht, als ihr rechtes Kind.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice69_00010181.wav"))
+var level_04_2_06: Tuple = Tuple.new("Das Prinzip ist genau das gleiche, nur spiegelverkehrt", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice70_00010449.wav"))
+var level_04_2_07: Tuple = Tuple.new("Bei einer rechten Rotation wird der linke Knoten zur neuen Wurzel. Die 20 wird also die neue Wurzel, die 30 wird ihr rechtes Kind, und die 27 wird nun linkes Kind der 30.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice71_00010555.wav"))
+
+var level_04_2_08: Tuple = Tuple.new("Perfekt! Der Baum ist jetzt wunderschön ausgeglichen.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice72_00010870.wav"))
+var level_04_2_09: Tuple = Tuple.new("Kannst du die Harmonie spüren?", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice73_00010987.wav"))
+var level_04_2_10: Tuple = Tuple.new("Und jetzt einmal in die Suchphase!", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice74_00011088.wav"))
+
+var level_04_2_11: Tuple = Tuple.new("Sooo und jetzt nurnoch die 27 finden.", preload("res://scenes/dialog_system/voicelines/level4_2/search/AlgoditVoice75_00011179.wav"))
+
+
+var level_04_2_12: Tuple = Tuple.new("", null)
+var level_04_2_13: Tuple = Tuple.new("", null)
