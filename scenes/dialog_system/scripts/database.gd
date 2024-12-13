@@ -1,6 +1,7 @@
 extends Node
 
-var text_test: String = "Test for Database"
+var special_interaction_01: Tuple = Tuple.new("Ja, genau so!", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice46.wav"))
+var special_interaction_02: Tuple = Tuple.new("Perfekt!", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice48_00007116.wav"))
 
 var A_level_01_01: Array[Tuple] = [	self.level_01_01, 
 									self.level_01_02, 
@@ -106,8 +107,27 @@ var level_03_1_04: Tuple = Tuple.new("Einige Knoten sind völlig durcheinander."
 
 var A_level_03_2_01: Array[Tuple] = [self.level_03_2_01, 
 									self.level_03_2_02,  
-									self.level_03_1_03, 
-									self.level_03_1_04]
+									self.level_03_1_03]
+var A_level_03_2_02: Array[Tuple] = [self.special_interaction_01, 
+									self.level_03_2_04]
+var A_level_03_2_03: Array[Tuple] = [self.level_03_2_05, 
+									self.special_interaction_02]
+var A_level_03_2_04: Array[Tuple] = [self.level_03_2_06, 
+									self.level_03_2_07,
+									self.level_03_2_08]
+var A_level_03_2_05: Array[Tuple] = [self.level_03_2_09]
 
-var level_03_2_01: Tuple = Tuple.new("", null)
-var level_03_2_02: Tuple = Tuple.new("", null)
+var level_03_2_01: Tuple = Tuple.new("Ich habe die schlimmsten Übeltäter mal in dein Inventar gepackt.", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice43_00006571.wav"))
+var level_03_2_02: Tuple = Tuple.new("Dein Job ist es jetzt, den Baum so zu sortieren, dass er wieder seine wunderschöne Ordnung zurückbekommt.", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice44_00006644.wav"))
+var level_03_2_03: Tuple = Tuple.new("Denk daran: Links kommen die kleineren Zahlen, rechts die größeren.", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice45_00006780.wav"))
+
+var level_03_2_04: Tuple = Tuple.new("Die 25 gehört nach links...", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice47_00007056.wav"))
+var level_03_2_05: Tuple = Tuple.new("Und jetzt die 80… ohh, ich sollte dich einstellen!", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice49_00007157.wav"))
+
+var level_03_2_06: Tuple = Tuple.new("Schau dir das an!", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice51_00007480.wav"))
+var level_03_2_07: Tuple = Tuple.new("Alles an seinem Platz – ein wahres Kunstwerk!", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice52_00007527.wav"))
+var level_03_2_08: Tuple = Tuple.new("Ach warte… ich hab gerade gemerkt, dass wir einen letzten Test machen müssen, um sicherzugehen, dass alles wirklich korrekt ist.", preload("res://scenes/dialog_system/voicelines/level3_2/build/AlgoditVoice53_00007649.wav"))
+
+var level_03_2_09: Tuple = Tuple.new("Deine letzte Aufgabe für dieses Level: Finde die 95!", preload("res://scenes/dialog_system/voicelines/level3_2/search/AlgoditVoice54_00007876.wav"))
+var level_03_2_10: Tuple = Tuple.new("", null)
+var level_03_2_11: Tuple = Tuple.new("", null)
