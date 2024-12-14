@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wreyh5unmm31"
-path="res://.godot/imported/Postkarte.png-d449d915f630f3ad08628bfcecba1872.ctex"
+path="res://.godot/imported/text_box.png-150bbad048925b1c26be1b2bf9b74285.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/dialog_system/art/Postkarte.png"
-dest_files=["res://.godot/imported/Postkarte.png-d449d915f630f3ad08628bfcecba1872.ctex"]
+source_file="res://scenes/dialog_system/art/text_box.png"
+dest_files=["res://.godot/imported/text_box.png-150bbad048925b1c26be1b2bf9b74285.ctex"]
 
 [params]
 

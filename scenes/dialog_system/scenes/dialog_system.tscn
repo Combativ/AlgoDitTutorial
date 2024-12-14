@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsehu8h5432ef"]
+[gd_scene load_steps=9 format=3 uid="uid://bsehu8h5432ef"]
 
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/database.gd" id="1_23t7t"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/dialog_system.gd" id="1_wxxts"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_nxrd8"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/text_box.gd" id="3_qjwsw"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button.gd" id="5_840j7"]
-[ext_resource type="Texture2D" uid="uid://wreyh5unmm31" path="res://scenes/dialog_system/art/Postkarte.png" id="5_wyvk3"]
+[ext_resource type="Texture2D" uid="uid://wreyh5unmm31" path="res://scenes/dialog_system/art/text_box.png" id="5_wyvk3"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button_2.gd" id="6_qpihx"]
+[ext_resource type="PackedScene" uid="uid://j3oflwbbphny" path="res://scenes/dialog_system/scenes/error_window.tscn" id="8_bf4x1"]
 
 [node name="dialog_system" type="Node2D"]
 script = ExtResource("1_wxxts")
@@ -65,3 +66,11 @@ offset_right = 978.0
 offset_bottom = -507.0
 text = "Dialog down"
 script = ExtResource("6_qpihx")
+
+[node name="ErrorWindow" parent="." instance=ExtResource("8_bf4x1")]
+visible = false
+offset_left = 480.0
+offset_top = 537.0
+offset_right = 480.0
+offset_bottom = 537.0
+scale = Vector2(0.4, 0.4)

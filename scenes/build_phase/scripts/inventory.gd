@@ -39,3 +39,8 @@ func add_room_item(room_number: int):
 	var roomItem = ROOM_ITEM.instantiate()
 	roomItem.room_number = room_number
 	itemContainer.add_child(roomItem)
+
+##returns true if there are no children in this inventory's room item countainer,
+##false otherwise
+func is_empty() -> bool:
+	return self.itemContainer.get_child_count() == 0

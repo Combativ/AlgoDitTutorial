@@ -1,10 +1,28 @@
 extends Node2D
 class_name Main
 
-@onready var search_phase = $search_phase
-@onready var build_phase = $build_phase
+@onready var search_phase: SearchPhase = $search_phase
+@onready var build_phase: BuildPhase = $build_phase
 
 func switch_to_search_phase():
+	var inv: Inventory = Global.current_level.get_node("Inventory")
+	if(not inv.is_empty()):
+		Global.dialog_system.play_sound(Global.dialog_system.get_database().special_interaction_negative)
+		var error_window: ErrorWindow = Global.dialog_system.get_error_window()
+		error_window.show_error("Inventar enthält noch Räume!", 2)
+		return
+	if(not Helper.tree_is_sorted(Global.tree_root)):
+		Global.dialog_system.play_sound(Global.dialog_system.get_database().special_interaction_negative)
+		var error_window: ErrorWindow = Global.dialog_system.get_error_window()
+		error_window.show_error("Baum ist nicht sortiert!", 2)
+		return
+	if(not Helper.tree_is_balanced(Global.tree_root)):
+		Global.dialog_system.play_sound(Global.dialog_system.get_database().special_interaction_negative)
+		var error_window: ErrorWindow = Global.dialog_system.get_error_window()
+		error_window.show_error("Baum ist nicht balanciert!", 2)
+		return
+	
+	
 	get_transition_wall().transition_show_up()
 	await get_transition_wall().transition_show_up_done
 	Helper.disable_and_hide_node(build_phase)
@@ -12,13 +30,8 @@ func switch_to_search_phase():
 	Global.path_tracker.clear()
 	search_phase.get_node("Room")._initialize()
 	
-	##if target_room is not set in buildphase create random
-	##else update destination_room to the target_rooom's new position
-	#if(Global.destination_room == null || Global.destination_room.get_number() <= 0):
-		#Global.target_room = 
-		#SearchPhase.create_destination_room(true)
-	#else:
-	#	Global.destination_room = Helper.find_SnapTargetNode_from_RoomMiniature(Global.target_room)
+	##if target_room is not set in build phase create random destination_room
+	##else set destination_room to the target_rooom's new position
 	if Global.current_level.target_room != null:
 		Global.destination_room = Helper.find_SnapTargetNode_from_RoomMiniature(Global.current_level.target_room)
 	else:
@@ -37,6 +50,7 @@ func switch_to_build_phase():
 	Helper.enable_and_show_node(build_phase)
 	await get_tree().create_timer(search_phase.get_transition_time()).timeout
 	get_transition_wall().transition_hide_back()
+	
 
 func get_dialog_system() -> Node2D:
 	return $dialog_system

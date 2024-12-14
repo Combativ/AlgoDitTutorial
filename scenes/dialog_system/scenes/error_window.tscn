@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://j3oflwbbphny"]
+
+[ext_resource type="Script" path="res://scenes/dialog_system/scripts/error_window.gd" id="1_85tgh"]
+[ext_resource type="Texture2D" uid="uid://535qtr8s1bnd" path="res://scenes/dialog_system/art/error_frame.png" id="2_uu1vg"]
+
+[node name="ErrorWindow" type="ReferenceRect"]
+top_level = true
+script = ExtResource("1_85tgh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 957.0
+offset_bottom = 215.0
+color = Color(1, 0.08, 0.08, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Inventar enthält noch Räume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -12.0
+offset_right = 28.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uu1vg")
+expand_mode = 3
