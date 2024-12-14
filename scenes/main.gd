@@ -7,18 +7,18 @@ class_name Main
 func switch_to_search_phase():
 	var inv: Inventory = Global.current_level.get_node("Inventory")
 	if(not inv.is_empty()):
-		Global.dialog_system.play_sound(Global.dialog_system.get_database().special_interaction_negative)
 		var error_window: ErrorWindow = Global.dialog_system.get_error_window()
+		error_window.play_sometimes_error_sound()
 		error_window.show_error("Inventar enthält noch Räume!", 2)
 		return
 	if(not Helper.tree_is_sorted(Global.tree_root)):
-		Global.dialog_system.play_sound(Global.dialog_system.get_database().special_interaction_negative)
 		var error_window: ErrorWindow = Global.dialog_system.get_error_window()
+		error_window.play_sometimes_error_sound()
 		error_window.show_error("Baum ist nicht sortiert!", 2)
 		return
 	if(not Helper.tree_is_balanced(Global.tree_root)):
-		Global.dialog_system.play_sound(Global.dialog_system.get_database().special_interaction_negative)
 		var error_window: ErrorWindow = Global.dialog_system.get_error_window()
+		error_window.play_sometimes_error_sound()
 		error_window.show_error("Baum ist nicht balanciert!", 2)
 		return
 	
