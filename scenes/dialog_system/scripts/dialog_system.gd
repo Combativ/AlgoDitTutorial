@@ -141,9 +141,14 @@ func get_skip_key() -> Key:
 func get_audio_player() -> AudioPlayer:
 	return self.audio_player
 
+##returns this system's error window
 func get_error_window() -> ErrorWindow:
 	return $ErrorWindow
-	
+
+##returns this system's task window
+func get_task_window() -> TaskWindow:
+	return $TaskWindow
+
 ##sets the text of it´s text_box to the transferred text
 func set_text(text: String) -> void:
 	$Text_box.set_text(text)
