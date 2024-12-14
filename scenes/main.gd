@@ -12,7 +12,16 @@ func switch_to_search_phase():
 	Global.path_tracker.clear()
 	search_phase.get_node("Room")._initialize()
 	
-	if(Global.destination_room == null || Global.destination_room.get_number() <= 0):
+	##if target_room is not set in buildphase create random
+	##else update destination_room to the target_rooom's new position
+	#if(Global.destination_room == null || Global.destination_room.get_number() <= 0):
+		#Global.target_room = 
+		#SearchPhase.create_destination_room(true)
+	#else:
+	#	Global.destination_room = Helper.find_SnapTargetNode_from_RoomMiniature(Global.target_room)
+	if Global.current_level.target_room != null:
+		Global.destination_room = Helper.find_SnapTargetNode_from_RoomMiniature(Global.current_level.target_room)
+	else:
 		SearchPhase.create_destination_room(true)
 	print("destination_room: ", Global.destination_room.get_number())
 	search_phase.get_letter().set_number(Global.destination_room.get_number())

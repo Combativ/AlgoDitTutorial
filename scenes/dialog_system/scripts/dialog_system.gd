@@ -191,6 +191,8 @@ func skip() -> void:
 	self.skip_text()
 	self.get_audio_player().skip()
 
+
+
 ##locks the scenes and slides up the text_box
 ##plays a single couple of text and speech
 ##emits signal: self.writing_done when the wrtie animation finishes
@@ -226,6 +228,9 @@ func play_sequence(couple_array: Array[Tuple]) -> void:
 	$"..".build_phase.release()
 	$"..".search_phase.release()
 	pass
+
+	
+
 
 ##slides up the dialog system
 func slide_up() -> void:

@@ -140,8 +140,7 @@ var A_level_04_1_01: Array[Tuple] = [self.level_04_1_01,
 									self.level_04_1_07,
 									self.level_04_1_08]
 var A_level_04_1_02: Array[Tuple] = [self.level_04_1_09,
-									self.level_04_1_10,
-									self.level_04_1_11]
+									self.level_04_1_10]
 
 
 var level_04_1_01: Tuple = Tuple.new("Sieh dir die 60 an.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice55_00008161.wav"))

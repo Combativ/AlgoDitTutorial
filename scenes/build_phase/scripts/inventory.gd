@@ -16,13 +16,13 @@ const ROOM_ITEM = preload("res://scenes/build_phase/scenes/room_item.tscn")
 
 func _ready() -> void:
 	SignalBus.room_miniature_freed.connect(_on_room_miniature_freed)
-
 	# If there are RoomMiniatures assigned for the inventory (as children
 	# of this Node), then create these as RoomItems in the inventory
 	for child in get_children():
 		if child is RoomMiniature:
 			add_room_item(child.number)
 			child.queue_free()
+	
 
 
 
