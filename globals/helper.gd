@@ -85,3 +85,19 @@ static func _apply(tree_root: SnapTargetNode, array: Array[int]) -> void:
 	if tree_root.get_right_child_node() != null:
 		_apply(tree_root.get_right_child_node(), array)
 	pass
+
+##performs the Callable call, while the search phase and build phase are locked and cannot be 
+##interacted with
+func perform_locked(call: Callable):
+	Global.build_phase.lock()
+	Global.search_phase.lock()
+	Global.dialog_system.lock()
+	Global.global_sound_manager.lock()
+	
+	call.call()
+	
+	Global.build_phase.release()
+	Global.search_phase.release()
+	Global.dialog_system.release()
+	Global.global_sound_manager.release()
+	pass

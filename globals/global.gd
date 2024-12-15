@@ -22,3 +22,9 @@ var dialog_system: Dialogsystem = null
 
 ##stores the reference to the global sound manager
 var global_sound_manager: SoundManager = null
+
+##stores the reference to the search phase
+var search_phase: SearchPhase = null
+
+##stores the reference to the build phase
+var build_phase: BuildPhase = null

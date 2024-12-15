@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0v46wm86qer8"]
+[gd_scene load_steps=6 format=3 uid="uid://c0v46wm86qer8"]
 
 [ext_resource type="Script" path="res://scenes/global_sound_manager/scripts/global_sound_manager.gd" id="1_pry1k"]
 [ext_resource type="Texture2D" uid="uid://d0uhn2xtgkx1" path="res://scenes/global_sound_manager/art_assets/sound_on.png" id="2_3rvwp"]
 [ext_resource type="AudioStream" uid="uid://b5nxitk2ynatq" path="res://scenes/global_sound_manager/sounds/WhiteNoise1.wav" id="3_38eu3"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_o31qo"]
+[ext_resource type="PackedScene" uid="uid://ddty3e47pq7av" path="res://scenes/global_sound_manager/scenes/sound_options_window.tscn" id="5_8bfi4"]
 
 [node name="sound_manager" type="Control"]
 layout_mode = 3
@@ -28,3 +29,6 @@ stretch_mode = 3
 [node name="global_white_noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_38eu3")
 script = ExtResource("3_o31qo")
+
+[node name="sound_options_window" parent="." instance=ExtResource("5_8bfi4")]
+visible = false

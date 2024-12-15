@@ -6,6 +6,11 @@ class_name SearchPhase
 @onready var room: Room = $Room
 @onready var letter: Letter = $Letter
 
+####################################################################################################
+func _ready() -> void:
+	Global.search_phase = self
+
+
 #getter and setter
 ####################################################################################################
 

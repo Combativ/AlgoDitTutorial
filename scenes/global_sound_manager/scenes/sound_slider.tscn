@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhn18ysu8blvk"]
+
+[ext_resource type="Script" path="res://scenes/global_sound_manager/scripts/sound_slider.gd" id="1_rhtre"]
+[ext_resource type="Texture2D" uid="uid://d0uhn2xtgkx1" path="res://scenes/global_sound_manager/art_assets/sound_on.png" id="2_nvoxw"]
+
+[node name="sound_slider" type="Node2D"]
+script = ExtResource("1_rhtre")
+text = "test"
+
+[node name="HSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = 200.0
+offset_right = 465.0
+offset_bottom = 36.0
+max_value = 160.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 485.0
+offset_right = 958.0
+offset_bottom = 369.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_nvoxw")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 190.0
+offset_bottom = 36.0
+text = "Gesamtlautstärke:"
+vertical_alignment = 1

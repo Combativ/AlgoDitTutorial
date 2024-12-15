@@ -199,18 +199,6 @@ func skip() -> void:
 	self.skip_text()
 	self.get_audio_player().skip()
 
-##performs the Callable call, while the search phase and build phase are locked and cannot be 
-##interacted with
-func perform_locked(call: Callable):
-	$"..".build_phase.lock()
-	$"..".search_phase.lock()
-	
-	call.call()
-	
-	$"..".build_phase.release()
-	$"..".search_phase.release()
-	pass
-
 ##locks the scenes and slides up the text_box
 ##plays a single couple of text and speech
 ##emits signal: self.writing_done when the wrtie animation finishes
@@ -228,7 +216,7 @@ func play(couple: Tuple) -> void:
 ##slides down the text_box and releases the scenes
 func play_sequence(couple_array: Array[Tuple]) -> void:
 	
-	perform_locked(func():
+	Helper.perform_locked(func():
 		self.slide_up()
 	
 		for i in range(len(couple_array)):
@@ -244,12 +232,16 @@ func play_sequence(couple_array: Array[Tuple]) -> void:
 	)
 	pass
 
+##plays only the sound of the transferred tuple
+##emits signal: self.get_audio_player().finished when finished playing the sound track
 func play_sound(couple: Tuple) -> void:
 	var arr: Array[Tuple] = [couple]
 	play_sound_sequence(arr)
 
+##plays all sounds of the transferred tuples in order 
+##emits signal: self.get_audio_player().finished whenever finished playing one sound track
 func play_sound_sequence(couples: Array[Tuple]) -> void:
-	perform_locked(func():
+	Helper.perform_locked(func():
 		var sound: AudioStream
 		for tuple in couples:
 			sound = tuple.get_sound()
@@ -258,7 +250,6 @@ func play_sound_sequence(couples: Array[Tuple]) -> void:
 			await audio_player.finished
 	)
 	pass
-
 
 ##slides up the dialog system
 func slide_up() -> void:
@@ -279,3 +270,11 @@ func unmute() -> void:
 ##returns true if the entire dialog system is muted, false otherwise
 func is_muted() -> bool:
 	return get_audio_player().is_muted()
+
+##deactivates buttons of this dialog system
+func lock() -> void:
+	self.get_task_window().lock()
+
+##reactivates buttons of this dialog system
+func release() -> void:
+	self.get_task_window().release()

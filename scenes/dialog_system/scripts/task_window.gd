@@ -22,3 +22,14 @@ func _process(delta: float) -> void:
 		task.hide()
 		task_hidden = true
 	pass
+
+#methods
+####################################################################################################
+
+##deactivates this TaskWindow's button
+func lock() -> void:
+	button.disabled = true
+
+##activates this TaskWindow's button
+func release() -> void:
+	button.disabled = false
