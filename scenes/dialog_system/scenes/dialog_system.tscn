@@ -17,7 +17,10 @@ skip_key = 83
 [node name="Database" type="Node" parent="."]
 script = ExtResource("1_23t7t")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Storyteller_player" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_nxrd8")
+
+[node name="Special_effects_player" type="AudioStreamPlayer" parent="."]
 script = ExtResource("3_nxrd8")
 
 [node name="Text_box" type="CharacterBody2D" parent="."]

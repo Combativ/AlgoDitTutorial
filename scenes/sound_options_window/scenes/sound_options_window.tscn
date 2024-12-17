@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddty3e47pq7av"]
+
+[ext_resource type="Script" path="res://scenes/sound_options_window/scripts/sound_options_window.gd" id="1_g7l4f"]
+[ext_resource type="PackedScene" uid="uid://dbug5ix5ecyni" path="res://scenes/sound_options_window/scenes/option_gui.tscn" id="2_ej733"]
+[ext_resource type="Texture2D" uid="uid://dux77h7ihgxnc" path="res://icon.svg" id="2_larbp"]
+[ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="2_nk3cy"]
+[ext_resource type="AudioStream" uid="uid://b5nxitk2ynatq" path="res://scenes/sound_options_window/sounds/WhiteNoise1.wav" id="2_y1mu8"]
+[ext_resource type="Texture2D" uid="uid://d0uhn2xtgkx1" path="res://scenes/sound_options_window/art_assets/sound_on.png" id="4_aygj0"]
+
+[node name="sound_options_window" type="Node2D"]
+top_level = true
+script = ExtResource("1_g7l4f")
+
+[node name="white_noise_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_y1mu8")
+script = ExtResource("2_nk3cy")
+
+[node name="global_mute_button" type="TextureButton" parent="."]
+offset_left = 1123.0
+offset_top = 40.0
+offset_right = 1596.0
+offset_bottom = 409.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("4_aygj0")
+
+[node name="option_open_button" type="TextureButton" parent="."]
+offset_left = 1190.0
+offset_top = 26.0
+offset_right = 1318.0
+offset_bottom = 154.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_larbp")
+
+[node name="sound_control" parent="." instance=ExtResource("2_ej733")]
+visible = false
+position = Vector2(329, 184)

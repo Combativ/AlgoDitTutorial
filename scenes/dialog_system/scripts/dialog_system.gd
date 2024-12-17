@@ -39,7 +39,8 @@ var texts: Array[String] 			= []
 var key_pressed: bool
 @export var skip_key: Key
 
-@onready var audio_player: AudioPlayer = $AudioStreamPlayer
+@onready var audio_player: AudioPlayer = $Storyteller_player
+@onready var sfx_player: AudioPlayer = $Special_effects_player
 ####################################################################################################
 
 #controls the movement of the dialog system
@@ -137,9 +138,14 @@ func get_distance() -> int:
 func get_skip_key() -> Key:
 	return self.skip_key
 
-##returns this system's audio player
+##returns this system's audio player of the storyteller voice lines
 func get_audio_player() -> AudioPlayer:
 	return self.audio_player
+
+##returns this system's audio player for special effects
+##this one cannot be skipped
+func get_sfx_player() -> AudioPlayer:
+	return self.sfx_player
 
 ##returns this system's error window
 func get_error_window() -> ErrorWindow:
@@ -262,14 +268,16 @@ func slide_down() -> void:
 ##mutes the dialog system's audio
 func mute() -> void:
 	get_audio_player().mute()
+	get_sfx_player().mute()
 
 ##unmutes the dialog system's audio
 func unmute() -> void:
 	get_audio_player().unmute()
+	get_sfx_player().unmute()
 
 ##returns true if the entire dialog system is muted, false otherwise
 func is_muted() -> bool:
-	return get_audio_player().is_muted()
+	return get_audio_player().is_muted() and get_sfx_player().is_muted()
 
 ##deactivates buttons of this dialog system
 func lock() -> void:

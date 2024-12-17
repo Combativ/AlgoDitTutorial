@@ -33,3 +33,6 @@ signal picture_wrong_room()
 # This signal is emitted, when the player finishes a level. It triggers the
 # loading of the next level.
 signal level_finished
+
+##when emitted updates every muted status of all audio players
+signal sound_mute_status_update

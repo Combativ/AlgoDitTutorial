@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhn18ysu8blvk"]
 
-[ext_resource type="Script" path="res://scenes/global_sound_manager/scripts/sound_slider.gd" id="1_rhtre"]
-[ext_resource type="Texture2D" uid="uid://d0uhn2xtgkx1" path="res://scenes/global_sound_manager/art_assets/sound_on.png" id="2_nvoxw"]
+[ext_resource type="Script" path="res://scenes/sound_options_window/scripts/sound_slider.gd" id="1_rhtre"]
+[ext_resource type="Texture2D" uid="uid://d0uhn2xtgkx1" path="res://scenes/sound_options_window/art_assets/sound_on.png" id="2_nvoxw"]
 
 [node name="sound_slider" type="Node2D"]
 script = ExtResource("1_rhtre")
-text = "test"
 
 [node name="HSlider" type="HSlider" parent="."]
 custom_minimum_size = Vector2(100, 0)

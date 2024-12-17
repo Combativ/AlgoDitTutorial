@@ -11,18 +11,25 @@ var volume: float
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	volume = volume_db
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(muted and volume_db != -80):
+		volume = volume_db
 		self.volume_db = -80
 	elif(!muted and volume_db != volume):
 		self.volume_db = volume
 	
 	pass
+
+#getter & setter
+####################################################################################################
+
+##sets this AudioPlayer's volume to the transferred one
+func set_volume(new_volume: float) -> void:
+	self.volume = new_volume
 
 #methods
 ####################################################################################################
@@ -53,14 +60,13 @@ func skip():
 	self.finished.emit()
 
 ##mutes the soundtrack (volume_db is set to -80 dB)
+##emits signal: SignalBus.sound_mute_status_update
 func mute() -> void:
-	volume = volume_db
-	volume_db = -80
 	self.muted = true
 
 ##unmutes the soundtrack (volume_db is set to value of volume)
+##emits signal: SignalBus.sound_mute_status_update
 func unmute() -> void:
-	volume_db = volume
 	self.muted = false
 
 ##returns true if the audio player is muted, false otherwise

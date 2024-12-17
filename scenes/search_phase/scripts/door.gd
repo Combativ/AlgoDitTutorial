@@ -8,7 +8,9 @@ class_name Door
 ##stores a reference to the TextureButton used for the door´s hitbox and texture
 @onready var door_hitbox: TextureButton = $"Hitbox & Image"
 ##stores a reference to this door's AudioStreamPlayer2D
-@onready var audioplayer: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audioplayer: AudioPlayer = $AudioPlayer
+#$AudioPlayer
+#$"../../../dialog_system/Special_effects_player"
 ##sound that is played when moving through the door
 @export var sound: AudioStream
 @export var muted: bool
@@ -55,7 +57,7 @@ func get_door_hitbox() -> TextureButton:
 	return self.door_hitbox
 
 ##returns this door's AudioStreamPlayer2D
-func get_audio_player() -> AudioStreamPlayer2D:
+func get_audio_player() -> AudioPlayer:
 	return self.audioplayer
 
 ##sets the door number to the new integer
@@ -83,7 +85,7 @@ func set_img_doorplate(img: Texture2D) -> void:
 	$"DoorNumber/Hitbox & Image".set_texture_normal(img)
 
 ##sets this door's audio player to the transferred one
-func set_audio_player(new_player: AudioStreamPlayer2D) -> void:
+func set_audio_player(new_player: AudioPlayer) -> void:
 	self.audioplayer = new_player
 	
 #methods
