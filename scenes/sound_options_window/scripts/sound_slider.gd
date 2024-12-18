@@ -106,13 +106,15 @@ func unmute() -> void:
 	self.get_mute_button().texture_normal = self.texture_unmuted
 	SignalBus.sound_mute_status_update.emit()
 
-#TODO (slider scrollable disabled?)
+#TODO (animation ?)
 func lock():
 	self.mute_button.disabled = true
 	self.slider.editable = false
+	self.slider.scrollable = false
 
 #TODO
 func release():
 	self.mute_button.disabled = false
 	self.slider.editable = true
+	self.slider.scrollable = true
 	pass

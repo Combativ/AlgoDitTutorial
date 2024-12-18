@@ -5,7 +5,7 @@ signal playing_started
 signal playing_paused
 signal playing_continued
 
-@export var muted: bool = false
+@export var muted: bool = true
 var volume: float
 
 ####################################################################################################

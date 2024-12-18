@@ -23,6 +23,7 @@ text = "Optionen:"
 [node name="total volume scale" parent="ColorRect" instance=ExtResource("2_k8xk3")]
 position = Vector2(40, 75)
 text = "Gesamtlautstärke:"
+muted = true
 slider_max_value = 1
 slider_start_value = 0.5
 slider_step_size = 0.001
@@ -37,6 +38,7 @@ slider_start_value = 75000.0
 [node name="white noise" parent="ColorRect" instance=ExtResource("2_k8xk3")]
 position = Vector2(40, 195)
 text = "Hintergrundgeräusche:"
+muted = true
 slider_min_value = 1
 slider_max_value = 158489
 slider_start_value = 75000.0
@@ -44,6 +46,7 @@ slider_start_value = 75000.0
 [node name="sfx" parent="ColorRect" instance=ExtResource("2_k8xk3")]
 position = Vector2(40, 255)
 text = "Soundeffekte:"
+muted = true
 slider_min_value = 1
 slider_max_value = 158489
 slider_start_value = 75000.0
@@ -55,3 +58,13 @@ offset_top = 15.0
 offset_right = 610.0
 offset_bottom = 46.0
 text = "X"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.01
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true

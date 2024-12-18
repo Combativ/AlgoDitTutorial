@@ -5,6 +5,9 @@ class_name SoundControl
 @onready var special_effects_player: AudioPlayer = Global.dialog_system.get_sfx_player()
 @onready var white_noise_player: AudioPlayer = $"../white_noise_player"
 @onready var close_button: Button = $ColorRect/close_button
+@onready var update_timer: Timer = $Timer
+@onready var slow_timer: Timer = $Timer2
+var count: int = 0
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,8 +16,6 @@ func _ready() -> void:
 	white_noise_player.set_volume(get_white_noise_volume_db())
 	storyteller_player.set_volume(get_storyteller_volume_db())
 	special_effects_player.set_volume(get_special_effects_volume_db())
-	
-	#TODO connect mute methods (here or somewhere else?)
 	
 	#connect voulume change mehtods
 	get_total_volume_scale_control_block().get_slider().value_changed.connect(func(new_value):
@@ -38,6 +39,18 @@ func _ready() -> void:
 	close_button.pressed.connect(func():
 		var option_open_button: TextureButton = $"../option_open_button"
 		option_open_button.pressed.emit()
+	)
+	
+	#makes sure that the mute function of buttons works at the start of the game
+	self.update_timer.timeout.connect(func():
+		SignalBus.sound_mute_status_update.emit()
+		count += 1
+		print(count)
+	)
+	
+	#dectivate update_timer after 10s
+	slow_timer.timeout.connect(func():
+		self.update_timer.one_shot = true
 	)
 	pass
 
