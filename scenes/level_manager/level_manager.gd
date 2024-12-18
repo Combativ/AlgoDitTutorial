@@ -33,11 +33,73 @@ func _ready() -> void:
 	var level5_3: Node2D = LEVEL_05_3.instantiate()
 	
 	
-	#Global.dialog_system.play(introduction_01)
-	
+	#TODO: Zettel mit Zahl ausblenden
 	load_level(level1)
-	await SignalBus.level_finished
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	$"../search_phase/Room/DoorLeft".release()
+	#Global.dialog_system.play_sequence(Database.A_level_01_01)
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room/DoorLeft".lock()
+	$"../search_phase/Room/DoorRight".release()
+	#Global.dialog_system.play_sequence(Database.A_level_01_02)
+	
+	await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room/DoorRight".lock()
+	$"../search_phase/Room/DoorLeft".release()
+	#Global.dialog_system.play_sequence(Database.A_level_01_03)
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	#Global.dialog_system.play_sequence(Database.A_level_01_04)
+	#await get_tree().create_timer(1).timeout
+	#Global.dialog_system.play_sequence(Database.A_level_01_05)
+	#await get_tree().create_timer(1).timeout
+	#Global.dialog_system.play_sequence(Database.A_level_01_06)
+	$"../search_phase/Room/Picture".release()
+	
+	await $"../search_phase/Room/Picture/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	
+	#TODO Zettel mit Zahl einblenden
+	#Global.dialog_system.play_sequence(Database.A_level_01_07)
+	$"../search_phase/Room/DoorLeft".release()
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	#Global.dialog_system.play_sequence(Database.A_level_01_08)
+	$"../search_phase/Room/DoorLeft".release()
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	$"../search_phase/Room/DoorLeft".release()
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	#Global.dialog_system.play_sequence(Database.A_level_01_09)
+	$"../search_phase/Room/DoorRight".release()
+	
+	await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	#Global.dialog_system.play_sequence(Database.A_level_01_10)
+	$"../search_phase/Room/Picture".release()
+	
+	
+	
+	await $"../search_phase/Room/Picture/Hitbox & Image".pressed
 	load_level(level2)
+	
+	
+	
 	await SignalBus.level_finished
 	load_level(level2_2)
 	await SignalBus.level_finished

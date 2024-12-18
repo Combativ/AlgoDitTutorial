@@ -224,6 +224,7 @@ func play(couple: Tuple) -> void:
 ##emits signal: self.writing_done whenever the wrtie animation finishes
 ##emits signal: self.get_audio_player().finished whenever the voice track finishes or is skipped
 ##slides down the text_box and releases the scenes
+#TODO Debugging (Global.dialog_system.play_sequence(Database.A_level_01_01) wirft Fehler in Zeile 234 aus, LG Joran)
 func play_sequence(couple_array: Array[Tuple]) -> void:
 	
 	Helper.perform_locked(func():
