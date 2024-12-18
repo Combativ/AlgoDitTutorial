@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn4nr4230q1he"
-path="res://.godot/imported/banana.png-de3875bde3571e47e0ea64b729d563cb.ctex"
+uid="uid://7wlpaalpfmxs"
+path="res://.godot/imported/snap_preview.png-7d01e9b0964bf693cf7d1731cb57e222.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/build_phase/art/banana.png"
-dest_files=["res://.godot/imported/banana.png-de3875bde3571e47e0ea64b729d563cb.ctex"]
+source_file="res://scenes/build_phase/art/snap_preview.png"
+dest_files=["res://.godot/imported/snap_preview.png-7d01e9b0964bf693cf7d1731cb57e222.ctex"]
 
 [params]
 

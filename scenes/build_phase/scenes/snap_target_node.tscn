@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/snap_target_node.gd" id="1_74qrg"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/binary_tree.gd" id="2_5d5va"]
 [ext_resource type="PackedScene" uid="uid://bvc8rgpppkr2a" path="res://scenes/build_phase/scenes/snap_target.tscn" id="2_yaldm"]
-[ext_resource type="Texture2D" uid="uid://bn4nr4230q1he" path="res://scenes/build_phase/art/banana.png" id="3_huvbn"]
+[ext_resource type="Texture2D" uid="uid://7wlpaalpfmxs" path="res://scenes/build_phase/art/snap_preview.png" id="4_uqhfh"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/rotation_manager.gd" id="5_4lev5"]
-[ext_resource type="Texture2D" uid="uid://hebfjp1g3xph" path="res://scenes/build_phase/art/arrow_ccw.png" id="6_spex1"]
-[ext_resource type="Texture2D" uid="uid://bf28w2h5qv1kk" path="res://scenes/build_phase/art/arrow_cw.png" id="7_knus8"]
+[ext_resource type="Texture2D" uid="uid://cxomnapxq12dk" path="res://scenes/build_phase/art/arrow_ccw.png" id="6_2qrbg"]
+[ext_resource type="Texture2D" uid="uid://dyycb4rd6ondr" path="res://scenes/build_phase/art/arrow_cw.png" id="7_aphda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mipt1"]
 size = Vector2(40, 40)
@@ -24,7 +24,8 @@ script = ExtResource("2_5d5va")
 
 [node name="Sprite2D" parent="SnapTarget" index="1"]
 self_modulate = Color(1, 1, 1, 1)
-texture = ExtResource("3_huvbn")
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("4_uqhfh")
 
 [node name="RotationManager" type="Area2D" parent="."]
 process_mode = 4
@@ -38,10 +39,10 @@ offset_left = -80.0
 offset_top = -22.0
 offset_right = 428.0
 offset_bottom = 526.0
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.05, 0.05)
 mouse_default_cursor_shape = 2
 action_mode = 0
-icon = ExtResource("6_spex1")
+icon = ExtResource("6_2qrbg")
 flat = true
 
 [node name="RotateRightButton" type="Button" parent="RotationManager"]
@@ -51,10 +52,10 @@ offset_left = 40.0
 offset_top = -22.0
 offset_right = 548.0
 offset_bottom = 526.0
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.05, 0.05)
 mouse_default_cursor_shape = 2
 action_mode = 0
-icon = ExtResource("7_knus8")
+icon = ExtResource("7_aphda")
 flat = true
 icon_alignment = 2
 
