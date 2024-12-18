@@ -33,4 +33,5 @@ texture_normal = ExtResource("2_larbp")
 
 [node name="sound_control" parent="." instance=ExtResource("2_ej733")]
 visible = false
+z_index = 1000
 position = Vector2(329, 184)

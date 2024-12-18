@@ -173,6 +173,10 @@ func set_distance(size: int) -> void:
 func set_skip_key(key: Key) -> void:
 	self.skip_key = key
 
+##sets the text in the task window to the transferred one
+func set_task(task: String) -> void:
+	self.get_task_window().task.text = task
+
 #methods
 ####################################################################################################
 
