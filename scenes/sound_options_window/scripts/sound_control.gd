@@ -7,7 +7,7 @@ class_name SoundControl
 @onready var close_button: Button = $ColorRect/close_button
 @onready var update_timer: Timer = $Timer
 @onready var slow_timer: Timer = $Timer2
-var count: int = 0
+
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,8 +44,6 @@ func _ready() -> void:
 	#makes sure that the mute function of buttons works at the start of the game
 	self.update_timer.timeout.connect(func():
 		SignalBus.sound_mute_status_update.emit()
-		count += 1
-		print(count)
 	)
 	
 	#dectivate update_timer after 10s
