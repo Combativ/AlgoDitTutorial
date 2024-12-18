@@ -21,6 +21,7 @@ run/stretch/aspect="expand"
 SignalBus="*res://globals/signal_bus.gd"
 Helper="*res://globals/helper.gd"
 Global="*res://globals/global.gd"
+Database="*res://scenes/dialog_system/scripts/database.gd"
 
 [display]
 
