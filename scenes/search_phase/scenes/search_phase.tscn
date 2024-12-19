@@ -12,6 +12,7 @@ transition_time = 1.0
 scale = Vector2(1.335, 1.335)
 
 [node name="SwitchPhase" type="Button" parent="."]
+visible = false
 offset_left = 1120.0
 offset_top = 520.0
 offset_right = 1248.0
@@ -19,7 +20,15 @@ offset_bottom = 587.0
 text = "Buildphase"
 
 [node name="Letter" parent="." instance=ExtResource("5_ih0yh")]
+visible = false
 position = Vector2(166, 698)
 rotation = -0.26825
+
+[node name="InputLock" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_right = 1286.0
+offset_bottom = 734.0
+disabled = true
 
 [connection signal="pressed" from="SwitchPhase" to="." method="_on_switch_phase_button_pressed"]

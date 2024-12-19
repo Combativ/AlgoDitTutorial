@@ -113,6 +113,7 @@ func _process(delta: float) -> void:
 	#skip input logic
 	if Input.is_key_pressed(self.skip_key) && !key_pressed:
 		key_pressed = true
+		self.get_audio_player().skip()
 		skipped.emit()
 	elif !Input.is_key_pressed(self.skip_key) && key_pressed:
 		key_pressed = false
@@ -225,11 +226,13 @@ func play(couple: Tuple) -> void:
 ##plays all couples of text and speech of the array in order, waits for skip-key-input after every couple
 ##emits signal: self.writing_done whenever the wrtie animation finishes
 ##emits signal: self.get_audio_player().finished whenever the voice track finishes or is skipped
+##emits signal: self.sequence_finished when the sequence is done playing
 ##slides down the text_box and releases the scenes
 #TODO Debugging (Global.dialog_system.play_sequence(Database.A_level_01_01) wirft Fehler in Zeile 234 aus, LG Joran)
 func play_sequence(couple_array: Array[Tuple]) -> void:
 	
 	Helper.perform_locked(func():
+		
 		self.slide_up()
 	
 		for i in range(len(couple_array)):
@@ -240,9 +243,12 @@ func play_sequence(couple_array: Array[Tuple]) -> void:
 			await self.writing_done
 			await self.get_audio_player().finished
 			##player input
-			await self.skip
+			await self.skipped
 			
 		self.slide_down()
+		Helper.perform_locked_end.emit()
+		self.sequence_finished.emit()
+		
 	)
 	pass
 
@@ -262,6 +268,7 @@ func play_sound_sequence(couples: Array[Tuple]) -> void:
 			audio_player.stream = sound
 			audio_player.play()
 			await audio_player.finished
+		Helper.perform_locked_end
 	)
 	pass
 

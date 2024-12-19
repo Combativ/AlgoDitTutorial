@@ -36,10 +36,12 @@ func _ready() -> void:
 	#TODO: Zettel mit Zahl ausblenden
 	load_level(level1)
 	await $"../TransitionWall".transition_hide_back_done
+	#$"../search_phase/Room".lock()
+	#$"../search_phase/Room/DoorLeft".release()
+	Global.dialog_system.play_sequence(Database.A_level_01_01)
+	await Global.dialog_system.sequence_finished
 	$"../search_phase/Room".lock()
 	$"../search_phase/Room/DoorLeft".release()
-	#Global.dialog_system.play_sequence(Database.A_level_01_01)
-	
 	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room/DoorLeft".lock()

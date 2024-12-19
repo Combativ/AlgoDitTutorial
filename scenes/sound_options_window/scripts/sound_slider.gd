@@ -1,8 +1,8 @@
 extends Node2D
 class_name SoundSlider
 
-@export var texture_unmuted: Texture2D = preload("res://scenes/sound_options_window/art_assets/sound_on.png")
-@export var texture_muted: Texture2D = preload("res://scenes/sound_options_window/art_assets/sound_off.png")
+@export var texture_unmuted: Texture2D = preload("res://scenes/sound_options_window/art_assets/sound_on_white.png")
+@export var texture_muted: Texture2D = preload("res://scenes/sound_options_window/art_assets/sound_off_white.png")
 
 @onready var mute_button: TextureButton = $TextureButton
 @onready var slider: HSlider = $HSlider
@@ -39,9 +39,8 @@ func _ready() -> void:
 	)
 	
 	#initialize correct button skin
-	if(muted):
-		self.mute_button.pressed.emit()
-		self.mute_button.pressed.emit()
+	self.mute_button.pressed.emit()
+	self.mute_button.pressed.emit()
 	
 	pass # Replace with function body.
 

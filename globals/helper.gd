@@ -88,16 +88,18 @@ static func _apply(tree_root: SnapTargetNode, array: Array[int]) -> void:
 
 ##performs the Callable call, while the game is locked and cannot be 
 ##interacted with
+signal perform_locked_end
 func perform_locked(call: Callable):
 	Global.build_phase.lock()
-	Global.search_phase.lock()
+	Global.search_phase.input_lock.show()
 	Global.dialog_system.lock()
 	Global.sound_options_window.lock()
 	
 	call.call()
 	
+	await perform_locked_end
 	Global.build_phase.release()
-	Global.search_phase.release()
+	Global.search_phase.input_lock.hide()
 	Global.dialog_system.release()
 	Global.sound_options_window.release()
 	pass
