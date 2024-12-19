@@ -25,10 +25,10 @@ signal room_miniature_freed(room_miniature: RoomMiniature)
 signal snapTargetNode_sorted_insertion_failed(room_miniature: RoomMiniature)
 
 ##This signal is emitted when clicked on the picture of Global.destination_room (in search phase)
-signal picture_right_room()
+signal picture_right_room
 
 ##This signal is emitted when clicked on a picture in another room than Global.destination_room (in search phase)
-signal picture_wrong_room()
+signal picture_wrong_room
 
 # This signal is emitted, when the player finishes a level. It triggers the
 # loading of the next level.

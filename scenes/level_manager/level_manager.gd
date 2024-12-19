@@ -33,99 +33,102 @@ func _ready() -> void:
 	var level5_3: Node2D = LEVEL_05_3.instantiate()
 	
 	
-	#load_level(level1)
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_01)
-	#$"../search_phase/Room/DoorLeft".release()
-	#await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room/DoorLeft".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_02)
-	#$"../search_phase/Room/DoorRight".release()
-	#
-	#await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room/DoorRight".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_03)
-	#$"../search_phase/Room/DoorLeft".release()
-	#
-	#await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_04)
-	#await Global.dialog_system.sequence_finished
-	#Global.dialog_system.play_sequence(Database.A_level_01_05)
-	#await Global.dialog_system.sequence_finished
-	#Global.dialog_system.play_sequence(Database.A_level_01_06)
-	#$"../search_phase/Room/Picture".release()
-	#
-	#await $"../search_phase/Room/Picture/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room".lock()
-	#
-	#$"../search_phase/Letter".show()
-	#Global.dialog_system.play_sequence(Database.A_level_01_07)
-	#$"../search_phase/Room/DoorLeft".release()
-	#
-	#await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_08)
-	#$"../search_phase/Room/DoorLeft".release()
-	#
-	#await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room".lock()
-	#$"../search_phase/Room/DoorLeft".release()
-	#
-	#await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_09)
-	#$"../search_phase/Room/DoorRight".release()
-	#
-	#await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
-	#await $"../TransitionWall".transition_hide_back_done
-	#$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_10)
-	#$"../search_phase/Room/Picture".release()
-	#
-	#await $"../search_phase/Room/Picture/Hitbox & Image".pressed
+	load_level(level1)
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	Global.dialog_system.play_sequence(Database.A_level_01_01)
+	$"../search_phase/Room/DoorLeft".release()
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room/DoorLeft".lock()
+	Global.dialog_system.play_sequence(Database.A_level_01_02)
+	$"../search_phase/Room/DoorRight".release()
+	
+	await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room/DoorRight".lock()
+	Global.dialog_system.play_sequence(Database.A_level_01_03)
+	$"../search_phase/Room/DoorLeft".release()
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	Global.dialog_system.play_sequence(Database.A_level_01_04)
+	await Global.dialog_system.sequence_finished
+	Global.dialog_system.play_sequence(Database.A_level_01_05)
+	await Global.dialog_system.sequence_finished
+	Global.dialog_system.play_sequence(Database.A_level_01_06)
+	$"../search_phase/Room/Picture".release()
+	
+	await $"../search_phase/Room/Picture/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	
+	$"../search_phase/Letter".show()
+	Global.dialog_system.play_sequence(Database.A_level_01_07)
+	$"../search_phase/Room/DoorLeft".release()
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	Global.dialog_system.play_sequence(Database.A_level_01_08)
+	$"../search_phase/Room/DoorLeft".release()
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	$"../search_phase/Room/DoorLeft".release()
+	
+	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	Global.dialog_system.play_sequence(Database.A_level_01_09)
+	$"../search_phase/Room/DoorRight".release()
+	
+	await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
+	await $"../TransitionWall".transition_hide_back_done
+	$"../search_phase/Room".lock()
+	Global.dialog_system.play_sequence(Database.A_level_01_10)
+	$"../search_phase/Room/Picture".release()
+	
+	await $"../search_phase/Room/Picture/Hitbox & Image".pressed
 	
 	
 	
 	
 	
-	#load_level(level2)
-	#await $"../TransitionWall".transition_hide_back_done
-	#Global.dialog_system.play_sequence(Database.A_level_02_01)
-	#await Global.dialog_system.sequence_finished
+	load_level(level2)
+	await $"../TransitionWall".transition_hide_back_done
+	Global.dialog_system.play_sequence(Database.A_level_02_01)
+	await Global.dialog_system.sequence_finished
 	
 	load_level(level2_2)
-	#await $"../TransitionWall".transition_hide_back_done
-	#Global.dialog_system.play_sequence(Database.A_level_02_02)
-	#await Global.dialog_system.sequence_finished
-	#
-	#while (!Global.current_level.inventory.is_empty() || !Helper.tree_is_sorted(Global.tree_root) || Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
-		#await get_tree().create_timer(0.1).timeout
-	#Global.dialog_system.play_sequence(Database.A_level_02_03)
-	#for child in Helper.get_all_children(Global.tree_root.get_parent()):
-		#if child is SnapTargetNode && child.snapTarget.snapperObject != null:
-			#child.snapTarget.snapperObject.lock()
-	#
-	#await $"../build_phase/DoneButton".pressed
-	#await $"../TransitionWall".transition_show_up_done
-	#$"../search_phase/Room/DoorRight/DoorNumber".hide()
-	#$"../search_phase/Room/DoorLeft/DoorNumber".hide()
-	#await $"../TransitionWall".transition_hide_back_done
-	#Global.dialog_system.play_sequence(Database.A_level_02_04)
+	await $"../TransitionWall".transition_hide_back_done
+	Global.dialog_system.play_sequence(Database.A_level_02_02)
+	await Global.dialog_system.sequence_finished
+	
+	while (!Global.current_level.inventory.is_empty() || !Helper.tree_is_sorted(Global.tree_root) || Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
+		await get_tree().create_timer(0.1).timeout
+	Global.dialog_system.play_sequence(Database.A_level_02_03)
+	for child in Helper.get_all_children(Global.tree_root.get_parent()):
+		if child is SnapTargetNode && child.snapTarget.snapperObject != null:
+			child.snapTarget.snapperObject.lock()
+	
+	await $"../build_phase/DoneButton".pressed
+	await $"../TransitionWall".transition_show_up_done
+	$"../search_phase/Room/DoorRight/DoorNumber".hide()
+	$"../search_phase/Room/DoorLeft/DoorNumber".hide()
+	await $"../TransitionWall".transition_hide_back_done
+	Global.dialog_system.play_sequence(Database.A_level_02_04)
 	
 	
-	#await SignalBus.level_finished
-	#load_level(level3)
-	#await SignalBus.level_finished
-	#load_level(level3_2)
+	await SignalBus.picture_right_room
+	load_level(level3)
+	
+	
+	
+	await SignalBus.level_finished
+	load_level(level3_2)
 	await SignalBus.level_finished
 	load_level(level4)
 	await SignalBus.level_finished
