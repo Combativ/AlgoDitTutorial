@@ -8,9 +8,7 @@ class_name Door
 ##stores a reference to the TextureButton used for the door´s hitbox and texture
 @onready var door_hitbox: TextureButton = $"Hitbox & Image"
 ##stores a reference to this door's AudioStreamPlayer2D
-@onready var audioplayer: AudioPlayer = $AudioPlayer
-#$AudioPlayer
-#$"../../../dialog_system/Special_effects_player"
+@onready var audioplayer: AudioStreamPlayer2D = $AudioPlayer
 ##sound that is played when moving through the door
 @export var sound: AudioStream
 @export var muted: bool
@@ -19,14 +17,20 @@ class_name Door
 ####################################################################################################
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#get sfx-player options for own player
+	self.door_hitbox.pressed.connect(func():
+		if(Global.sound_options_window.get_mute_status_sfx()):
+			get_audio_player().volume_db = -80
+		else:
+			get_audio_player().volume_db = Global.sound_options_window.get_sound_control().get_special_effects_volume_db()
+			
+	)
+	
 	_initialize()
 	pass # Replace with function body.
 
 ##sets all textures of this Object to the ones stored in the Controller-class
 func _initialize() -> void:
-	set_img($"../../Controller".DOOR_IMG_NORMAL)
-	set_img_hover($"../../Controller".DOOR_IMG_HOVER)
-	set_img_doorplate($"../../Controller".DOOR_IMG_DOORPLATE)
 	$"DoorNumber/Hitbox & Image".disabled = true
 	self.audioplayer.stream = self.sound
 	#self.get_door_hitbox().pressed.connect(self.audioplayer.play)
@@ -57,7 +61,7 @@ func get_door_hitbox() -> TextureButton:
 	return self.door_hitbox
 
 ##returns this door's AudioStreamPlayer2D
-func get_audio_player() -> AudioPlayer:
+func get_audio_player() -> AudioStreamPlayer2D:
 	return self.audioplayer
 
 ##sets the door number to the new integer
@@ -85,7 +89,7 @@ func set_img_doorplate(img: Texture2D) -> void:
 	$"DoorNumber/Hitbox & Image".set_texture_normal(img)
 
 ##sets this door's audio player to the transferred one
-func set_audio_player(new_player: AudioPlayer) -> void:
+func set_audio_player(new_player: AudioStreamPlayer2D) -> void:
 	self.audioplayer = new_player
 	
 #methods
@@ -112,9 +116,10 @@ func lock() -> void:
 	self.get_door_hitbox().disabled = true
 
 ##releases the buttons (buttons can be used again)
-## disabled = false
+##disabled = false (only if behind door exists a room)
 func release() -> void:
-	self.get_door_hitbox().disabled = false
+	if (door_node != null && door_node.get_number() != -1):
+		self.get_door_hitbox().disabled = false
 
 ##mutes the door's sound
 func mute() -> void:

@@ -28,8 +28,8 @@ func _process(delta: float) -> void:
 ####################################################################################################
 
 ##sets this AudioPlayer's volume to the transferred one
-func set_volume(new_volume: float) -> void:
-	self.volume = new_volume
+func set_volume(new_volume_db: float) -> void:
+	self.volume = new_volume_db
 
 #methods
 ####################################################################################################

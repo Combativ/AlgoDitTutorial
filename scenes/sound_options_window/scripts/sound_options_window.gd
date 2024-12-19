@@ -63,17 +63,6 @@ func _ready() -> void:
 		white_noise_player.play()
 	)
 	
-	sfx_player.stream = load("res://scenes/sound_options_window/sounds/WhiteNoise2.wav")
-	sfx_player.play()
-	sfx_player.finished.connect(func():
-		sfx_player.play()
-	)
-
-	storyteller_player.stream = load("res://scenes/sound_options_window/sounds/WhiteNoise3.wav")
-	storyteller_player.play()
-	storyteller_player.finished.connect(func():
-		storyteller_player.play()
-	)
 	pass # Replace with function body.
 
 

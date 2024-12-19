@@ -86,19 +86,20 @@ static func _apply(tree_root: SnapTargetNode, array: Array[int]) -> void:
 		_apply(tree_root.get_right_child_node(), array)
 	pass
 
-##performs the Callable call, while the search phase and build phase are locked and cannot be 
+##performs the Callable call, while the game is locked and cannot be 
 ##interacted with
-#TODO (den global_sound_manager gibt es nicht mehr)
+signal perform_locked_end
 func perform_locked(call: Callable):
 	Global.build_phase.lock()
-	Global.search_phase.lock()
+	Global.search_phase.input_lock.show()
 	Global.dialog_system.lock()
-	#löschen: Global.global_sound_manager.lock()
+	Global.sound_options_window.lock()
 	
 	call.call()
 	
+	await perform_locked_end
 	Global.build_phase.release()
-	Global.search_phase.release()
+	Global.search_phase.input_lock.hide()
 	Global.dialog_system.release()
-	#löschen: Global.global_sound_manager.release()
+	Global.sound_options_window.release()
 	pass

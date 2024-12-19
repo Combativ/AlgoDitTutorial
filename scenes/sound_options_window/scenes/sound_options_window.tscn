@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/sound_options_window/scripts/sound_options_window.gd" id="1_g7l4f"]
 [ext_resource type="PackedScene" uid="uid://dbug5ix5ecyni" path="res://scenes/sound_options_window/scenes/option_gui.tscn" id="2_ej733"]
-[ext_resource type="Texture2D" uid="uid://dux77h7ihgxnc" path="res://icon.svg" id="2_larbp"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="2_nk3cy"]
 [ext_resource type="AudioStream" uid="uid://b5nxitk2ynatq" path="res://scenes/sound_options_window/sounds/WhiteNoise1.wav" id="2_y1mu8"]
 [ext_resource type="Texture2D" uid="uid://d0uhn2xtgkx1" path="res://scenes/sound_options_window/art_assets/sound_on.png" id="4_aygj0"]
+[ext_resource type="Texture2D" uid="uid://85wqy5watwo6" path="res://scenes/sound_options_window/art_assets/gear.png" id="5_6ogsb"]
 
 [node name="sound_options_window" type="Node2D"]
 top_level = true
@@ -24,12 +24,12 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("4_aygj0")
 
 [node name="option_open_button" type="TextureButton" parent="."]
-offset_left = 1190.0
-offset_top = 26.0
-offset_right = 1318.0
-offset_bottom = 154.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("2_larbp")
+offset_left = 1195.0
+offset_top = 30.0
+offset_right = 1897.0
+offset_bottom = 752.0
+scale = Vector2(0.08, 0.08)
+texture_normal = ExtResource("5_6ogsb")
 
 [node name="sound_control" parent="." instance=ExtResource("2_ej733")]
 visible = false

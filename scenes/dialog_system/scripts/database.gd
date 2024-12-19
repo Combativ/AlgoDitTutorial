@@ -222,6 +222,7 @@ var A_level_05_3_01: Array[Tuple] = [self.level_05_3_01,
 var A_level_05_3_02: Array[Tuple] = [self.level_05_3_04,
 									self.level_05_3_05]
 
+
 var endscreen_01: Tuple = Tuple.new("Ich hoffe dir hat das Tutorial gefallen.", preload("res://scenes/dialog_system/voicelines/level_endscreen/AlgoditVoice91_00013382.wav"))
 var endscreen_02: Tuple = Tuple.new("Hier ist ein Keks für deine Mühen.", preload("res://scenes/dialog_system/voicelines/level_endscreen/AlgoditVoice92_00013438.wav"))
 

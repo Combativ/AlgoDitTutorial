@@ -5,6 +5,7 @@ class_name SearchPhase
 @export var transition_time: float
 @onready var room: Room = $Room
 @onready var letter: Letter = $Letter
+@onready var input_lock: Button = $InputLock
 
 ####################################################################################################
 func _ready() -> void:
@@ -67,13 +68,17 @@ static func create_destination_room(random_destination_room_generating: bool) ->
 
 ##blocks every single button of this phase (incl. switch_phase button)
 func lock() -> void:
+	#$InputLock.show()
 	room.lock()
 	$SwitchPhase.disabled = true
+	pass
 	
 ##releases the buttons of this phase
 func release() -> void: 
+	#$InputLock.hide()
 	room.release()
 	$SwitchPhase.disabled = false
+	pass
 
 ##makes the screen black for almost the time transferred 
 func transition(seconds: float) -> void:
