@@ -11,7 +11,7 @@ class_name Controller
 		return ROOM_IMG
 
 #Picture
-@export var PICTURE_IMG: Texture2D = preload("res://scenes/search_phase/art/Picture_v01.png"):
+@export var PICTURE_IMG: Texture2D = preload("res://scenes/search_phase/art/Picture_v03.png"):
 	set(img):
 		PICTURE_IMG = img
 	get():
@@ -28,7 +28,7 @@ class_name Controller
 		DOOR_IMG_HOVER = img
 	get():
 		return DOOR_IMG_HOVER
-@export var DOOR_IMG_DOORPLATE: Texture2D = PICTURE_IMG:
+@export var DOOR_IMG_DOORPLATE: Texture2D = preload("res://scenes/search_phase/art/Picture_v03.png"):
 	set(img):
 		DOOR_IMG_DOORPLATE = img
 	get():

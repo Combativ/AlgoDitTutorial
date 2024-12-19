@@ -5,6 +5,8 @@ class_name Dialogsystem
 signal skipped
 ##emits, when the writing animation has finished or got skipped
 signal writing_done
+##emits, when the sequence of tuples is done playing
+signal sequence_finished
 
 var up: bool 				= false
 var down: bool		 		= false
@@ -237,6 +239,7 @@ func play_sequence(couple_array: Array[Tuple]) -> void:
 			
 			await self.writing_done
 			await self.get_audio_player().finished
+			##player input
 			await self.skip
 			
 		self.slide_down()

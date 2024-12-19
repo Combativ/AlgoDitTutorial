@@ -38,7 +38,6 @@ slider_start_value = 75000.0
 [node name="white noise" parent="ColorRect" instance=ExtResource("2_k8xk3")]
 position = Vector2(40, 195)
 text = "Hintergrundgeräusche:"
-muted = true
 slider_min_value = 1
 slider_max_value = 158489
 slider_start_value = 75000.0
@@ -46,7 +45,6 @@ slider_start_value = 75000.0
 [node name="sfx" parent="ColorRect" instance=ExtResource("2_k8xk3")]
 position = Vector2(40, 255)
 text = "Soundeffekte:"
-muted = true
 slider_min_value = 1
 slider_max_value = 158489
 slider_start_value = 75000.0
