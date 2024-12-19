@@ -103,7 +103,7 @@ func _process(delta: float) -> void:
 		skipped.disconnect(skip_text)
 	
 	#writing animation
-	if writing && index !=  self.text.length()-1:
+	if writing && index !=  self.text.length():
 		_write_next()
 	elif writing:
 			working = false
@@ -203,7 +203,7 @@ func _write_next() -> void:
 ##emits signal: writing_done
 func skip_text() -> void:
 	set_text(self.text)
-	self.index = self.text.length()-1
+	self.index = self.text.length()
 
 ##skips the writing animation and the voice track
 ##emits signal: self.skipped
@@ -268,7 +268,7 @@ func play_sound_sequence(couples: Array[Tuple]) -> void:
 			audio_player.stream = sound
 			audio_player.play()
 			await audio_player.finished
-		Helper.perform_locked_end
+		Helper.perform_locked_end.emit()
 	)
 	pass
 
