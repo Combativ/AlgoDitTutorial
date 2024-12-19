@@ -36,30 +36,31 @@ func _ready() -> void:
 	#TODO: Zettel mit Zahl ausblenden
 	load_level(level1)
 	await $"../TransitionWall".transition_hide_back_done
+	Global.dialog_system.play_sequence(Database.A_level_01_01)
+	#await Global.dialog_system.sequence_finished
 	$"../search_phase/Room".lock()
 	$"../search_phase/Room/DoorLeft".release()
-	#Global.dialog_system.play_sequence(Database.A_level_01_01)
 	
 	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room/DoorLeft".lock()
 	$"../search_phase/Room/DoorRight".release()
-	#Global.dialog_system.play_sequence(Database.A_level_01_02)
+	Global.dialog_system.play_sequence(Database.A_level_01_02)
 	
 	await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room/DoorRight".lock()
 	$"../search_phase/Room/DoorLeft".release()
-	#Global.dialog_system.play_sequence(Database.A_level_01_03)
+	Global.dialog_system.play_sequence(Database.A_level_01_03)
 	
 	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_04)
-	#await get_tree().create_timer(1).timeout
-	#Global.dialog_system.play_sequence(Database.A_level_01_05)
-	#await get_tree().create_timer(1).timeout
-	#Global.dialog_system.play_sequence(Database.A_level_01_06)
+	Global.dialog_system.play_sequence(Database.A_level_01_04)
+	await get_tree().create_timer(1).timeout
+	Global.dialog_system.play_sequence(Database.A_level_01_05)
+	await get_tree().create_timer(1).timeout
+	Global.dialog_system.play_sequence(Database.A_level_01_06)
 	$"../search_phase/Room/Picture".release()
 	
 	await $"../search_phase/Room/Picture/Hitbox & Image".pressed
@@ -67,13 +68,13 @@ func _ready() -> void:
 	$"../search_phase/Room".lock()
 	
 	#TODO Zettel mit Zahl einblenden
-	#Global.dialog_system.play_sequence(Database.A_level_01_07)
+	Global.dialog_system.play_sequence(Database.A_level_01_07)
 	$"../search_phase/Room/DoorLeft".release()
 	
 	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_08)
+	Global.dialog_system.play_sequence(Database.A_level_01_08)
 	$"../search_phase/Room/DoorLeft".release()
 	
 	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
@@ -84,13 +85,13 @@ func _ready() -> void:
 	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_09)
+	Global.dialog_system.play_sequence(Database.A_level_01_09)
 	$"../search_phase/Room/DoorRight".release()
 	
 	await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room".lock()
-	#Global.dialog_system.play_sequence(Database.A_level_01_10)
+	Global.dialog_system.play_sequence(Database.A_level_01_10)
 	$"../search_phase/Room/Picture".release()
 	
 	
