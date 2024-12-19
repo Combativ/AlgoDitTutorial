@@ -80,3 +80,14 @@ func end_drag():
 
 func update_number():
 	$Label.text = str(number)
+
+
+func lock():
+	$DragMask.disabled = true
+	# set mouse to default arrow (indicates no interaction)
+	$DragMask.mouse_default_cursor_shape = 0
+
+func release():
+	$DragMask.disabled = false
+	# set mouse to grab arrow (indicates interaction)
+	$DragMask.mouse_default_cursor_shape = 6

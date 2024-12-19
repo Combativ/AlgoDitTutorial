@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://n2liaj1xpsip" path="res://scenes/build_phase/scenes/inventory.tscn" id="4_05tb3"]
 [ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://scenes/build_phase/scenes/room_miniature.tscn" id="5_m5h8j"]
 
-[node name="Level03_2" type="Node2D" node_paths=PackedStringArray("target_room")]
+[node name="Level03_2" type="Node2D"]
 script = ExtResource("1_4mpt7")
-target_room = NodePath("Inventory/95")
+target_room = 95
 lock_predefined_nodes_in_tree = true
 
 [node name="Tree" type="Node2D" parent="."]

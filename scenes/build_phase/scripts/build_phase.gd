@@ -19,8 +19,3 @@ func lock():
 # enable user input
 func release():
 	$InputLock.hide()
-
-# DEBUG
-func _process(delta: float) -> void:
-	if (Input.is_action_just_pressed("ui_left")):
-		print(Helper.find_SnapTargetNode_from_RoomMiniature(Global.current_level.target_room))

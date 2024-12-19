@@ -46,10 +46,10 @@ func emulate_left_mouse_button_click(pos: Vector2 = get_viewport().get_mouse_pos
 
 # This method returns the SnapTargetNode the requested RoomMiniature sits in
 # It returns null, if the RoomMiniature is not found in the tree
-func find_SnapTargetNode_from_RoomMiniature(room: RoomMiniature) -> SnapTargetNode:
+func find_SnapTargetNode_from_number(number: int) -> SnapTargetNode:
 	for child in Helper.get_all_children(Global.tree_root.get_parent()):
-		if (child is SnapTargetNode):
-			if (child.snapTarget.snapperObject == room):
+		if (child is SnapTargetNode && child.snapTarget.snapperObject != null):
+			if (child.snapTarget.snapperObject.number == number):
 				return child
 	return null
 

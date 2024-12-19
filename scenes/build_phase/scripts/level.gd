@@ -11,7 +11,7 @@ class_name Level
 
 # the room the player has to find to finish the level
 # (must be set in the inspector)
-@export var target_room: RoomMiniature = null
+@export var target_room: int = -1
 
 
 # variables to enable/disable functions. These must be set
@@ -49,9 +49,7 @@ func _ready() -> void:
 	if (lock_predefined_nodes_in_tree == true):
 		for child in Helper.get_all_children(self):
 			if (child is SnapTarget && child.snapperObject != null):
-				child.snapperObject.get_node("DragMask").disabled = true
-				# set mouse to default arrow (indicates no interaction)
-				child.snapperObject.get_node("DragMask").mouse_default_cursor_shape = 0
+				child.snapperObject.lock()
 	
 	if (enable_rotation_operations == true):
 		for child in Helper.get_all_children($Tree):

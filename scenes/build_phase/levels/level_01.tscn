@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cw3710glxvp2k" path="res://icon_small.svg" id="3_bpbfc"]
 [ext_resource type="PackedScene" uid="uid://dhrv6jgwyaplb" path="res://scenes/build_phase/scenes/room_miniature.tscn" id="4_bvggk"]
 
-[node name="Level01" type="Node2D" node_paths=PackedStringArray("target_room")]
+[node name="Level01" type="Node2D"]
 script = ExtResource("1_6uj8a")
-target_room = NodePath("RoomMiniatureContainer/RoomMiniature12")
+target_room = 12
 lock_predefined_nodes_in_tree = true
 start_in_search_phase = true
 

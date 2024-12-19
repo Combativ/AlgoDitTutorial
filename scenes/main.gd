@@ -32,8 +32,8 @@ func switch_to_search_phase():
 	
 	##if target_room is not set in build phase create random destination_room
 	##else set destination_room to the target_rooom's new position
-	if Global.current_level.target_room != null:
-		Global.destination_room = Helper.find_SnapTargetNode_from_RoomMiniature(Global.current_level.target_room)
+	if Global.current_level.target_room >= 0:
+		Global.destination_room = Helper.find_SnapTargetNode_from_number(Global.current_level.target_room)
 	else:
 		SearchPhase.create_destination_room(true)
 	print("destination_room: ", Global.destination_room.get_number())
