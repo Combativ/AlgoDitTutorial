@@ -17,7 +17,8 @@ text = "Aufgabe
 visible = false
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
-text = "filll ma asome askfj aödlkfj aölkdsfj alkdfj öalkd mföalksdmfölkasdöf jaölsdkfj ölasjdfö ladsföl jasödkj flasjdf ölölak sjdfölkajsd f"
+bbcode_enabled = true
+text = "[center]filll ma asome askfj aödlkfj aölkdsfj alkdfj öalkd mföalksdmfölkasdöf jaölsdkfj ölasjdfö ladsföl jasödkj flasjdf ölölak sjdfölkajsd f"
 
 [node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
 show_behind_parent = true

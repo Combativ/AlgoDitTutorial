@@ -24,6 +24,7 @@ script = ExtResource("3_nxrd8")
 script = ExtResource("3_nxrd8")
 
 [node name="Text_box" type="CharacterBody2D" parent="."]
+z_index = 1
 scale = Vector2(0.6, 0.6)
 script = ExtResource("3_qjwsw")
 

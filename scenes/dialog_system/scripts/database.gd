@@ -16,7 +16,7 @@ var level_01_05: Tuple = Tuple.new("Und nun wieder LINKS.", preload("res://scene
 
 var level_01_06: Tuple = Tuple.new("Einen Moment...", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice6_00001065.wav"))
 
-var level_01_07: Tuple = Tuple.new("Hier Stimmt etwas nicht, nach meinem Script,… solltest du eigentlich erst in 5 Leveln hier sein… Mhmmm...", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice7_00001111.wav"))
+var level_01_07: Tuple = Tuple.new("Hier Stimmt etwas nicht, nach meinem Skript,… solltest du eigentlich erst in 5 Leveln hier sein… Mhmmm...", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice7_00001111.wav"))
 
 var level_01_08: Tuple = Tuple.new("Ahhhhh, ich habs!", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice8_00001348.wav"))
 var level_01_09: Tuple = Tuple.new("Drücke mal auf den Bilderrahmen in der Mitte, mit der 30. Der sollte uns wieder zurück zum Anfang bringen", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice9_00001457.wav"))
@@ -28,6 +28,7 @@ var level_01_13: Tuple = Tuple.new("Wir gehen wieder nach Rechts, zu der 25", pr
 
 var level_01_14: Tuple = Tuple.new("Jetzt gehen wir zu der 15, danach runter in die 10.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice14_00002148.wav"))
 
+#TODO Voiceline einfügen (die Datei existiert im Projektverzeichnis, ist aber nicht eingefügt)
 var level_01_15: Tuple = Tuple.new("Ahhhh, da ist ja unser Ziel - die 12, wie sie im Zettel steht.", null)
 
 var level_01_16: Tuple = Tuple.new("Nun nurnoch auf den Bilderrahmen klicken und dann haben wir das erste Level abgeschlossen.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice16_00002385.wav"))
@@ -62,7 +63,7 @@ var level_02_09: Tuple = Tuple.new("Also, der AVL-Baum hat eine spannende Eigens
 var level_02_10: Tuple = Tuple.new("Er sorgt dafür, dass er immer gut ausbalanciert bleibt.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice26_00003952.wav"))
 var level_02_11: Tuple = Tuple.new("Aber was bedeutet das eigentlich?", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice27_00004035.wav"))
 var level_02_12: Tuple = Tuple.new("Balance heißt, dass die Unterbäume eines Knotens nie einen zu großen (>1) Höhenunterschied haben.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice28.wav"))
-var level_02_13: Tuple = Tuple.new("Unter anderem ist es auch wichtig, dass wir die Knoten von links (klein) nach rechts (groß) einnordnen.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice29_00004334.wav"))
+var level_02_13: Tuple = Tuple.new("Unter anderem ist es auch wichtig, dass wir die Knoten von links (klein) nach rechts (groß) einordnen.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice29_00004334.wav"))
 var level_02_14: Tuple = Tuple.new("Deswegen würde ich die 39 links unter der 40 einordnen, da sie kleiner als die 40, aber größer als die 35 ist.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice30_00004506.wav"))
 var level_02_15: Tuple = Tuple.new("Sobald du die Knoten eingefügt hast, zeige ich dir, wie wir prüfen können, ob unser Baum noch in Balance ist.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice31_00004808.wav"))
 
@@ -79,7 +80,7 @@ var A_level_02_01: Array[Tuple] = [	self.level_02_01,
 									self.level_02_02, 
 									self.level_02_03,
 									self.level_02_04,
-									self.level_01_05]
+									self.level_02_05]
 var A_level_02_02: Array[Tuple] = [	self.level_02_06, 
 									self.level_02_07, 
 									self.level_02_08,

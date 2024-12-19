@@ -6,6 +6,7 @@ class_name Level
 # reference to the tree root of the level
 @onready var tree_root_node = find_child("root")
 @onready var main = get_tree().get_root().get_node("Main")
+@onready var inventory: Inventory = $Inventory
 
 
 # the room the player has to find to finish the level
