@@ -111,7 +111,7 @@ func lock():
 	self.slider.editable = false
 	self.slider.scrollable = false
 
-#TODO
+#TODO (animation weg?)
 func release():
 	self.mute_button.disabled = false
 	self.slider.editable = true
