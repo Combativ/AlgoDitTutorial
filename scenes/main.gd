@@ -43,13 +43,17 @@ func switch_to_search_phase():
 	print("is balanced: ",balanced)
 	print("is sorted: ", Helper.tree_is_sorted(Global.tree_root))
 
-func switch_to_build_phase():
-	get_transition_wall().transition_show_up()
-	await get_transition_wall().transition_show_up_done
+func switch_to_build_phase(skip_animation:bool = false):
+	if (skip_animation == false):
+		get_transition_wall().transition_show_up()
+		await get_transition_wall().transition_show_up_done
+		
 	Helper.disable_and_hide_node(search_phase)
 	Helper.enable_and_show_node(build_phase)
-	await get_tree().create_timer(search_phase.get_transition_time()).timeout
-	get_transition_wall().transition_hide_back()
+	
+	if (skip_animation == false):
+		await get_tree().create_timer(search_phase.get_transition_time()).timeout
+		get_transition_wall().transition_hide_back()
 	
 
 func get_dialog_system() -> Node2D:

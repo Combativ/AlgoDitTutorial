@@ -16,9 +16,9 @@ var level_01_05: Tuple = Tuple.new("Und nun wieder LINKS.", preload("res://scene
 
 var level_01_06: Tuple = Tuple.new("Einen Moment...", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice6_00001065.wav"))
 
-var level_01_07: Tuple = Tuple.new("Hier Stimmt etwas nicht, nach meinem Skript,… solltest du eigentlich erst in 5 Leveln hier sein… Mhmmm...", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice7_00001111.wav"))
+var level_01_07: Tuple = Tuple.new("Hier Stimmt irgendetwas nicht. Nach meinem Skript... solltest du eigentlich erst in 5 Leveln hier sein... Hmm...", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice7_00001111.wav"))
 
-var level_01_08: Tuple = Tuple.new("Ahhhhh, ich habs!", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice8_00001348.wav"))
+var level_01_08: Tuple = Tuple.new("Ahhhhh, ich hab's!", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice8_00001348.wav"))
 var level_01_09: Tuple = Tuple.new("Drücke mal auf den Bilderrahmen in der Mitte, mit der 30. Das sollte uns wieder zurück an den Anfang bringen.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice9_00001457.wav"))
 var level_01_10: Tuple = Tuple.new("Und...", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice10_00001812.wav"))
 
@@ -28,8 +28,7 @@ var level_01_13: Tuple = Tuple.new("Wir gehen wieder nach LINKS, zu der 25.", pr
 
 var level_01_14: Tuple = Tuple.new("Jetzt gehen wir zu der 15, danach runter in die 10.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice14_00002148.wav"))
 
-#TODO Voiceline einfügen (die Datei existiert im Projektverzeichnis, ist aber nicht eingefügt)
-var level_01_15: Tuple = Tuple.new("Ahhhh, da ist ja unser Ziel - die 12, wie sie im Zettel steht.", null)
+var level_01_15: Tuple = Tuple.new("Ahhhh, da ist ja unser Ziel - die 12, wie sie im Zettel steht.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice15_00002268.wav"))
 
 var level_01_16: Tuple = Tuple.new("Und nurnoch auf den Bilderrahmen klicken und dann haben wir das erste Level abgeschlossen.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice16_00002385.wav"))
 
@@ -56,7 +55,7 @@ var level_02_03: Tuple = Tuple.new("Jetzt schauen wir uns einmal genauer an, wie
 var level_02_04: Tuple = Tuple.new("Du siehst da diese Zahlen?", preload("res://scenes/dialog_system/voicelines/level2_1_prolog/build/AlgoditVoice20_00003193.wav"))
 var level_02_05: Tuple = Tuple.new("Genau, da unten...", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice21_00003256.wav"))
 
-var level_02_06: Tuple = Tuple.new("...die 39, 42, 58, 87 und 99", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice22_00003468.wav"))
+var level_02_06: Tuple = Tuple.new("...die 39, 42, 58, 87 und 99.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice22_00003468.wav"))
 var level_02_07: Tuple = Tuple.new("Wir werden diese nun gemeinsam in unseren Baum einfügen.", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice23_00003638.wav"))
 var level_02_08: Tuple = Tuple.new("Keine Angst, ich helfe dir dabei!", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice24_00003714.wav"))
 var level_02_09: Tuple = Tuple.new("Also, der AVL-Baum hat eine spannende Eigenschaft:", preload("res://scenes/dialog_system/voicelines/level2_2/build/AlgoditVoice25_00003863.wav"))
@@ -165,7 +164,7 @@ var level_04_2_03: Tuple = Tuple.new("Zieh sie mal in den Baum, du wirst sehen, 
 var level_04_2_04: Tuple = Tuple.new("... wir müssen ihn dann zwar balancieren, aber wir als Team kriegen das hin!", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice68_00009961.wav"))
 
 var level_04_2_05: Tuple = Tuple.new("Wir müssen hier nun eine Rechts-Rotation der 30 durchführen, da ihr linkes Kind 2 Ebenen tiefer reicht, als ihr rechtes Kind.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice69_00010181.wav"))
-var level_04_2_06: Tuple = Tuple.new("Das Prinzip ist genau das gleiche, nur spiegelverkehrt", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice70_00010449.wav"))
+var level_04_2_06: Tuple = Tuple.new("Das Prinzip ist genau das gleiche, nur spiegelverkehrt.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice70_00010449.wav"))
 var level_04_2_07: Tuple = Tuple.new("Bei einer rechten Rotation wird der linke Knoten zur neuen Wurzel. Die 20 wird also die neue Wurzel, die 30 wird ihr rechtes Kind, und die 27 wird nun linkes Kind der 30.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice71_00010555.wav"))
 
 var level_04_2_08: Tuple = Tuple.new("Perfekt! Der Baum ist jetzt wunderschön ausgeglichen.", preload("res://scenes/dialog_system/voicelines/level4_2/build/AlgoditVoice72_00010870.wav"))
@@ -189,13 +188,13 @@ var A_level_04_2_04: Array[Tuple] = [self.level_04_2_11]
 var level_05_1_01: Tuple = Tuple.new("Willkommen im letzten Bereich unseres Tutorials.", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice76_00011399.wav"))
 var level_05_1_02: Tuple = Tuple.new("Siehst du die 4?", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice77_00011484.wav"))
 var level_05_1_03: Tuple = Tuple.new("Ihr rechter Teilbaum ist deutlich tiefer als ihr linker.", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice78_00011527.wav"))
-var level_05_1_04: Tuple = Tuple.new("Auf den ersten Blick würde man denken eine einfache Links Rotation würde ausreichen, um den Baum wieder zu balancieren.", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice79_00011627.wav"))
-var level_05_1_05: Tuple = Tuple.new("Der Täuscht aber!", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice80_00011834.wav"))
-var level_05_1_06: Tuple = Tuple.new("Zuerst müssen wir eine Rechts Rotation auf 6 durchführen, um den Überhang nach Rechts zu bringen", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice81_00011901.wav"))
+var level_05_1_04: Tuple = Tuple.new("Auf den ersten Blick würde man denken eine einfache Links-Rotation würde vollkommen ausreichen, um den Baum wieder zu balancieren.", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice79_00011627.wav"))
+var level_05_1_05: Tuple = Tuple.new("Das täuscht aber!", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice80_00011834.wav"))
+var level_05_1_06: Tuple = Tuple.new("Zuerst müssen wir eine Rechts-Rotation auf der 6 durchführen, um den Überhang nach rechts zu bringen.", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice81_00011901.wav"))
 
 var level_05_1_07: Tuple = Tuple.new("Und jetzt nur noch eine einfach Links-Rotation, du weißt ja wie das geht.", preload("res://scenes/dialog_system/voicelines/level5/build/AlgoditVoice82_00012105.wav"))
 
-var level_05_1_08: Tuple = Tuple.new("Einmal die 6 zum Mitnehmen bitte.", null)
+var level_05_1_08: Tuple = Tuple.new("Einmal die 6 zum Mitnehmen bitte.", preload("res://scenes/dialog_system/voicelines/level5/search/AlgoditVoice83_00012375.wav"))
 
 var A_level_05_1_01: Array[Tuple] = [self.level_05_1_01,
 									self.level_05_1_02,
@@ -207,14 +206,14 @@ var A_level_05_1_02: Array[Tuple] = [self.level_05_1_07]
 var A_level_05_1_03: Array[Tuple] = [self.level_05_1_08]
 
 var level_05_2_01: Tuple = Tuple.new("So, bist du bereit für die letzte Herausforderung?", preload("res://scenes/dialog_system/voicelines/level5_2_prolog/build/AlgoditVoice84_00012513.wav"))
-var level_05_2_02: Tuple = Tuple.new("Moment Warte, die 15 gehört da nicht hin, du sollst ja auch was zu tun haben.", preload("res://scenes/dialog_system/voicelines/level5_2_prolog/build/AlgoditVoice85_00012627.wav"))
+var level_05_2_02: Tuple = Tuple.new("Moment... warte, die 15 gehört da gar nicht hin, du sollst ja auch was zu tun haben.", preload("res://scenes/dialog_system/voicelines/level5_2_prolog/build/AlgoditVoice85_00012627.wav"))
 
 var A_level_05_2_01: Array[Tuple] = [self.level_05_2_01,
 									self.level_05_2_02]
 
-var level_05_3_01: Tuple = Tuple.new("Was du hier machen musst ist eine Links-Rechts Rotation.", preload("res://scenes/dialog_system/voicelines/level5_3/build/AlgoditVoice86_00012904.wav"))
-var level_05_3_02: Tuple = Tuple.new("Quasi wie gerade eben nur einmal umgedreht.", preload("res://scenes/dialog_system/voicelines/level5_3/build/AlgoditVoice87_00013011.wav"))
-var level_05_3_03: Tuple = Tuple.new("Das bekommst du bestimmt auch ohne mich hin!", preload("res://scenes/dialog_system/voicelines/level5_3/build/AlgoditVoice88_00013121.wav"))
+var level_05_3_01: Tuple = Tuple.new("Was du hier machen musst ist eine Links-Rechts-Rotation.", preload("res://scenes/dialog_system/voicelines/level5_3/build/AlgoditVoice86_00012904.wav"))
+var level_05_3_02: Tuple = Tuple.new("Quasi wie gerade eben, nur einmal umgedreht.", preload("res://scenes/dialog_system/voicelines/level5_3/build/AlgoditVoice87_00013011.wav"))
+var level_05_3_03: Tuple = Tuple.new("Das bekommst du auch ohne mich hin!", preload("res://scenes/dialog_system/voicelines/level5_3/build/AlgoditVoice88_00013121.wav"))
 
 var level_05_3_04: Tuple = Tuple.new("Ach du bist schon fertig?", preload("res://scenes/dialog_system/voicelines/level5_3/search/AlgoditVoice89_00013248.wav"))
 var level_05_3_05: Tuple = Tuple.new("Ich habe mir gerade noch Kaffee geholt!", preload("res://scenes/dialog_system/voicelines/level5_3/search/AlgoditVoice90_00013311.wav"))
