@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="AlgoDitTutorial"
-run/main_scene="res://scenes/main.tscn"
+config/name="Baumabenteuer"
+run/main_scene="res://menus/title/title.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 run/stretch/aspect="expand"
