@@ -9,11 +9,12 @@ class_name RotationManager
 func _process(delta: float) -> void:
 	
 	# pls dont sue me. This is the only method that worked
-	if (get_local_mouse_position().x > $enter.position.x - $enter.shape.get_rect().size.x / 2
-			&& get_local_mouse_position().x < $enter.position.x + $enter.shape.get_rect().size.x / 2
-			&& get_local_mouse_position().y > $enter.position.y - $enter.shape.get_rect().size.y / 2
-			&& get_local_mouse_position().y < $enter.position.y + $enter.shape.get_rect().size.y / 2):
-		show_arrows()
+	if (snap_target_node.get_left_child_node() != null || snap_target_node.get_right_child_node() != null):
+		if (get_local_mouse_position().x > $enter.position.x - $enter.shape.get_rect().size.x / 2
+				&& get_local_mouse_position().x < $enter.position.x + $enter.shape.get_rect().size.x / 2
+				&& get_local_mouse_position().y > $enter.position.y - $enter.shape.get_rect().size.y / 2
+				&& get_local_mouse_position().y < $enter.position.y + $enter.shape.get_rect().size.y / 2):
+			show_arrows()
 	
 	if (get_local_mouse_position().x > $exit.position.x + $exit.shape.get_rect().size.x / 2
 			|| get_local_mouse_position().x < $exit.position.x - $exit.shape.get_rect().size.x / 2
