@@ -51,7 +51,11 @@ theme_override_constants/margin_bottom = 50
 [node name="RichTextLabel" type="RichTextLabel" parent="Text_box/Text_box_img/MarginContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 42
+theme_override_font_sizes/italics_font_size = 42
+theme_override_font_sizes/mono_font_size = 42
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 42
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -81,7 +85,7 @@ offset_bottom = 537.0
 scale = Vector2(0.4, 0.4)
 
 [node name="TaskWindow" parent="." instance=ExtResource("9_5jwbw")]
-offset_left = -269.0
+offset_left = -257.0
 offset_top = -749.0
-offset_right = -119.0
+offset_right = -107.0
 offset_bottom = -614.0

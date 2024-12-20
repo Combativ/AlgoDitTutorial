@@ -21,28 +21,28 @@ theme_override_font_sizes/font_size = 25
 text = "Optionen:"
 
 [node name="total volume scale" parent="ColorRect" instance=ExtResource("2_k8xk3")]
-position = Vector2(40, 75)
+position = Vector2(40, 87)
 text = "Gesamtlautstärke:"
 slider_max_value = 1
 slider_start_value = 0.5
 slider_step_size = 0.001
 
 [node name="storyteller" parent="ColorRect" instance=ExtResource("2_k8xk3")]
-position = Vector2(40, 135)
+position = Vector2(40, 147)
 text = "Sprecher:"
 slider_min_value = 1
 slider_max_value = 158489
 slider_start_value = 75000.0
 
 [node name="white noise" parent="ColorRect" instance=ExtResource("2_k8xk3")]
-position = Vector2(40, 195)
+position = Vector2(40, 207)
 text = "Hintergrundgeräusche:"
 slider_min_value = 1
 slider_max_value = 158489
 slider_start_value = 12589.3
 
 [node name="sfx" parent="ColorRect" instance=ExtResource("2_k8xk3")]
-position = Vector2(40, 255)
+position = Vector2(40, 267)
 text = "Soundeffekte:"
 slider_min_value = 1
 slider_max_value = 158489

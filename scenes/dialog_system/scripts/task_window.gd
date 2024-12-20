@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (task_hidden and (button.is_hovered() or button_pressed)):
+	if (task_hidden and button.disabled == false and (button.is_hovered() or button_pressed)):
 		task.show()
 		task_hidden = false
 	elif(not task_hidden and not button.is_hovered() and not button_pressed):

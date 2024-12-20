@@ -13,6 +13,8 @@ const LEVEL_05_2 = preload("res://scenes/build_phase/levels/level_05_2_prolog.ts
 const LEVEL_05_3 = preload("res://scenes/build_phase/levels/level_05_3.tscn")
 
 var build_phase: Node2D
+var task_label: RichTextLabel
+
 # level 3 needs to know the last inserted room
 var room_number_just_inserted: int = -1
 
@@ -22,6 +24,7 @@ func _ready() -> void:
 	await get_parent().ready
 	
 	build_phase = get_parent().get_node("build_phase")
+	task_label = $"../dialog_system/TaskWindow/RichTextLabel"
 	
 	SignalBus.room_miniature_released_on_snap_target.connect(_on_roomMiniature_released_on_snapTarget)
 	
@@ -41,12 +44,14 @@ func _ready() -> void:
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room".lock()
 	Global.dialog_system.play_sequence(Database.A_level_01_01)
+	task_label.text = "[center]Klicke auf die linke Tür, um fortzufahren."
 	$"../search_phase/Room/DoorLeft".release()
 	await $"../search_phase/Room/DoorLeft/Hitbox & Image".pressed
 	await $"../TransitionWall".transition_show_up_done
 	$"../search_phase/Room/DoorLeft".lock()
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_01_02)
+	task_label.text = "[center]Klicke auf die rechte Tür."
 	$"../search_phase/Room/DoorRight".release()
 	
 	await $"../search_phase/Room/DoorRight/Hitbox & Image".pressed

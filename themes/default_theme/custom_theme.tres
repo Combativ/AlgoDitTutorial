@@ -1,11 +1,17 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://big8qmtia1gn1"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://big8qmtia1gn1"]
 
 [ext_resource type="Texture2D" uid="uid://d27ideucrcfei" path="res://themes/default_theme/assets/button_hover.png" id="1_ekie4"]
 [ext_resource type="FontFile" uid="uid://dgf8mykeskqby" path="res://themes/default_theme/assets/a song for jennifer.ttf" id="1_ljxr3"]
+[ext_resource type="Texture2D" uid="uid://bt5fjb342xlw7" path="res://themes/default_theme/assets/button_disabled.png" id="2_jj52h"]
 [ext_resource type="Texture2D" uid="uid://e2ad0gp4rhqw" path="res://themes/default_theme/assets/button_normal.png" id="2_o6im3"]
 [ext_resource type="Texture2D" uid="uid://cswhv1cdgsc1u" path="res://themes/default_theme/assets/button_press.png" id="3_nuxs2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2sg8d"]
+texture = ExtResource("2_jj52h")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y72iw"]
 texture = ExtResource("1_ekie4")
@@ -36,8 +42,9 @@ content_margin_bottom = 5.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
-Button/font_sizes/font_size = 18
-Button/fonts/font = ExtResource("1_ljxr3")
+default_font = ExtResource("1_ljxr3")
+default_font_size = 24
+Button/font_sizes/font_size = 20
 Button/styles/disabled = SubResource("StyleBoxTexture_2sg8d")
 Button/styles/hover = SubResource("StyleBoxTexture_y72iw")
 Button/styles/normal = SubResource("StyleBoxTexture_q7wyv")

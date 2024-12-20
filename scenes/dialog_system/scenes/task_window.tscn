@@ -18,7 +18,7 @@ visible = false
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]filll ma asome askfj aödlkfj aölkdsfj alkdfj öalkd mföalksdmfölkasdöf jaölsdkfj ölasjdfö ladsföl jasödkj flasjdf ölölak sjdfölkajsd f"
+text = "[center]test"
 
 [node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
 show_behind_parent = true
