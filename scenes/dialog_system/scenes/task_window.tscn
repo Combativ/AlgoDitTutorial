@@ -15,10 +15,10 @@ text = "Aufgabe
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 visible = false
-custom_minimum_size = Vector2(150, 100)
+custom_minimum_size = Vector2(230, 100)
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]test"
+text = "[center]Lorem Ipsum"
 
 [node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
 show_behind_parent = true
