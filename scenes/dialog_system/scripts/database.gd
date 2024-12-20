@@ -37,9 +37,13 @@ var A_level_01_01: Array[Tuple] = [	self.level_01_01,
 									self.level_01_03]
 var A_level_01_02: Array[Tuple] = [	self.level_01_04]
 var A_level_01_03: Array[Tuple] = [	self.level_01_05]
-var A_level_01_04: Array[Tuple] = [	self.level_01_06]
-var A_level_01_05: Array[Tuple] = [	self.level_01_07]
-var A_level_01_06: Array[Tuple] = [	self.level_01_08,
+var A_level_01_04: Array[Tuple] = [	self.level_01_06,
+#									]
+#var A_level_01_05: Array[Tuple] = [	
+									self.level_01_07,
+#									]
+#var A_level_01_06: Array[Tuple] = [	
+									self.level_01_08,
 									self.level_01_09,
 									self.level_01_10]
 var A_level_01_07: Array[Tuple] = [	self.level_01_11,

@@ -67,10 +67,10 @@ func _ready() -> void:
 	$"../search_phase/Room".lock()
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_01_04)
-	await Global.dialog_system.sequence_finished
-	Global.dialog_system.play_sequence(Database.A_level_01_05)
-	await Global.dialog_system.sequence_finished
-	Global.dialog_system.play_sequence(Database.A_level_01_06)
+	#await Global.dialog_system.sequence_finished
+	#Global.dialog_system.play_sequence(Database.A_level_01_05)
+	#await Global.dialog_system.sequence_finished
+	#Global.dialog_system.play_sequence(Database.A_level_01_06)
 	$"../search_phase/Room/Picture".release()
 	
 	await $"../search_phase/Room/Picture/Hitbox & Image".pressed

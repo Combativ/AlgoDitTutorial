@@ -54,7 +54,13 @@ func switch_to_build_phase(skip_animation:bool = false):
 	if (skip_animation == false):
 		await get_tree().create_timer(search_phase.get_transition_time()).timeout
 		get_transition_wall().transition_hide_back()
-	
+
+func switch_to_level_01():
+	get_transition_wall().transition_show_up()
+	$Title.hide()
+	$LevelManager.load_level($LevelManager.LEVEL_01)
+	await get_tree().create_timer(0.5)
+	get_transition_wall().transition_hide_back()
 
 func get_dialog_system() -> Node2D:
 	return $dialog_system
