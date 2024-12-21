@@ -149,6 +149,7 @@ func _ready() -> void:
 	var picture: Picture = $"../search_phase/Room/Picture"
 	while(!(int(picture.get_number()) == Global.destination_room.get_number())):
 		await get_tree().create_timer(0.1).timeout
+	Global.dialog_system.set_task("[center]Klicke auf die 42, um ins nächste Level zu kommen.")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play(Database.special_interaction_positive_02)
 	

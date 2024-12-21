@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsehu8h5432ef"]
+[gd_scene load_steps=11 format=3 uid="uid://bsehu8h5432ef"]
 
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/database.gd" id="1_23t7t"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/dialog_system.gd" id="1_wxxts"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/text_box.gd" id="3_qjwsw"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button.gd" id="5_840j7"]
 [ext_resource type="Texture2D" uid="uid://wreyh5unmm31" path="res://scenes/dialog_system/art/text_box.png" id="5_wyvk3"]
+[ext_resource type="Texture2D" uid="uid://bfeiybhn3dyw" path="res://scenes/search_phase/art/Squirrel.png" id="6_qophr"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button_2.gd" id="6_qpihx"]
 [ext_resource type="PackedScene" uid="uid://j3oflwbbphny" path="res://scenes/dialog_system/scenes/error_window.tscn" id="8_bf4x1"]
 [ext_resource type="PackedScene" uid="uid://ngg0x7f22b0i" path="res://scenes/dialog_system/scenes/task_window.tscn" id="9_5jwbw"]
@@ -25,6 +26,7 @@ script = ExtResource("3_nxrd8")
 
 [node name="Text_box" type="CharacterBody2D" parent="."]
 z_index = 1
+position = Vector2(0, 241)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("3_qjwsw")
 
@@ -56,6 +58,33 @@ theme_override_font_sizes/italics_font_size = 42
 theme_override_font_sizes/mono_font_size = 42
 theme_override_font_sizes/normal_font_size = 42
 theme_override_font_sizes/bold_font_size = 42
+
+[node name="Squirrel" type="Sprite2D" parent="Text_box"]
+position = Vector2(1055, -83.3333)
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("6_qophr")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="Text_box"]
+offset_left = 648.0
+offset_top = 240.333
+offset_right = 893.0
+offset_bottom = 307.333
+color = Color(0, 0, 0, 0.415686)
+
+[node name="Label" type="Label" parent="Text_box/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.66667
+offset_bottom = -1.66667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "S ...Weiter"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 visible = false

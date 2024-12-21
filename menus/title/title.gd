@@ -2,11 +2,13 @@ extends Node2D
 
 @onready var play_button: Button = $PlayButton
 @onready var quit_button: Button = $QuitButton
+@onready var player: AudioPlayer = $AudioPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	play_button.pressed.connect(_on_play_button_pressed)
 	quit_button.pressed.connect(func(): get_tree().quit())
+	player.finished.connect(func(): player.play())
 	pass # Replace with function body.
 
 

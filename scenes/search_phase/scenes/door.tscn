@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://di3vmniplspd7"]
+[gd_scene load_steps=9 format=3 uid="uid://di3vmniplspd7"]
 
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/door.gd" id="1_33kvn"]
 [ext_resource type="Texture2D" uid="uid://p3jfqia07ywx" path="res://scenes/search_phase/art/tur_zu.png" id="2_0hv7g"]
 [ext_resource type="AudioStream" uid="uid://dvr2q2deag61p" path="res://scenes/search_phase/sounds/Tür_short.wav" id="2_2g4s0"]
+[ext_resource type="Texture2D" uid="uid://cxs3dpgyc5bcu" path="res://scenes/search_phase/art/door_frame.png" id="3_b8le2"]
 [ext_resource type="PackedScene" uid="uid://bxk0vcdmjjrxc" path="res://scenes/search_phase/scenes/picture.tscn" id="3_lt8sn"]
 [ext_resource type="Texture2D" uid="uid://3gf4bn6vmmre" path="res://scenes/search_phase/art/tur_auf.png" id="3_w37d8"]
 [ext_resource type="AudioStream" uid="uid://dq7mk5of2e2py" path="res://scenes/search_phase/sounds/Tür.wav" id="5_thwxb"]
@@ -12,6 +13,11 @@
 script = ExtResource("1_33kvn")
 sound = ExtResource("2_2g4s0")
 
+[node name="DoorFrame" type="Sprite2D" parent="."]
+position = Vector2(257.5, 350)
+scale = Vector2(0.869626, 0.862823)
+texture = ExtResource("3_b8le2")
+
 [node name="Hitbox & Image" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -19,7 +25,7 @@ texture_normal = ExtResource("2_0hv7g")
 texture_hover = ExtResource("3_w37d8")
 
 [node name="DoorNumber" parent="." instance=ExtResource("3_lt8sn")]
-position = Vector2(107, -218)
+position = Vector2(111, -284)
 scale = Vector2(0.5, 0.5)
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]

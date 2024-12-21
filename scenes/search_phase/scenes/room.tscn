@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqlk1wfmnu28x"]
+[gd_scene load_steps=6 format=3 uid="uid://dqlk1wfmnu28x"]
 
 [ext_resource type="PackedScene" uid="uid://di3vmniplspd7" path="res://scenes/search_phase/scenes/door.tscn" id="1_7lnf2"]
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/room.gd" id="1_71vnw"]
 [ext_resource type="Texture2D" uid="uid://c5vgmosuagjes" path="res://scenes/search_phase/art/Room_v001.png" id="2_07f0h"]
 [ext_resource type="PackedScene" uid="uid://bxk0vcdmjjrxc" path="res://scenes/search_phase/scenes/picture.tscn" id="4_b34m5"]
+[ext_resource type="Texture2D" uid="uid://bamj7n846lc1n" path="res://scenes/search_phase/art/lamp.png" id="5_2pw0u"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_71vnw")
@@ -14,13 +15,18 @@ scale = Vector2(0.498857, 0.500416)
 texture = ExtResource("2_07f0h")
 
 [node name="DoorRight" parent="." instance=ExtResource("1_7lnf2")]
-position = Vector2(579, 211)
+position = Vector2(585, 201)
 scale = Vector2(0.3, 0.3)
 
 [node name="DoorLeft" parent="." instance=ExtResource("1_7lnf2")]
-position = Vector2(218, 210)
+position = Vector2(221, 200)
 scale = Vector2(0.3, 0.3)
 
 [node name="Picture" parent="." instance=ExtResource("4_b34m5")]
-position = Vector2(390, 217)
+position = Vector2(394, 217)
 scale = Vector2(0.3, 0.3)
+
+[node name="Lamp" type="Sprite2D" parent="."]
+position = Vector2(490, 68)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_2pw0u")
