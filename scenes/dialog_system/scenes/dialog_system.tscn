@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/text_box.gd" id="3_qjwsw"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button.gd" id="5_840j7"]
 [ext_resource type="Texture2D" uid="uid://wreyh5unmm31" path="res://scenes/dialog_system/art/text_box.png" id="5_wyvk3"]
-[ext_resource type="Texture2D" uid="uid://bfeiybhn3dyw" path="res://scenes/search_phase/art/Squirrel.png" id="6_qophr"]
+[ext_resource type="Texture2D" uid="uid://d1yw786iyrckc" path="res://scenes/dialog_system/art/squirrel.png" id="6_om3ag"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/button_2.gd" id="6_qpihx"]
 [ext_resource type="PackedScene" uid="uid://j3oflwbbphny" path="res://scenes/dialog_system/scenes/error_window.tscn" id="8_bf4x1"]
 [ext_resource type="PackedScene" uid="uid://ngg0x7f22b0i" path="res://scenes/dialog_system/scenes/task_window.tscn" id="9_5jwbw"]
@@ -60,9 +60,9 @@ theme_override_font_sizes/normal_font_size = 42
 theme_override_font_sizes/bold_font_size = 42
 
 [node name="Squirrel" type="Sprite2D" parent="Text_box"]
-position = Vector2(1055, -83.3333)
+position = Vector2(1015, -71.6667)
 scale = Vector2(0.333333, 0.333333)
-texture = ExtResource("6_qophr")
+texture = ExtResource("6_om3ag")
 flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="Text_box"]
