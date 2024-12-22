@@ -75,7 +75,8 @@ func _physics_process(delta: float) -> void:
 		location += 1
 		working = false
 		
-	if down && location != Mode.DOWN:
+		#switch Mode.NEUTRAL to Mode.DOWN, if this option should be availasble
+	if down && location != Mode.NEUTRAL:
 		get_text_box().position.y += speed
 		counter -= speed
 	elif down:

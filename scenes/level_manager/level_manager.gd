@@ -232,7 +232,8 @@ func _ready() -> void:
 	while (!Global.current_level.inventory.is_empty() || Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		await get_tree().create_timer(0.1).timeout
 	Global.dialog_system.play_sequence(Database.A_level_04_2_02)
-	Global.tree_root.get_left_child_node().get_left_child_node().get_left_child_node().get_left_child_node().snapTarget.snapperObject.lock()
+	Helper.find_SnapTargetNode_from_number(1).snapTarget.snapperObject.lock()
+	#Global.tree_root.get_left_child_node().get_left_child_node().get_left_child_node().get_left_child_node().snapTarget.snapperObject.lock()
 	Global.dialog_system.set_task("[center]Rotiere die 30 so, dass der Baum balanciert wird.")
 	
 	while (!Helper.tree_is_balanced(Global.tree_root)):
@@ -317,6 +318,8 @@ func _ready() -> void:
 	$"../build_phase/DoneButton".hide()
 	$"../dialog_system/TaskWindow".hide()
 	load_level(end_screen)
+	Global.sound_options_window.white_noise_player.stream = load("res://sounds/Mainmenu1.wav")
+	Global.sound_options_window.white_noise_player.play()
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_endscreen)
 
