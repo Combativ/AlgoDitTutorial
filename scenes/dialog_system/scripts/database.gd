@@ -6,7 +6,7 @@ var special_interaction_negative: Tuple = Tuple.new("Moment mal, bist du dir da 
 
 
 
-var level_01_01: Tuple = Tuple.new("Hallöchen und herzlich willkommen in meinem kleinen Tutorial zu AVL-Bäumen.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice1_00000281.wav"))
+var level_01_01: Tuple = Tuple.new("Hallöchen und herzlich willkommen in meinem kleinen Tutorial zu AVL-Bäumen.\n(Zum Fortfahren \"s\" drücken)", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice1_00000281.wav"))
 var level_01_02: Tuple = Tuple.new("Ich erkläre dir heute alles, was du zu diesen wundersamen Bäumen wissen musst.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice2_00000439.wav"))
 var level_01_03: Tuple = Tuple.new("Um das Tutorial zu starten, so klicke bitte einmal auf die LINKE TÜR.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice3_00000578.wav"))
 
