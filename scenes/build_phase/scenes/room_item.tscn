@@ -1,21 +1,35 @@
 [gd_scene load_steps=3 format=3 uid="uid://nvjsceiv6lbb"]
 
-[ext_resource type="Texture2D" uid="uid://cw3710glxvp2k" path="res://icon_small.svg" id="1_mjpli"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/room_item.gd" id="1_nyvok"]
+[ext_resource type="Texture2D" uid="uid://cyhno855vvmy8" path="res://scenes/build_phase/art/Raum_von_oben.png" id="2_vd27m"]
 
 [node name="RoomItem" type="PanelContainer"]
+offset_right = 61.0
+offset_bottom = 52.4764
 script = ExtResource("1_nyvok")
 
 [node name="RoomItemTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(76.325, 50.585)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("1_mjpli")
+texture = ExtResource("2_vd27m")
+expand_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="RoomItemTexture"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 55.0
+offset_bottom = 50.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="RoomNumberLabel" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 1
 text = "number"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MouseTrigger" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)

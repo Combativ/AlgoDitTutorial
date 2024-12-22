@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7wlpaalpfmxs"
-path="res://.godot/imported/snap_preview.png-7d01e9b0964bf693cf7d1731cb57e222.ctex"
+uid="uid://cyhno855vvmy8"
+path="res://.godot/imported/Raum_von_oben.png-6810d0ed82117aba3b23bbb7c941417b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/build_phase/art/snap_preview.png"
-dest_files=["res://.godot/imported/snap_preview.png-7d01e9b0964bf693cf7d1731cb57e222.ctex"]
+source_file="res://scenes/build_phase/art/Raum_von_oben.png"
+dest_files=["res://.godot/imported/Raum_von_oben.png-6810d0ed82117aba3b23bbb7c941417b.ctex"]
 
 [params]
 

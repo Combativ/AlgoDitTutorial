@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhrv6jgwyaplb"]
 
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/room_miniature.gd" id="1_dt2u2"]
-[ext_resource type="Texture2D" uid="uid://cw3710glxvp2k" path="res://icon_small.svg" id="2_35et2"]
+[ext_resource type="Texture2D" uid="uid://cyhno855vvmy8" path="res://scenes/build_phase/art/Raum_von_oben.png" id="2_s5y8n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeaq3"]
 size = Vector2(64, 64)
@@ -24,13 +24,23 @@ mouse_default_cursor_shape = 6
 shape = SubResource("RectangleShape2D_yeaq3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_35et2")
+scale = Vector2(0.121331, 0.121331)
+texture = ExtResource("2_s5y8n")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -132.0
+offset_top = -132.0
+offset_right = 132.0
+offset_bottom = 132.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -40.0
-offset_top = -40.0
+offset_top = -21.0
 offset_right = 40.0
-text = "number"
+offset_bottom = 19.0
+text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 

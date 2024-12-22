@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/snap_target_node.gd" id="1_74qrg"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/binary_tree.gd" id="2_5d5va"]
 [ext_resource type="PackedScene" uid="uid://bvc8rgpppkr2a" path="res://scenes/build_phase/scenes/snap_target.tscn" id="2_yaldm"]
-[ext_resource type="Texture2D" uid="uid://7wlpaalpfmxs" path="res://scenes/build_phase/art/snap_preview.png" id="4_uqhfh"]
+[ext_resource type="Texture2D" uid="uid://dojuuaedkxkqx" path="res://scenes/build_phase/art/Raum_Rechteck.png" id="4_6rs7h"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/rotation_manager.gd" id="5_4lev5"]
 [ext_resource type="Texture2D" uid="uid://cxomnapxq12dk" path="res://scenes/build_phase/art/arrow_ccw.png" id="6_2qrbg"]
 [ext_resource type="Texture2D" uid="uid://dyycb4rd6ondr" path="res://scenes/build_phase/art/arrow_cw.png" id="7_aphda"]
@@ -24,8 +24,8 @@ script = ExtResource("2_5d5va")
 
 [node name="Sprite2D" parent="SnapTarget" index="1"]
 self_modulate = Color(1, 1, 1, 1)
-scale = Vector2(0.47, 0.47)
-texture = ExtResource("4_uqhfh")
+scale = Vector2(0.121212, 0.121212)
+texture = ExtResource("4_6rs7h")
 
 [node name="RotationManager" type="Area2D" parent="."]
 process_mode = 4
