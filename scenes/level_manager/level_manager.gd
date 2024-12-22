@@ -315,6 +315,7 @@ func _ready() -> void:
 	
 	await Global.dialog_system.sequence_finished
 	$"../build_phase/DoneButton".hide()
+	$"../dialog_system/TaskWindow".hide()
 	load_level(end_screen)
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_endscreen)
