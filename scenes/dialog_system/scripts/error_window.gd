@@ -33,8 +33,8 @@ func show_error(error_text: String, time: float) -> void:
 
 func play_sometimes_error_sound() -> void:
 	var dialog_system: Dialogsystem = $".."
-	var rnd = RandomNumberGenerator.new()
-	var i = rnd.randi_range(0,3)
-	if (i == 0):
-		dialog_system.play_sound(dialog_system.get_database().special_interaction_negative)
+	#var rnd = RandomNumberGenerator.new()
+	#var i = rnd.randi_range(0,3)
+	#if (i == 0):
+	dialog_system.play_sound(dialog_system.get_database().special_interaction_negative)
 	pass
