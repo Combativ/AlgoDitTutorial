@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bvc8rgpppkr2a" path="res://scenes/build_phase/scenes/snap_target.tscn" id="2_yaldm"]
 [ext_resource type="Texture2D" uid="uid://dojuuaedkxkqx" path="res://scenes/build_phase/art/Raum_Rechteck.png" id="4_6rs7h"]
 [ext_resource type="Script" path="res://scenes/build_phase/scripts/rotation_manager.gd" id="5_4lev5"]
-[ext_resource type="Texture2D" uid="uid://cxomnapxq12dk" path="res://scenes/build_phase/art/arrow_ccw.png" id="6_2qrbg"]
-[ext_resource type="Texture2D" uid="uid://dyycb4rd6ondr" path="res://scenes/build_phase/art/arrow_cw.png" id="7_aphda"]
+[ext_resource type="Texture2D" uid="uid://c6klme4h7ple2" path="res://scenes/build_phase/art/arrow_ccw.png" id="6_tt2ge"]
+[ext_resource type="Texture2D" uid="uid://rqmlou6debfi" path="res://scenes/build_phase/art/arrow_cw.png" id="7_m43w3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mipt1"]
 size = Vector2(40, 40)
@@ -35,27 +35,27 @@ script = ExtResource("5_4lev5")
 [node name="RotateLeftButton" type="Button" parent="RotationManager"]
 z_index = 15
 z_as_relative = false
-offset_left = -86.0
+offset_left = -89.0
 offset_top = -29.0
-offset_right = 812.0
-offset_bottom = 1012.0
+offset_right = 895.0
+offset_bottom = 1067.0
 scale = Vector2(0.05, 0.05)
 mouse_default_cursor_shape = 2
 action_mode = 0
-icon = ExtResource("6_2qrbg")
+icon = ExtResource("6_tt2ge")
 flat = true
 
 [node name="RotateRightButton" type="Button" parent="RotationManager"]
 z_index = 15
 z_as_relative = false
-offset_left = 42.0
+offset_left = 40.0
 offset_top = -29.0
-offset_right = 940.0
-offset_bottom = 1012.0
+offset_right = 1024.0
+offset_bottom = 1067.0
 scale = Vector2(0.05, 0.05)
 mouse_default_cursor_shape = 2
 action_mode = 0
-icon = ExtResource("7_aphda")
+icon = ExtResource("7_m43w3")
 flat = true
 icon_alignment = 2
 
