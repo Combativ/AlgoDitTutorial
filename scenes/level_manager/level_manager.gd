@@ -78,7 +78,7 @@ func _ready() -> void:
 	$"../search_phase/Room".lock()
 	$"../search_phase/Letter".show()
 	$"../dialog_system/TaskWindow".show()
-	task_label.text = "[center]Folge den Anweisungen des Eichhörnchens."
+	Global.dialog_system.set_task("[center]Folge den Anweisungen des Eichhörnchens.")
 	await $"../TransitionWall".transition_hide_back_done
 	
 	Global.dialog_system.play_sequence(Database.A_level_01_07)
@@ -119,20 +119,20 @@ func _ready() -> void:
 	
 	load_level(level2)
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Höre dem Eichhörnchen zu!"
+	Global.dialog_system.set_task("[center]Höre dem Eichhörnchen zu!")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_02_01)
 	await Global.dialog_system.sequence_finished
 	
 	load_level(level2_2, true)
-	task_label.text = "[center]Sortiere alle Zahlen in den Baum ein."
+	Global.dialog_system.set_task("[center]Sortiere alle Zahlen in den Baum ein.")
 	Global.dialog_system.play_sequence(Database.A_level_02_02)
 	await Global.dialog_system.sequence_finished
 	
 	while (!Global.current_level.inventory.is_empty() || !Helper.tree_is_sorted(Global.tree_root) || Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		await get_tree().create_timer(0.1).timeout
 	Global.dialog_system.play_sequence(Database.A_level_02_03)
-	task_label.text = "[center]Klicke auf den Knopf\n\"Zur Suchphase\"."
+	Global.dialog_system.set_task("[center]Klicke auf den Knopf\n\"Zur Suchphase\".")
 	for child in Helper.get_all_children(Global.tree_root.get_parent()):
 		if child is SnapTargetNode && child.snapTarget.snapperObject != null:
 			child.snapTarget.snapperObject.lock()
@@ -141,7 +141,7 @@ func _ready() -> void:
 	await $"../TransitionWall".transition_show_up_done
 	$"../search_phase/Room/DoorRight/DoorNumber".hide()
 	$"../search_phase/Room/DoorLeft/DoorNumber".hide()
-	task_label.text = "[center]Finde die 42. Falls du dich verirrst, klicke auf die Zahl in der Mitte."
+	Global.dialog_system.set_task("[center]Finde die 42. Falls du dich verirrst, klicke auf die Zahl in der Mitte.")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_02_04)
 	
@@ -161,7 +161,7 @@ func _ready() -> void:
 	
 	load_level(level3)
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Höre dem Eichhörnchen zu!"
+	Global.dialog_system.set_task("[center]Höre dem Eichhörnchen zu!")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_03_1_01)
 	
@@ -171,7 +171,7 @@ func _ready() -> void:
 	await get_tree().create_timer(3.0).timeout
 	$"../build_phase/InputLock".hide()
 	load_level(level3_2, true)
-	task_label.text = "[center]Sortiere alle Zahlen in den Baum ein."
+	Global.dialog_system.set_task("[center]Sortiere alle Zahlen in den Baum ein.")
 	Global.dialog_system.play_sequence(Database.A_level_03_2_01)
 	
 	# wait until inventory empty and tree is sorted
@@ -193,7 +193,7 @@ func _ready() -> void:
 		if child is SnapTargetNode && child.snapTarget.snapperObject != null:
 			child.snapTarget.snapperObject.lock()
 	Global.dialog_system.play_sequence(Database.A_level_03_2_04)
-	task_label.text = "[center]Klicke auf den Knopf \"Zur Suchphase\", um deinen Baum zu durchlaufen."
+	Global.dialog_system.set_task("[center]Klicke auf den Knopf \"Zur Suchphase\", um deinen Baum zu durchlaufen.")
 	
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_hide_back_done
@@ -209,12 +209,12 @@ func _ready() -> void:
 	load_level(level4)
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_04_1_01)
-	task_label.text = "[center]Führe eine Links-Rotation auf der 60 aus."
+	Global.dialog_system.set_task("[center]Führe eine Links-Rotation auf der 60 aus.")
 	
 	while (!Helper.tree_is_balanced(Global.tree_root)):
 		await get_tree().create_timer(0.1).timeout
 	Global.dialog_system.play_sequence(Database.A_level_04_1_02)
-	task_label.text = "[center]Navigiere zum Raum mit der Nummer 60."
+	Global.dialog_system.set_task("[center]Navigiere zum Raum mit der Nummer 60.")
 	
 	await SignalBus.picture_right_room
 	
@@ -224,7 +224,7 @@ func _ready() -> void:
 	
 	load_level(level4_2)
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Ziehe die 1 auf den Baum."
+	Global.dialog_system.set_task("[center]Ziehe die 1 auf den Baum.")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_04_2_01)
 	
@@ -233,12 +233,12 @@ func _ready() -> void:
 		await get_tree().create_timer(0.1).timeout
 	Global.dialog_system.play_sequence(Database.A_level_04_2_02)
 	Global.tree_root.get_left_child_node().get_left_child_node().get_left_child_node().get_left_child_node().snapTarget.snapperObject.lock()
-	task_label.text = "[center]Rotiere die 30 so, dass der Baum balanciert wird."
+	Global.dialog_system.set_task("[center]Rotiere die 30 so, dass der Baum balanciert wird.")
 	
 	while (!Helper.tree_is_balanced(Global.tree_root)):
 		await get_tree().create_timer(0.1).timeout
 	Global.dialog_system.play_sequence(Database.A_level_04_2_03)
-	task_label.text = "[center]Gehe in die Suchphase, um deinen Baum zu durchlaufen."
+	Global.dialog_system.set_task("[center]Gehe in die Suchphase, um deinen Baum zu durchlaufen.")
 	
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_show_up_done
@@ -254,10 +254,10 @@ func _ready() -> void:
 	
 	load_level(level5)
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Höre dem Eichhörnchen zu!"
+	Global.dialog_system.set_task("[center]Höre dem Eichhörnchen zu!")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_05_1_01)
-	task_label.text = "[center]Führe eine Rechts-Rotation auf der 6 aus."
+	Global.dialog_system.set_task("[center]Führe eine Rechts-Rotation auf der 6 aus.")
 	
 	await Global.dialog_system.sequence_finished
 	var voiceline_rotated_6_played = false
@@ -271,7 +271,7 @@ func _ready() -> void:
 			Global.tree_root.get_left_child_node().get_left_child_node().get_right_child_node().get_number() == 5 &&
 			Global.tree_root.get_left_child_node().get_left_child_node().get_right_child_node().get_right_child_node().get_number() == 6):
 			Global.dialog_system.play_sequence(Database.A_level_05_1_02)
-			task_label.text = "[center]Balanciere den Baum mit einer Links-Rotation."
+			Global.dialog_system.set_task("[center]Balanciere den Baum mit einer Links-Rotation.")
 			voiceline_rotated_6_played = true
 		# Play Voiceline if the tree is in the state where a left rotation on the 4 after a right rotation on the 6 was done
 		if (voiceline_rotated_4_played == false &&
@@ -280,12 +280,12 @@ func _ready() -> void:
 			Global.tree_root.get_left_child_node().get_left_child_node().get_left_child_node().get_number() == 4 &&
 			Global.tree_root.get_left_child_node().get_left_child_node().get_right_child_node().get_number() == 6):
 			Global.dialog_system.play(Database.special_interaction_positive_01)
-			task_label.text = "[center]Klicke auf \"Zur Suchphase\", um dein Ergebnis zu überprüfen!"
+			Global.dialog_system.set_task("[center]Klicke auf \"Zur Suchphase\", um dein Ergebnis zu überprüfen!")
 			voiceline_rotated_4_played = true
 	
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Finde den Weg zu Raum 6."
+	Global.dialog_system.set_task("[center]Finde den Weg zu Raum 6.")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_05_1_03)
 	
@@ -297,18 +297,18 @@ func _ready() -> void:
 	
 	load_level(level5_2)
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Höre dem Eichhörnchen zu!"
+	Global.dialog_system.set_task("[center]Höre dem Eichhörnchen zu!")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_05_2_01)
 	
 	await Global.dialog_system.sequence_finished
 	load_level(level5_3, true)
-	task_label.text = "[center]Balanciere den Baum durch Rotieren und gehe in die Suchphase."
+	Global.dialog_system.set_task("[center]Balanciere den Baum durch Rotieren und gehe in die Suchphase.")
 	Global.dialog_system.play_sequence(Database.A_level_05_3_01)
 	
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Das Eichhörnchen ist weg... naja, du findest den Weg sicher alleine."
+	Global.dialog_system.set_task("[center]Das Eichhörnchen ist weg... naja, du findest den Weg sicher alleine.")
 	
 	await SignalBus.picture_right_room
 	Global.dialog_system.play_sequence(Database.A_level_05_3_02)
