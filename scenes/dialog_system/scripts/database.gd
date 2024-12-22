@@ -142,10 +142,9 @@ var level_04_1_01: Tuple = Tuple.new("Sieh dir die 60 an.", preload("res://scene
 var level_04_1_02: Tuple = Tuple.new("Die ist der Übeltäter hier!", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice56_00008223.wav"))
 var level_04_1_03: Tuple = Tuple.new("Sie sorgt dafür, dass ihr rechter Teilbaum viel tiefer ist als ihr linker.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice57_00008288.wav"))
 var level_04_1_04: Tuple = Tuple.new("Was wir hier brauchen, ist eine sogenannte LINKS-ROTATION.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice58_00008389.wav"))
-var level_04_1_05: Tuple = Tuple.new("Eine Links-Rotation führst du aus, indem du:", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice59_00008495.wav"))
-var level_04_1_06: Tuple = Tuple.new("- mit deiner Maus über die 60 hoverst und auf den linken Pfeil klickst, welcher erscheint.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice60_00008580.wav"))
+var level_04_1_05: Tuple = Tuple.new("Eine Links-Rotation führst du aus, indem du mit deiner Maus über die 60 hoverst und auf den linken Pfeil klickst, welcher erscheint.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice59_00008495.wav"))
 #Angepasst, da Johanna in der Voiceline Mist erzählt. Die besagte 70 ist eine 82 und sie bleibt auch nicht an ihrem Platz
-var level_04_1_07: Tuple = Tuple.new("Eine linke Rotation bedeutet, dass die 80 die neue Wurzel wird, die 60 ihr linkes Kind, und die 82 rutscht einfach nach oben nach.", null)
+var level_04_1_07: Tuple = Tuple.new("Die linke Rotation bedeutet, dass die 80 die neue Wurzel wird, die 60 ihr linkes Kind, und die 82 rutscht einfach nach oben nach.", null)
 var level_04_1_08: Tuple = Tuple.new("Dadurch gelangt unser Baum ins Gleichgewicht.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice62_00009135.wav"))
 
 var level_04_1_09: Tuple = Tuple.new("So – Unser Baum ist jetzt balanciert.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice63_00009254.wav"))
@@ -156,7 +155,6 @@ var A_level_04_1_01: Array[Tuple] = [self.level_04_1_01,
 									self.level_04_1_03,
 									self.level_04_1_04,
 									self.level_04_1_05,
-									self.level_04_1_06,
 									self.level_04_1_07,
 									self.level_04_1_08]
 var A_level_04_1_02: Array[Tuple] = [self.level_04_1_09,
