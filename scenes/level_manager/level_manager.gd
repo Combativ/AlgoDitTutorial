@@ -12,6 +12,8 @@ const LEVEL_05   = preload("res://scenes/build_phase/levels/level_05.tscn")
 const LEVEL_05_2 = preload("res://scenes/build_phase/levels/level_05_2_prolog.tscn")
 const LEVEL_05_3 = preload("res://scenes/build_phase/levels/level_05_3.tscn")
 
+const END_SCREEN = preload("res://menus/end_screen/end_screen.tscn")
+
 var build_phase: Node2D
 var task_label: RichTextLabel
 
@@ -39,6 +41,8 @@ func _ready() -> void:
 	var level5: Node2D = LEVEL_05.instantiate()
 	var level5_2: Node2D = LEVEL_05_2.instantiate()
 	var level5_3: Node2D = LEVEL_05_3.instantiate()
+	
+	var end_screen: Node2D = END_SCREEN.instantiate()
 	
 	# hide task window for the first level
 	$"../dialog_system/TaskWindow".hide()
@@ -313,7 +317,11 @@ func _ready() -> void:
 	await SignalBus.picture_right_room
 	Global.dialog_system.play_sequence(Database.A_level_05_3_02)
 	
-	#TODO: Dann kommt der Credits-Bildschirm und der letzte Dialog
+	await Global.dialog_system.sequence_finished
+	$"../build_phase/DoneButton".hide()
+	load_level(end_screen)
+	await $"../TransitionWall".transition_hide_back_done
+	Global.dialog_system.play_sequence(Database.A_endscreen)
 
 
 

@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://chbmq0bitlqku"]
+
+[ext_resource type="Texture2D" uid="uid://c5f4minea0o5n" path="res://scenes/build_phase/art/background.png" id="1_vq3ca"]
+[ext_resource type="Texture2D" uid="uid://de5xorali1kct" path="res://menus/end_screen/art/keks_normal.png" id="2_spk2c"]
+[ext_resource type="Texture2D" uid="uid://bcd01ug32t1uf" path="res://menus/end_screen/art/keks_zwinkern.png" id="3_85of7"]
+[ext_resource type="Script" path="res://menus/end_screen/scripts/cookie.gd" id="4_i6uy0"]
+[ext_resource type="Script" path="res://menus/end_screen/scripts/back_to_title.gd" id="5_0l1es"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdg5a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_85of7")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_spk2c")
+}],
+"loop": false,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gko7g"]
+radius = 475.826
+
+[node name="end_screen" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("1_vq3ca")
+
+[node name="Credits" type="RichTextLabel" parent="."]
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 927.0
+offset_bottom = 728.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+bbcode_enabled = true
+text = "[font_size=44]Vielen Dank fürs Spielen von Baumabenteuer🌳![/font_size]
+
+
+[font_size=28]Projektleitung[/font_size]
+Johanna Kleinwechter     –     Project Manager, Head of Development Department  
+Josefine Kösser     –     Project Manager, Head of Art Department
+
+[font_size=28]Entwicklung[/font_size]
+Johanna Kleinwechter     –     Head of Development Department
+Joran Zurmühl     –     Developer
+Justin Rudnick     –     Developer
+
+[font_size=28]Art & Design[/font_size]
+Josefine Kösser     –     Head of  Art Department 
+Jonas Herwig     –     Artist
+Charlotte Bilz     –     Artist  
+Julian Kind     –     Artist
+
+
+[font_size=28]Einen besonderen Dank[/font_size]
+An alle, die dieses Abenteuer mit ihren Ideen und ihrer Unterstützung bereichert haben.
+Insbesondere danken wir Herrn Dr. rer. nat. Rico Beier-Grunwald, welcher dieses Projekt ermöglicht hat.
+
+
+Entwickelt von
+dem Team hinter Baumabenteuer🌳"
+
+[node name="Cookie" type="AnimatedSprite2D" parent="."]
+position = Vector2(1025, 256)
+scale = Vector2(0.329959, 0.32996)
+sprite_frames = SubResource("SpriteFrames_bdg5a")
+animation = &"normal"
+speed_scale = 0.0
+script = ExtResource("4_i6uy0")
+
+[node name="Area2D" type="Area2D" parent="Cookie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookie/Area2D"]
+shape = SubResource("CircleShape2D_gko7g")
+
+[node name="BackToTitle" type="Button" parent="."]
+offset_left = 1046.0
+offset_top = 614.0
+offset_right = 1244.0
+offset_bottom = 689.0
+text = "Zurück zum Titelmenü"
+script = ExtResource("5_0l1es")
+
+[connection signal="mouse_entered" from="Cookie/Area2D" to="Cookie" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Cookie/Area2D" to="Cookie" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="BackToTitle" to="BackToTitle" method="_on_pressed"]
