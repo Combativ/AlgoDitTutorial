@@ -181,8 +181,16 @@ func _on_rotate_right_button_pressed() -> void:
 	rotate_right()
 
 func rotate_right():
+	# determine max height of tree
+	var max_height = 0
+	var temp_snapTargetNode: SnapTargetNode = Global.tree_root
+	while (temp_snapTargetNode.get_node("rChild") != null):
+		max_height += 1
+		temp_snapTargetNode = temp_snapTargetNode.get_node("rChild")
+		
+	
 	# check if rotation is possible (abort if not enough space in tree)
-	if ((get_left_child_node() == null) || ((get_right_child_node() != null) && (get_depth() + get_right_child_node().get_height()+1 >= 4))):
+	if ((get_left_child_node() == null) || ((get_right_child_node() != null) && (get_depth() + get_right_child_node().get_height()+1 >= max_height))):
 		return
 	
 	# convert to logical (sub-)tree
@@ -207,8 +215,16 @@ func rotate_right():
 	_load_from_binary_tree(rotated_subtree)
 
 func rotate_left():
+	# determine max height of tree
+	var max_height = 0
+	var temp_snapTargetNode: SnapTargetNode = Global.tree_root
+	while (temp_snapTargetNode.get_node("lChild") != null):
+		max_height += 1
+		temp_snapTargetNode = temp_snapTargetNode.get_node("lChild")
+	
+	
 	# check if rotation is possible (abort if not enough space in tree)
-	if ((get_right_child_node() == null) || ((get_left_child_node() != null) && (get_depth() + get_left_child_node().get_height()+1 >= 4))):
+	if ((get_right_child_node() == null) || ((get_left_child_node() != null) && (get_depth() + get_left_child_node().get_height()+1 >= max_height))):
 		return
 	
 	# convert to logical (sub-)tree
