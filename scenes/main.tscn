@@ -25,6 +25,7 @@ distance = 500
 script = ExtResource("6_6mlcy")
 
 [node name="sound_options_window" parent="." instance=ExtResource("8_h6gh1")]
+z_index = 501
 
 [node name="TransitionWall" type="ColorRect" parent="."]
 visible = false
