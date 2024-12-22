@@ -33,10 +33,9 @@ position = Vector2(259, 372)
 stream = ExtResource("5_thwxb")
 
 [node name="Planks" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(259, 403)
+position = Vector2(245.941, 375.968)
 rotation = 0.117622
-scale = Vector2(0.321215, 0.35629)
+scale = Vector2(0.432252, 0.41866)
 texture = ExtResource("7_8i2ov")
 
 [connection signal="pressed" from="Hitbox & Image" to="." method="move_trough_door"]
