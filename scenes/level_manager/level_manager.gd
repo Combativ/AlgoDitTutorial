@@ -235,6 +235,7 @@ func _ready() -> void:
 	Helper.find_SnapTargetNode_from_number(1).snapTarget.snapperObject.lock()
 	#Global.tree_root.get_left_child_node().get_left_child_node().get_left_child_node().get_left_child_node().snapTarget.snapperObject.lock()
 	Global.dialog_system.set_task("[center]Rotiere die 30 so, dass der Baum balanciert wird.")
+	await Global.dialog_system.sequence_finished
 	
 	while (!Helper.tree_is_balanced(Global.tree_root)):
 		await get_tree().create_timer(0.1).timeout
