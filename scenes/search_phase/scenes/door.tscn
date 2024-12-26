@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://di3vmniplspd7"]
 
 [ext_resource type="Script" path="res://scenes/search_phase/scripts/door.gd" id="1_33kvn"]
-[ext_resource type="Texture2D" uid="uid://p3jfqia07ywx" path="res://scenes/search_phase/art/tur_zu.png" id="2_0hv7g"]
 [ext_resource type="AudioStream" uid="uid://dvr2q2deag61p" path="res://scenes/search_phase/sounds/Tür_short.wav" id="2_2g4s0"]
 [ext_resource type="Texture2D" uid="uid://cxs3dpgyc5bcu" path="res://scenes/search_phase/art/door_frame.png" id="3_b8le2"]
 [ext_resource type="PackedScene" uid="uid://bxk0vcdmjjrxc" path="res://scenes/search_phase/scenes/picture.tscn" id="3_lt8sn"]
-[ext_resource type="Texture2D" uid="uid://3gf4bn6vmmre" path="res://scenes/search_phase/art/tur_auf.png" id="3_w37d8"]
+[ext_resource type="Texture2D" uid="uid://cbf2go8okpdts" path="res://scenes/search_phase/art/Door_closed_2.png" id="4_qn8px"]
+[ext_resource type="Texture2D" uid="uid://dbywsxg4ejkyr" path="res://scenes/search_phase/art/Door_opened_2.png" id="5_qcq8v"]
 [ext_resource type="AudioStream" uid="uid://dq7mk5of2e2py" path="res://scenes/search_phase/sounds/Tür.wav" id="5_thwxb"]
 [ext_resource type="Texture2D" uid="uid://w0r2dehouof3" path="res://scenes/search_phase/art/locked_door_accessory.png" id="7_8i2ov"]
 
@@ -14,18 +14,21 @@ script = ExtResource("1_33kvn")
 sound = ExtResource("2_2g4s0")
 
 [node name="DoorFrame" type="Sprite2D" parent="."]
-position = Vector2(257.5, 350)
-scale = Vector2(0.869626, 0.862823)
+position = Vector2(258.5, 338.5)
+scale = Vector2(0.8724, 0.843936)
 texture = ExtResource("3_b8le2")
 
 [node name="Hitbox & Image" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("2_0hv7g")
-texture_hover = ExtResource("3_w37d8")
+offset_left = 84.0
+offset_top = 38.0
+offset_right = 510.0
+offset_bottom = 884.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("4_qn8px")
+texture_hover = ExtResource("5_qcq8v")
 
 [node name="DoorNumber" parent="." instance=ExtResource("3_lt8sn")]
-position = Vector2(111, -284)
+position = Vector2(105, -284)
 scale = Vector2(0.5, 0.5)
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
