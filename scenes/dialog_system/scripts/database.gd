@@ -144,7 +144,7 @@ var level_04_1_03: Tuple = Tuple.new("Sie sorgt dafür, dass ihr rechter Teilbau
 var level_04_1_04: Tuple = Tuple.new("Was wir hier brauchen, ist eine sogenannte LINKS-ROTATION.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice58_00008389.wav"))
 var level_04_1_05: Tuple = Tuple.new("Eine Links-Rotation führst du aus, indem du mit deiner Maus über die 60 hoverst und auf den linken Pfeil klickst, welcher erscheint.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice59_00008495.wav"))
 #Angepasst, da Johanna in der Voiceline Mist erzählt. Die besagte 70 ist eine 82 und sie bleibt auch nicht an ihrem Platz
-var level_04_1_07: Tuple = Tuple.new("Die linke Rotation bedeutet, dass die 80 die neue Wurzel wird, die 60 ihr linkes Kind, und die 82 rutscht einfach nach oben nach.", null)
+var level_04_1_07: Tuple = Tuple.new("Die linke Rotation bedeutet, dass die 80 die neue Wurzel wird, die 60 ihr linkes Kind, und die 82 rutscht einfach nach oben nach.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice61_00008857.wav"))
 var level_04_1_08: Tuple = Tuple.new("Dadurch gelangt unser Baum ins Gleichgewicht.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice62_00009135.wav"))
 
 var level_04_1_09: Tuple = Tuple.new("So – Unser Baum ist jetzt balanciert.", preload("res://scenes/dialog_system/voicelines/level4/build/AlgoditVoice63_00009254.wav"))
