@@ -18,6 +18,8 @@ var build_phase: Node2D
 
 # level 3 needs to know the last inserted room
 var room_number_just_inserted: int = -1
+# level 3
+var tip_80_needed: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -176,15 +178,20 @@ func _ready() -> void:
 	
 	# wait until inventory empty and tree is sorted
 	# and play dialogue on correct insertion of 25 and 80
+	var show_tip_80 = func():
+		if (tip_80_needed):
+			Global.dialog_system.play(Tuple.new("Tipp: Die 80 gehört ganz oben in den rechten Teilbaum des Wurzelknotens.", null))
 	while (!Global.current_level.inventory.is_empty() || !Helper.tree_is_sorted(Global.tree_root) || Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		await get_tree().create_timer(0.1).timeout
 		# if 25 was just inserted to the right SnapTargetNode
 		if (room_number_just_inserted == 25 && Global.tree_root.get_left_child_node().get_left_child_node() != null && Global.tree_root.get_left_child_node().get_left_child_node().snapTarget.snapperObject.number == 25):
 			Global.dialog_system.play_sequence(Database.A_level_03_2_02)
 			Global.tree_root.get_left_child_node().get_left_child_node().snapTarget.snapperObject.lock()
+			Helper.execute_after_time(30, show_tip_80)
 			room_number_just_inserted = -1
 		# if 80 was just inserted to the right SnapTargetNode
 		if (room_number_just_inserted == 80 && Global.tree_root.get_right_child_node() != null && Global.tree_root.get_right_child_node().snapTarget.snapperObject.number == 80):
+			tip_80_needed = false
 			Global.dialog_system.play_sequence(Database.A_level_03_2_03)
 			Global.tree_root.get_right_child_node().snapTarget.snapperObject.lock()
 			room_number_just_inserted = -1
