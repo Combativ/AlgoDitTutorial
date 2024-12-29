@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4tvajj0c08u7"]
+[gd_scene load_steps=7 format=3 uid="uid://b4tvajj0c08u7"]
 
 [ext_resource type="Script" path="res://menus/title/title.gd" id="1_xrcp3"]
 [ext_resource type="AudioStream" uid="uid://di4qybsc11jcx" path="res://sounds/Mainmenu1.wav" id="2_jaapu"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_orngg"]
 [ext_resource type="Texture2D" uid="uid://cyq1pc3mamlbv" path="res://menus/title/art/house.png" id="4_53hga"]
+[ext_resource type="Texture2D" uid="uid://dmt6310ckfdlt" path="res://menus/art/schneeflocke_einfach.png" id="5_0rmmh"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5kukx"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(900, 1, 1)
+inherit_velocity_ratio = 1.0
+spread = 80.033
+initial_velocity_max = 160.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.01
+scale_max = 0.05
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_xrcp3")
@@ -44,4 +56,11 @@ stream = ExtResource("2_jaapu")
 volume_db = -20.222
 autoplay = true
 script = ExtResource("3_orngg")
-muted = false
+
+[node name="SnowFlakeParticles" type="GPUParticles2D" parent="."]
+position = Vector2(680, -40)
+amount = 28
+process_material = SubResource("ParticleProcessMaterial_5kukx")
+texture = ExtResource("5_0rmmh")
+lifetime = 10.23
+preprocess = 18.4
