@@ -46,6 +46,10 @@ func _ready() -> void:
 	$"../dialog_system/TaskWindow".hide()
 	
 	load_level(level1)
+	#bugfix transition lvl 1
+	await $"../TransitionWall".transition_show_up_done
+	$ColorRect.queue_free()
+	
 	await $"../TransitionWall".transition_hide_back_done
 	$"../search_phase/Room".lock()
 	Global.dialog_system.play_sequence(Database.A_level_01_01)

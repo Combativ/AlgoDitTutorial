@@ -24,6 +24,14 @@ distance = 500
 [node name="LevelManager" type="Node2D" parent="."]
 script = ExtResource("6_6mlcy")
 
+[node name="ColorRect" type="ColorRect" parent="LevelManager"]
+z_index = 1000
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 1298.0
+offset_bottom = 741.0
+color = Color(0, 0, 0, 1)
+
 [node name="sound_options_window" parent="." instance=ExtResource("8_h6gh1")]
 z_index = 501
 
