@@ -64,9 +64,9 @@ Julian Kind     –     Artist
 
 [font_size=28]Einen besonderen Dank[/font_size]
 An alle, die dieses Abenteuer mit ihren Ideen und ihrer Unterstützung bereichert haben.
-Insbesondere danken wir Herrn Dr. rer. nat. Rico Beier-Grunwald, welcher dieses Projekt ermöglicht hat.
 
-Musik: Snowman (Sia)"
+
+Musik: Snowman (Sia) ♫♪"
 
 [node name="Cookie" type="AnimatedSprite2D" parent="."]
 position = Vector2(1025, 256)
