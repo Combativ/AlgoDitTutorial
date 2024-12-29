@@ -28,7 +28,6 @@ script = ExtResource("6_6mlcy")
 z_index = 501
 
 [node name="TransitionWall" type="ColorRect" parent="."]
-visible = false
 visibility_layer = 24
 z_index = 500
 offset_right = 1301.0

@@ -15,7 +15,6 @@ const LEVEL_05_3 = preload("res://scenes/build_phase/levels/level_05_3.tscn")
 const END_SCREEN = preload("res://menus/end_screen/end_screen.tscn")
 
 var build_phase: Node2D
-var task_label: RichTextLabel
 
 # level 3 needs to know the last inserted room
 var room_number_just_inserted: int = -1
@@ -26,7 +25,6 @@ func _ready() -> void:
 	await get_parent().ready
 	
 	build_phase = get_parent().get_node("build_phase")
-	task_label = $"../dialog_system/TaskWindow/RichTextLabel"
 	
 	SignalBus.room_miniature_released_on_snap_target.connect(_on_roomMiniature_released_on_snapTarget)
 	
@@ -198,7 +196,7 @@ func _ready() -> void:
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_03_2_05)
-	task_label.text = "[center]Finde die 95!"
+	Global.dialog_system.set_task("[center]Finde die 95! \n (Klicke auf die Zahl in der Mitte, wenn du dich verläufst.)")
 	
 	await SignalBus.picture_right_room
 	
@@ -214,7 +212,7 @@ func _ready() -> void:
 	while (!Helper.tree_is_balanced(Global.tree_root)):
 		await get_tree().create_timer(0.1).timeout
 	Global.dialog_system.play_sequence(Database.A_level_04_1_02)
-	Global.dialog_system.set_task("[center]Navigiere zum Raum mit der Nummer 60.")
+	Global.dialog_system.set_task("[center]Navigiere zum Raum mit der Nummer 60. \n (Klicke auf die Zahl in der Mitte, wenn du dich verläufst.)")
 	
 	await SignalBus.picture_right_room
 	
@@ -244,7 +242,7 @@ func _ready() -> void:
 	
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_show_up_done
-	task_label.text = "[center]Finde die 27!"
+	Global.dialog_system.set_task("[center]Finde die 27! \n (Klicke auf die Zahl in der Mitte, wenn du dich verläufst.)")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_04_2_04)
 	
@@ -287,7 +285,7 @@ func _ready() -> void:
 	
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_show_up_done
-	Global.dialog_system.set_task("[center]Finde den Weg zu Raum 6.")
+	Global.dialog_system.set_task("[center]Finde den Weg zu Raum 6. \n (Klicke auf die Zahl in der Mitte, wenn du dich verläufst.)")
 	await $"../TransitionWall".transition_hide_back_done
 	Global.dialog_system.play_sequence(Database.A_level_05_1_03)
 	
@@ -310,7 +308,7 @@ func _ready() -> void:
 	
 	await $"../build_phase/DoneButton".pressed
 	await $"../TransitionWall".transition_show_up_done
-	Global.dialog_system.set_task("[center]Das Eichhörnchen ist weg... naja, du findest den Weg sicher alleine.")
+	Global.dialog_system.set_task("[center]Das Eichhörnchen ist weg... naja, du findest den Weg sicher alleine. \n (Klicke auf die Zahl in der Mitte, wenn du dich verläufst.)")
 	
 	await SignalBus.picture_right_room
 	Global.dialog_system.play_sequence(Database.A_level_05_3_02)
