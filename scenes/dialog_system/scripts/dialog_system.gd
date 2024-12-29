@@ -39,7 +39,7 @@ var texts: Array[String] 			= []
 
 ##if true: skip key is pressed
 var key_pressed: bool
-@export var skip_key: Key
+@export var skip_key: MouseButton
 
 @onready var audio_player: AudioPlayer = $Storyteller_player
 @onready var sfx_player: AudioPlayer = $Special_effects_player
@@ -112,11 +112,11 @@ func _process(delta: float) -> void:
 			writing_done.emit()
 	
 	#skip input logic
-	if Input.is_key_pressed(self.skip_key) && !key_pressed:
+	if Input.is_mouse_button_pressed(self.skip_key) && !key_pressed:
 		key_pressed = true
 		self.get_audio_player().skip()
 		skipped.emit()
-	elif !Input.is_key_pressed(self.skip_key) && key_pressed:
+	elif !Input.is_mouse_button_pressed(self.skip_key) && key_pressed:
 		key_pressed = false
 		
 #getter and setter
@@ -139,7 +139,7 @@ func get_distance() -> int:
 	return self.distance
 
 ##returns the key, that is used to skip the writing animation of the text_box
-func get_skip_key() -> Key:
+func get_skip_key() -> MouseButton:
 	return self.skip_key
 
 ##returns this system's audio player of the storyteller voice lines
@@ -174,7 +174,7 @@ func set_distance(size: int) -> void:
 	self.distance = size
 	
 ##set the skip_key to skip writing animation to the transferred one
-func set_skip_key(key: Key) -> void:
+func set_skip_key(key: MouseButton) -> void:
 	self.skip_key = key
 
 ##sets the text in the task window to the transferred one

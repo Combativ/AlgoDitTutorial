@@ -1,29 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4tvajj0c08u7"]
+[gd_scene load_steps=5 format=3 uid="uid://b4tvajj0c08u7"]
 
 [ext_resource type="Script" path="res://menus/title/title.gd" id="1_xrcp3"]
 [ext_resource type="AudioStream" uid="uid://di4qybsc11jcx" path="res://sounds/Mainmenu1.wav" id="2_jaapu"]
 [ext_resource type="Script" path="res://scenes/dialog_system/scripts/audio_player.gd" id="3_orngg"]
+[ext_resource type="Texture2D" uid="uid://cyq1pc3mamlbv" path="res://menus/title/art/house.png" id="4_53hga"]
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_xrcp3")
+
+[node name="House" type="Sprite2D" parent="."]
+position = Vector2(640, 280)
+scale = Vector2(0.834028, 0.834028)
+texture = ExtResource("4_53hga")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1300.0
+offset_bottom = 740.0
+color = Color(0.74902, 0.74902, 0.74902, 0.301961)
 
 [node name="PlayButton" type="Button" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 581.0
-offset_top = 249.0
-offset_right = 728.0
-offset_bottom = 308.0
+offset_left = 535.0
+offset_top = 220.0
+offset_right = 746.0
+offset_bottom = 303.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 text = "Spiel starten"
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 581.0
-offset_top = 373.0
-offset_right = 728.0
-offset_bottom = 432.0
+offset_left = 535.0
+offset_top = 365.0
+offset_right = 746.0
+offset_bottom = 448.0
 text = "Spiel beenden"
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
