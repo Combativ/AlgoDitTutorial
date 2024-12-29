@@ -103,3 +103,13 @@ func perform_locked(call: Callable):
 	Global.dialog_system.release()
 	Global.sound_options_window.release()
 	pass
+
+
+##executes the transferred callable after the transferred time
+func execute_after_time(sec: float, method: Callable):
+	var thread: Thread = Thread.new()
+	thread.start(func():
+		await get_tree().create_timer(sec).timeout
+		method.call()
+	)
+	pass

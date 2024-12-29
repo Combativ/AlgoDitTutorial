@@ -19,7 +19,6 @@ var build_phase: Node2D
 # level 3 needs to know the last inserted room
 var room_number_just_inserted: int = -1
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_parent().ready
@@ -27,7 +26,6 @@ func _ready() -> void:
 	build_phase = get_parent().get_node("build_phase")
 	
 	SignalBus.room_miniature_released_on_snap_target.connect(_on_roomMiniature_released_on_snapTarget)
-	
 	
 	var level1: Node2D = LEVEL_01.instantiate()
 	var level2: Node2D = LEVEL_02.instantiate()
