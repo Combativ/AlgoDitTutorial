@@ -30,7 +30,7 @@ var level_01_14: Tuple = Tuple.new("Jetzt gehen wir zu der 15, danach runter in 
 
 var level_01_15: Tuple = Tuple.new("Ahhhh, da ist ja unser Ziel - die 12, wie sie im Zettel steht.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice15_00002268.wav"))
 
-var level_01_16: Tuple = Tuple.new("Und nurnoch auf den Bilderrahmen klicken und dann haben wir das erste Level abgeschlossen.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice16_00002385.wav"))
+var level_01_16: Tuple = Tuple.new("Und nur noch auf den Bilderrahmen klicken und dann haben wir das erste Level abgeschlossen.", preload("res://scenes/dialog_system/voicelines/level1/search/AlgoditVoice16_00002385.wav"))
 
 var A_level_01_01: Array[Tuple] = [	self.level_01_01, 
 									self.level_01_02, 
