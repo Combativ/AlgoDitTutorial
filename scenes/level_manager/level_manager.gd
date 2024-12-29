@@ -170,7 +170,7 @@ func _ready() -> void:
 	await Global.dialog_system.sequence_finished
 	$"../build_phase/InputLock".show()
 	
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../build_phase/InputLock".hide()
 	load_level(level3_2, true)
 	Global.dialog_system.set_task("[center]Sortiere alle Zahlen in den Baum ein.")
