@@ -10,6 +10,7 @@
 script = ExtResource("1_4mpt7")
 target_room = 95
 lock_predefined_nodes_in_tree = true
+sorted_insertion = true
 
 [node name="Tree" type="Node2D" parent="."]
 
