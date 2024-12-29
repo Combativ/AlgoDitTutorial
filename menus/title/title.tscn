@@ -56,6 +56,7 @@ stream = ExtResource("2_jaapu")
 volume_db = -20.222
 autoplay = true
 script = ExtResource("3_orngg")
+muted = false
 
 [node name="SnowFlakeParticles" type="GPUParticles2D" parent="."]
 position = Vector2(680, -40)
